@@ -1,0 +1,63 @@
+.construccion {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/enConstruccion.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .mensaje-contenido {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    color: var(--texto-principal);
+    max-width: 600px;
+  }
+  
+  .mensaje-contenido h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--azul-brillante);
+  }
+  
+  .mensaje-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mensaje-contenido a {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--azul-brillante);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mensaje-contenido a:hover {
+    background-color: var(--resaltado);
+  }
+  
+  /* Responsive para móviles */
+  @media (max-width: 600px) {
+    .mensaje-contenido {
+      padding: 1.5rem 1.2rem;
+    }
+  
+    .mensaje-contenido h1 {
+      font-size: 1.5rem;
+    }
+  
+    .mensaje-contenido p {
+      font-size: 1rem;
+    }
+  }
+  

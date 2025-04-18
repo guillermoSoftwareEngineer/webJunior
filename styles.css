@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* HERO */
+/* clases hero */
 .hero {
   position: relative;
   height: 100vh;
@@ -65,7 +65,7 @@ body {
   margin-top: 0.5rem;
 }
 
-/* NAV */
+/* clases seccion de navegacion al estilo header */
 .nav ul {
   display: flex;
   justify-content: center;
@@ -86,24 +86,13 @@ body {
   color: var(--resaltado);
 }
 
-/* SECCIONES CON VIDEO RESPONSIVO */
+/* Secciones enlaces a cada seccion */
 .seccion {
   position: relative;
   overflow: hidden;
   padding: 4rem 2rem;
   text-align: center;
   border-top: 1px solid #1c1c2a;
-}
-
-.video-fondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-  z-index: 0;
 }
 
 .seccion a {
@@ -121,7 +110,7 @@ body {
   transform: scale(1.1);
 }
 
-/* FOOTER */
+/* Clases seccion footer */
 .footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -151,7 +140,8 @@ body {
   height: 20px;
 }
 
-/* RESPONSIVE */
+/* Seccion de clases responsive */
+/* para cada tamaño de letra expertos recomiendan un tamaño de letra en relacion con el tamaño de pantalla */
 @media (max-width: 768px) {
   .nombre { font-size: 1.8rem; }
   .tagline { font-size: 1rem; }
@@ -162,4 +152,52 @@ body {
   .seccion { padding: 6rem 4rem; }
   .logo-img img { width: 120px; }
   .nombre { font-size: 3.2rem; }
+}
+
+/* para cada tamaño de letra expertos recomiendan un tamaño de letra en relacion con el tamaño de pantalla */
+@media (max-width: 600px) {
+  .seccion {
+    padding: 3rem 1rem;
+    background-position: center top;
+  }
+
+  .seccion a {
+    font-size: 1.6rem;
+  }
+}
+
+/*   Fondos con imágenes para cada sección */
+.seccion.sobremi {
+  background-image: url("./images/sobreMi.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seccion.proyectos {
+  background-image: url("./images/proyectos.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seccion.slides {
+  background-image: url("./images/slides.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seccion.articulos {
+  background-image: url("./images/articulos.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seccion.contacto {
+  background-image: url("./images/contacto.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
