@@ -1,0 +1,165 @@
+:root {
+  --fondo: #0a0f1c;
+  --azul-brillante: #1e90ff;
+  --texto-principal: #f0f0f0;
+  --texto-secundario: #c0c0c0;
+  --resaltado: #0077ff;
+  --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto-principal);
+  font-family: var(--fuente);
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-img img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.nombre {
+  font-size: 2.8rem;
+  color: var(--texto-principal);
+}
+
+.pnombre {
+  color: var(--resaltado);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--texto-secundario);
+  margin-top: 0.5rem;
+}
+
+/* NAV */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  background-color: #10172a;
+  padding: 1rem;
+}
+
+.nav a {
+  color: var(--texto-principal);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--resaltado);
+}
+
+/* SECCIONES CON VIDEO RESPONSIVO */
+.seccion {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid #1c1c2a;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.seccion a {
+  position: relative;
+  z-index: 1;
+  color: var(--texto-principal);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.seccion a:hover {
+  color: var(--azul-brillante);
+  transform: scale(1.1);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #0d1224;
+  color: var(--texto-secundario);
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--azul-brillante);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links img.icono-red {
+  width: 20px;
+  height: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nombre { font-size: 1.8rem; }
+  .tagline { font-size: 1rem; }
+  .nav ul { flex-direction: column; align-items: center; }
+}
+
+@media (min-width: 1024px) {
+  .seccion { padding: 6rem 4rem; }
+  .logo-img img { width: 120px; }
+  .nombre { font-size: 3.2rem; }
+}
