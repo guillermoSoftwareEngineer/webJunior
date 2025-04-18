@@ -66,12 +66,17 @@ body {
 }
 
 /* clases seccion de navegacion al estilo header */
+.nav {
+  background-color: #10172a;
+  position: relative;
+}
+
+/* Enlaces principales */
 .nav ul {
   display: flex;
   justify-content: center;
   gap: 1rem;
   list-style: none;
-  background-color: #10172a;
   padding: 1rem;
 }
 
@@ -84,6 +89,24 @@ body {
 
 .nav a:hover {
   color: var(--resaltado);
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  background: none;
+  border: none;
+}
+
+.menu-toggle img {
+  width: 36px;
+  height: 36px;
 }
 
 /* Secciones enlaces a cada seccion */
@@ -140,21 +163,13 @@ body {
   height: 20px;
 }
 
-/* Seccion de clases responsive */
-/* para cada tamaño de letra expertos recomiendan un tamaño de letra en relacion con el tamaño de pantalla */
+/* Responsive general */
 @media (max-width: 768px) {
   .nombre { font-size: 1.8rem; }
   .tagline { font-size: 1rem; }
-  .nav ul { flex-direction: column; align-items: center; }
 }
 
-@media (min-width: 1024px) {
-  .seccion { padding: 6rem 4rem; }
-  .logo-img img { width: 120px; }
-  .nombre { font-size: 3.2rem; }
-}
-
-/* para cada tamaño de letra expertos recomiendan un tamaño de letra en relacion con el tamaño de pantalla */
+/* Responsive específico para secciones */
 @media (max-width: 600px) {
   .seccion {
     padding: 3rem 1rem;
@@ -166,7 +181,7 @@ body {
   }
 }
 
-/*   Fondos con imágenes para cada sección */
+/* Fondos con imágenes para cada sección */
 .seccion.sobremi {
   background-image: url("./images/sobreMi.png");
   background-size: cover;
@@ -200,4 +215,53 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Responsive: menú hamburguesa desde 425px hacia abajo */
+@media (max-width: 425px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #10172a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav ul.show {
+    display: flex;
+  }
+
+  .nav ul li {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav a {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Desde 670px hacia arriba: menú horizontal con ajuste */
+@media (min-width: 670px) {
+  .nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .nav a {
+    font-size: 1.05rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
 }
