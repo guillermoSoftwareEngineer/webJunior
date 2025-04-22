@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guillermo Vásquez | Proyectos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./proyectos.css">
+</head>
+<body>
+
+  <section class="proyectos">
+    <h1 class="titulo-seccion">Mis Proyectos</h1>
+
+    <!-- Botones de categoria para cambios -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="frontend">Frontend</button>
+      <button class="tab-button" data-tab="backend">Backend</button>
+      <button class="tab-button" data-tab="bd">Bases de datos</button>
+      <button class="tab-button" data-tab="electro">Electro</button>
+    </div>
+
+    <!-- Contenedor seccion Frontend -->
+    <div class="tab-content active" id="frontend">
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/Botones.png" alt="Proyecto 1">
+          <h3>Botones Animados</h3>
+          <p>Animaciones modernas solo con HTML y CSS.</p>
+          <a href="./botones.html">Ver más</a>
+        </div>
+        
+        <div class="card">
+          <img src="./images/Calculadora.png" alt="Proyecto 2">
+          <h3>ElectroCalculadora</h3>
+          <p>Calculadora interactiva de magnitudes eléctricas.</p>
+          <a href="./electro-calculadora.html">Ver más</a>
+        </div>
+        
+        <div class="card">
+            <img src="./images/restaurante.png" alt="Proyecto 2">
+            <h3>Restaurante Bootstrap</h3>
+            <p>Restaurante Frontend Boostrap</p>
+            <a href="./en-construccion.html">Ver más</a>
+          </div>
+
+      </div>
+    </div>
+
+    <!-- Contenedor seccion Backend -->
+    <div class="tab-content" id="backend">
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/backend1.png" alt="Backend">
+          <h3>API básica</h3>
+          <p>REST API simple para gestión de usuarios.</p>
+          <a href="./en-construccion.html">Ver más</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor seccion Bases de datos -->
+    <div class="tab-content" id="bd">
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/sql1.png" alt="SQL">
+          <h3>Modelo relacional</h3>
+          <p>Diseño y consultas SQL en MySQL.</p>
+          <a href="./en-construccion.html">Ver más</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor Electro -->
+    <div class="tab-content" id="electro">
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/ups1.png" alt="UPS">
+          <h3>Simulación UPS</h3>
+          <p>Simulación del funcionamiento de una UPS monofásica.</p>
+          <a href="./en-construccion.html">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

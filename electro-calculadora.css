@@ -1,0 +1,171 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1c;
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding: 2rem;
+  }
+  
+  /* Contenedor principal */
+  .detalle-proyecto {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  }
+  
+  /* Título principal */
+  .titulo {
+    text-align: center;
+    color: #1e90ff;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  /* Imagen destacada del proyecto */
+  .imagen-proyecto {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 360px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+  }
+  
+  /* Descripción del proyecto */
+  .descripcion {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Sección de tecnologías */
+  .tecnologias {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .tecnologias h2 {
+    color: #1e90ff;
+    margin-bottom: 1rem;
+  }
+  
+  .iconos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .iconos div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .iconos img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .iconos span {
+    font-size: 0.9rem;
+  }
+  
+  /* Sección de retos y aprendizajes */
+  .retos {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .retos h2 {
+    color: #1e90ff;
+    margin-bottom: 1rem;
+  }
+  
+  .retos ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .retos ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  /* Sección de enlaces a GitHub y GitHub Pages */
+  .enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .enlaces a {
+    text-decoration: none;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .enlaces a:hover {
+    background-color: #0077cc;
+  }
+  
+  /* Botón de retorno */
+  .volver {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .volver a {
+    text-decoration: none;
+    color: #1e90ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .volver a:hover {
+    color: #0077cc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .titulo {
+      font-size: 1.6rem;
+    }
+  
+    .descripcion {
+      font-size: 1rem;
+    }
+  
+    .retos ul li {
+      font-size: 0.95rem;
+    }
+  
+    .enlaces a {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .iconos img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
