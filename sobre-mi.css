@@ -1,283 +1,242 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
-  
-  /* Fondo con imagen */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Fondo con imagen */
+.sobre-mi {
+  background-image: url('./images/YoSobreMi.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem 2rem;
+}
+
+/* Contenedor del texto */
+.sobre-mi-contenido {
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* clase general para bloques individuales de texto biografia */
+.bloque {
+  margin-bottom: 2rem;
+}
+
+.bloque h2 {
+  color: #1e90ff;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.bloque p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Líneas divisoras de secciones de biografía */
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1.5rem 0;
+}
+
+/* Botón de retorno al home */
+.volver {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2%;
+}
+
+.volver a {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  color: #fff;
+  background-color: #1e90ff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.volver a:hover {
+  background-color: #0077cc;
+}
+
+/* Responsive general */
+@media (max-width: 768px) {
   .sobre-mi {
-    background-image: url('./images/YoSobreMi.png'); 
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 4rem 2rem;
-  }
-  
-  /* Contenedor del texto */
-  .sobre-mi-contenido {
-    max-width: 800px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-  }
-  
-  /* clase general para bloques individuales de texto biografia */
-  .bloque {
-    margin-bottom: 2rem;
-  }
-  
-  .bloque h2 {
-    color: #1e90ff;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .bloque p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-  
-  /* Líneas divisoras de secciones de biografía */
-  hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 1.5rem 0;
-  }
-  
-  /* Botón de retorno al home */
-  .volver {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2%;
-  }
-  
-  .volver a {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    color: #fff;
-    background-color: #1e90ff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-  }
-  
-  .volver a:hover {
-    background-color: #0077cc;
-  }
-  
-  /* Responsive general */
-  @media (max-width: 768px) {
-    .sobre-mi {
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-  
-    .sobre-mi-contenido {
-      max-width: 95%;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.5rem;
-    }
-  
-    .bloque p {
-      font-size: 1rem;
-    }
-  }
-  
-  /* Mejora entre 769px y 1142px para visibilidad de fondo */
-  @media (max-width: 1142px) and (min-width: 769px) {
-    .sobre-mi-contenido {
-      max-width: 550px;
-      padding: 1.5rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.6rem;
-    }
-  
-    .bloque p {
-      font-size: 1rem;
-    }
-  }
-  
-  /* Pantallas pequeñas, dejar que el texto cubra si es necesario */
-  @media (max-width: 488px) {
-    .sobre-mi {
-      background-position: top center;
-      justify-content: center;
-    }
-  
-    .sobre-mi-contenido {
-      max-width: 100%;
-      padding: 1.2rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.4rem;
-    }
-  
-    .bloque p {
-      font-size: 0.95rem;
-    }
   }
 
-  /* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #111;
-    color: #fff;
-  }
-  
-  /* Fondo con imagen */
-  .sobre-mi {
-    background-image: url('./images/YoSobreMi.png'); 
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 4rem 2rem;
-  }
-  
-  /* Contenedor del texto */
   .sobre-mi-contenido {
-    max-width: 800px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    max-width: 95%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
   }
-  
-  /* clase general para bloques individuales de texto biografia */
-  .bloque {
-    margin-bottom: 2rem;
-  }
-  
+
   .bloque h2 {
-    color: #1e90ff;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
   }
-  
+
   .bloque p {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1rem;
   }
-  
-  /* Líneas divisoras de secciones de biografía */
-  hr {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 1.5rem 0;
+}
+
+@media (max-width: 1142px) and (min-width: 769px) {
+  .sobre-mi-contenido {
+    max-width: 550px;
+    padding: 1.5rem;
   }
-  
-  /* Botón de retorno al home */
-  .volver {
+
+  .bloque h2 {
+    font-size: 1.6rem;
+  }
+
+  .bloque p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 488px) {
+  .sobre-mi {
+    background-position: top center;
+    justify-content: center;
+  }
+
+  .sobre-mi-contenido {
+    max-width: 100%;
+    padding: 1.2rem;
+  }
+
+  .bloque h2 {
+    font-size: 1.4rem;
+  }
+
+  .bloque p {
+    font-size: 0.95rem;
+  }
+}
+
+/* HEADER */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.hero-content .logo-img img {
+  width: 80px;
+}
+
+/* NAV */
+.nav {
+  background-color: #10172a;
+  position: relative;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu-toggle img {
+  width: 36px;
+  height: 36px;
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+  padding: 1rem;
+}
+.nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav a:hover {
+  color: #1e90ff;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #0d1224;
+  color: #c0c0c0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+.footer-links a {
+  color: #1e90ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-links img.icono-red {
+  width: 20px;
+  height: 20px;
+}
+
+/* NAV Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #10172a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  .nav ul.show {
+    display: flex;
+  }
+  .nav ul li {
+    padding: 0.5rem 0;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2%;
   }
-  
-  .volver a {
-    display: inline-block;
-    padding: 0.6rem 1.4rem;
-    color: #fff;
-    background-color: #1e90ff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+}
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
   }
-  
-  .volver a:hover {
-    background-color: #0077cc;
-  }
-  
-  /* Responsive general */
-  @media (max-width: 768px) {
-    .sobre-mi {
-      flex-direction: column;
-      justify-content: center;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-  
-    .sobre-mi-contenido {
-      max-width: 95%;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.5rem;
-    }
-  
-    .bloque p {
-      font-size: 1rem;
-    }
-  }
-  
-  /* Mejora entre 769px y 1142px para visibilidad de fondo */
-  @media (max-width: 1142px) and (min-width: 769px) {
-    .sobre-mi-contenido {
-      max-width: 550px;
-      padding: 1.5rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.6rem;
-    }
-  
-    .bloque p {
-      font-size: 1rem;
-    }
-  }
-  
-  /* Pantallas pequeñas, dejar que el texto cubra si es necesario */
-  @media (max-width: 488px) {
-    .sobre-mi {
-      background-position: top center;
-      justify-content: center;
-    }
-  
-    .sobre-mi-contenido {
-      max-width: 100%;
-      padding: 1.2rem;
-    }
-  
-    .bloque h2 {
-      font-size: 1.4rem;
-    }
-  
-    .bloque p {
-      font-size: 0.95rem;
-    }
-  }
-  
-  
+}

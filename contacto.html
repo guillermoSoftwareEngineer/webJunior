@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guillermo Vásquez | Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./contacto.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez">
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section class="contacto">
+    <div class="contacto-contenido">
+      <h1>Hablemos</h1>
+      <p>Puedes encontrarme en las siguientes plataformas profesionales. Estoy abierto a oportunidades, colaboración o simplemente compartir ideas.</p>
+
+      <div class="redes-contacto">
+        <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn">
+          LinkedIn
+        </a>
+
+        <a href="https://platzi.com/p/guillermovasben11/" target="_blank" rel="noopener">
+          <img src="./images/plat.png" alt="Platzi">
+          Platzi
+        </a>
+
+        <a href="./images/correo.png" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+          Correo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

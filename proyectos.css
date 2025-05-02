@@ -1,3 +1,4 @@
+/* Variables principales */
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
@@ -23,7 +24,7 @@ body {
   padding: 2rem 1rem;
 }
 
-/* Hero simplificado */
+/* Hero */
 .hero {
   display: flex;
   justify-content: center;
@@ -35,7 +36,7 @@ body {
   width: 80px;
 }
 
-/* Nav general */
+/* Nav */
 .nav {
   background-color: #10172a;
   position: relative;
@@ -78,7 +79,7 @@ body {
   color: var(--azul);
 }
 
-/* Sección de proyectos */
+/* Sección proyectos */
 .titulo-seccion {
   text-align: center;
   color: var(--azul);
@@ -110,7 +111,6 @@ body {
   color: white;
 }
 
-/* Contenido de tabs */
 .tab-content {
   display: none;
 }
@@ -183,6 +183,37 @@ body {
 
 .card a:hover {
   background-color: #006ddc;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #0d1224;
+  color: var(--gris);
+  margin-top: 3rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-links a {
+  color: var(--azul);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links img.icono-red {
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive general */

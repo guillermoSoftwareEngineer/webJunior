@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo Vásquez | Artículos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./articulos.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez">
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./en-construccion.html">Artículos</a></li>
+      <li><a href="./en-construccion.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="articulos" class="articulos-section">
+    <h1 class="titulo">Artículos</h1>
+
+    <div class="articles-container">
+      <div class="article-card">
+        <img src="./images/preprocesadores.png" alt="Preprocesadores de CSS" class="article-img">
+        <div class="article-content">
+          <h3>La magia de Sass y Less</h3>
+          <p>Cómo los preprocesadores de CSS aceleran tu flujo de trabajo.</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="./images/IGBT.png" alt="IGBT en UPS" class="article-img">
+        <div class="article-content">
+          <h3>IGBT en UPS</h3>
+          <p>Fundamentos y aplicaciones en sistemas de potencia.</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="./images/celdas.png" alt="Celdas vs Paneles Solares" class="article-img">
+        <div class="article-content">
+          <h3>Celdas vs Paneles Solares</h3>
+          <p>Diseño y diferenciación para energía renovable.</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="./images/UPS.png" alt="Accesibilidad Web" class="article-img">
+        <div class="article-content">
+          <h3>¿Qué pasa dentro de un UPS? Electrónica explicada</h3>
+          <p>introducción visual y práctica al funcionamiento interno de un UPS</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="./images/programar.png" alt="CSS Grid Avanzado" class="article-img">
+        <div class="article-content">
+          <h3>Por qué todo técnico debería aprender a programar</h3>
+          <p>Reflexión motivadora sobre unir electrónica y software en tu carrera</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <img src="./images/Mascota.png" alt="Automatización con Arduino" class="article-img">
+        <div class="article-content">
+          <h3>Mascota electrónica con Arduino y programación básica</h3>
+          <p>Proyecto divertido y educativo código para dar vida a una mascota interactiva</p>
+          <a href="./en-construccion.html" target="_blank">Leer artículo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="botones-finales">
+      <a href="./index.html" class="boton">← Volver al inicio</a>
+      <!-- <a href="./en-construccion.html" class="boton">Más Artículos →</a> -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

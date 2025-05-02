@@ -4,19 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guillermo Vásquez | Sobre mí</title>
-
-  <!-- Fuente y CSS externo -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./sobre-mi.css">
 </head>
 <body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez">
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./en-construccion.html">Contacto</a></li>
+    </ul>
+  </nav>
 
   <section class="sobre-mi">
     <div class="sobre-mi-contenido">
       <div class="bloque">
         <h2>Quién soy</h2>
         <p>
-          Mi nombre es Guillermo Vásquez. Soy estudiante de séptimo semestre de Ingeniería de Software, tecnólogo en Electrónica e Instrumentación, y actualmente estoy desarrollando mi portafolio profesional para postularme a mi primer empleo como desarrollador trainee o junior.        </p>
+          Mi nombre es Guillermo Vásquez. Soy estudiante de séptimo semestre de Ingeniería de Software, tecnólogo en Electrónica e Instrumentación, y actualmente estoy desarrollando mi portafolio profesional para postularme a mi primer empleo como desarrollador trainee o junior.
+        </p>
       </div>
       <hr>
       <div class="bloque">
@@ -35,11 +56,31 @@
     </div>
   </section>
 
-  <!-- Botón de retorno al home -->
   <div class="volver">
-                <a href="./index.html">← Volver al inicio</a>
+    <a href="./index.html">← Volver al inicio</a>
   </div>
 
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 
 </body>
 </html>

@@ -9,6 +9,28 @@
 </head>
 <body>
 
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez">
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
   <section class="detalle-proyecto">
     <h1 class="titulo">Electro Calculadora</h1>
 
@@ -16,8 +38,15 @@
 
     <div class="descripcion">
       <p>
-        Proyecto desarrollado con Angular para facilitar el cálculo de magnitudes eléctricas como potencia, corriente, resistencia y voltaje en sistemas monofásicos y trifásicos.
-        Permite seleccionar el tipo de conexión, configurar variables y obtener resultados instantáneos.
+        Electro Calculadora es un proyecto web desarrollado con Angular, enfocado en resolver cálculos eléctricos fundamentales como potencia, corriente, voltaje y resistencia, en configuraciones tanto monofásicas como trifásicas. El objetivo principal fue crear una herramienta precisa, intuitiva y de uso inmediato para estudiantes, técnicos e ingenieros que requieren validar datos eléctricos sin recurrir a software complejo.
+        <br><br>
+        La aplicación permite al usuario seleccionar el tipo de sistema, ingresar variables como tensión, corriente o resistencia, y obtener resultados instantáneamente. La lógica de cálculo fue implementada en TypeScript mediante funciones reutilizables, y estructurada bajo componentes Angular modulares, facilitando su escalabilidad.
+        <br><br>
+        Durante su desarrollo, se integraron buenas prácticas de programación reactiva con formularios controlados, validación de entrada, y separación de lógica en servicios reutilizables. Además, se priorizó la experiencia del usuario con una interfaz responsiva, clara y centrada en la accesibilidad.
+        <br><br>
+        Este proyecto refleja no solo el dominio técnico de Angular y conceptos eléctricos, sino también la capacidad de combinar diseño funcional con precisión matemática, permitiéndome avanzar hacia un perfil profesional que conecta software y electrónica aplicada.
+      </p>
+      rmite seleccionar el tipo de conexión, configurar variables y obtener resultados instantáneos.
       </p>
     </div>
 
@@ -46,12 +75,32 @@
       <a href="https://guillermosoftwareengineer.github.io/ElectricCalculator/" target="_blank">Ver proyecto en GitHub Pages</a>
     </div>
 
-    <!-- Botón para volver a la sección de proyectos -->
     <div class="volver">
       <a href="./proyectos.html">← Volver a proyectos</a>
     </div>
-
   </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 
 </body>
 </html>
