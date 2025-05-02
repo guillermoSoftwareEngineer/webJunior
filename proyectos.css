@@ -1,145 +1,228 @@
 :root {
-    --azul: #1e90ff;
-    --fondo: #0d1117;
-    --texto: #ffffff;
-    --gris: #c0c0c0;
-    --borde: #1e90ff;
-    --card-fondo: #0f172a;
-    --card-borde: #1e293b;
-    --sombra: rgba(30, 144, 255, 0.4);
-    --fuente: 'Poppins', sans-serif;
+  --azul: #1e90ff;
+  --fondo: #0d1117;
+  --texto: #ffffff;
+  --gris: #c0c0c0;
+  --borde: #1e90ff;
+  --card-fondo: #0f172a;
+  --card-borde: #1e293b;
+  --sombra: rgba(30, 144, 255, 0.4);
+  --fuente: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fondo);
+  font-family: var(--fuente);
+  color: var(--texto);
+  padding: 2rem 1rem;
+}
+
+/* Hero simplificado */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero-content .logo-img img {
+  width: 80px;
+}
+
+/* Nav general */
+.nav {
+  background-color: #10172a;
+  position: relative;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-toggle img {
+  width: 36px;
+  height: 36px;
+}
+
+/* Lista de navegación */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--azul);
+}
+
+/* Sección de proyectos */
+.titulo-seccion {
+  text-align: center;
+  color: var(--azul);
+  margin: 2rem 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: var(--azul);
+  border: 2px solid var(--azul);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: var(--azul);
+  color: white;
+}
+
+/* Contenido de tabs */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  margin: 0 auto;
+  max-width: 1100px;
+  background-color: var(--card-fondo);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px var(--sombra);
+  border: 1px solid var(--card-borde);
+}
+
+/* Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #111827;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  max-width: 260px;
+  flex: 1 1 250px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--sombra);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: var(--azul);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--gris);
+  margin-bottom: 1rem;
+}
+
+.card a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--azul);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #006ddc;
+}
+
+/* Responsive general */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+  .card {
+    max-width: 90%;
   }
-  
-  body {
-    background-color: var(--fondo);
-    font-family: var(--fuente);
-    color: var(--texto);
-    padding: 2rem 1rem;
+
+  .menu-toggle {
+    display: block;
   }
-  
-  .titulo-seccion {
-    text-align: center;
-    color: var(--azul);
-    margin-bottom: 2rem;
+
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #10172a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
   }
-  
-  .tabs {
+
+  .nav ul.show {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
   }
-  
-  .tab-button {
-    padding: 0.6rem 1.2rem;
-    background-color: transparent;
-    color: var(--azul);
-    border: 2px solid var(--azul);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 500;
+
+  .nav ul li {
+    padding: 0.5rem 0;
+    text-align: center;
   }
-  
-  .tab-button:hover,
-  .tab-button.active {
-    background-color: var(--azul);
-    color: white;
-  }
-  
-  /* Estilo de cada contenedor de tarjetas */
-  .tab-content {
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
     display: none;
   }
-  
-  .tab-content.active {
-    display: block;
-    margin: 0 auto;
-    max-width: 1100px;
-    background-color: var(--card-fondo);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 0 15px var(--sombra);
-    border: 1px solid var(--card-borde);
-  }
-  
-  /* Contenedor de las cards */
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  /* Card individual */
-  .card {
-    background-color: #111827;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    max-width: 260px;
-    flex: 1 1 250px;
-    border: 1px solid #1e293b;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px var(--sombra);
-  }
-  
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.8rem;
-    object-fit: cover;
-  }
-  
-  .card h3 {
-    color: var(--azul);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-  }
-  
-  .card p {
-    font-size: 0.95rem;
-    color: var(--gris);
-    margin-bottom: 1rem;
-  }
-  
-  /* Boton dentro de cada card */
-  .card a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: var(--azul);
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .card a:hover {
-    background-color: #006ddc;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .cards-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .card {
-      max-width: 90%;
-    }
-  }
-  
+}

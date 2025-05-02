@@ -9,10 +9,36 @@
 </head>
 <body>
 
+  <!-- Hero simplificado -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Navegación -->
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de proyectos -->
   <section class="proyectos">
     <h1 class="titulo-seccion">Mis Proyectos</h1>
 
-    <!-- Botones de categoria para cambios -->
+    <!-- Botones de categoría -->
     <div class="tabs">
       <button class="tab-button active" data-tab="frontend">Frontend</button>
       <button class="tab-button" data-tab="backend">Backend</button>
@@ -20,38 +46,36 @@
       <button class="tab-button" data-tab="electro">Electro</button>
     </div>
 
-    <!-- Contenedor seccion Frontend -->
+    <!-- Contenedores de tarjetas -->
     <div class="tab-content active" id="frontend">
       <div class="cards-container">
         <div class="card">
-          <img src="./images/Botones.png" alt="Proyecto 1">
+          <img src="./images/Botones.png" alt="Botones Animados">
           <h3>Botones Animados</h3>
           <p>Animaciones modernas solo con HTML y CSS.</p>
           <a href="./botones.html">Ver más</a>
         </div>
-        
+
         <div class="card">
-          <img src="./images/Calculadora.png" alt="Proyecto 2">
+          <img src="./images/Calculadora.png" alt="ElectroCalculadora">
           <h3>ElectroCalculadora</h3>
           <p>Calculadora interactiva de magnitudes eléctricas.</p>
           <a href="./electro-calculadora.html">Ver más</a>
         </div>
-        
-        <div class="card">
-            <img src="./images/restaurante.png" alt="Proyecto 2">
-            <h3>Restaurante Bootstrap</h3>
-            <p>Restaurante Frontend Boostrap</p>
-            <a href="./en-construccion.html">Ver más</a>
-          </div>
 
+        <div class="card">
+          <img src="./images/restaurante.png" alt="Restaurante Bootstrap">
+          <h3>Restaurante Bootstrap</h3>
+          <p>Restaurante Frontend Bootstrap.</p>
+          <a href="./en-construccion.html">Ver más</a>
+        </div>
       </div>
     </div>
 
-    <!-- Contenedor seccion Backend -->
     <div class="tab-content" id="backend">
       <div class="cards-container">
         <div class="card">
-          <img src="./images/backend1.png" alt="Backend">
+          <img src="./images/backend1.png" alt="API básica">
           <h3>API básica</h3>
           <p>REST API simple para gestión de usuarios.</p>
           <a href="./en-construccion.html">Ver más</a>
@@ -59,11 +83,10 @@
       </div>
     </div>
 
-    <!-- Contenedor seccion Bases de datos -->
     <div class="tab-content" id="bd">
       <div class="cards-container">
         <div class="card">
-          <img src="./images/sql1.png" alt="SQL">
+          <img src="./images/sql1.png" alt="Modelo relacional">
           <h3>Modelo relacional</h3>
           <p>Diseño y consultas SQL en MySQL.</p>
           <a href="./en-construccion.html">Ver más</a>
@@ -71,11 +94,10 @@
       </div>
     </div>
 
-    <!-- Contenedor Electro -->
     <div class="tab-content" id="electro">
       <div class="cards-container">
         <div class="card">
-          <img src="./images/ups1.png" alt="UPS">
+          <img src="./images/ups1.png" alt="Simulación UPS">
           <h3>Simulación UPS</h3>
           <p>Simulación del funcionamiento de una UPS monofásica.</p>
           <a href="./en-construccion.html">Ver más</a>
@@ -84,9 +106,12 @@
     </div>
   </section>
 
+  <!-- Script para tabs y menú hamburguesa -->
   <script>
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -96,6 +121,10 @@
         button.classList.add('active');
         document.getElementById(button.dataset.tab).classList.add('active');
       });
+    });
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
     });
   </script>
 
