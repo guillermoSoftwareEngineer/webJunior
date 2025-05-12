@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas Restaurante | Detalles del Proyecto</title>
+  <link rel="stylesheet" href="./rest-boostrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez">
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section class="detalle-proyecto">
+    <h1 class="titulo">Rest Reserv</h1>
+
+    <img src="./images/reservas.png" alt="Captura de Reservas Restaurante" class="imagen-proyecto">
+
+    <div class="descripcion">
+        <p>
+            En este proyecto desarrollé “Rest Reserv”, una aplicación web pensada para optimizar la experiencia de reservas y opiniones de los comensales. Utilizando HTML, CSS y JavaScript junto con Bootstrap, implementé un flujo completo de registro e inicio de sesión en el que cada usuario puede dejar valoraciones que se almacenan localmente en el navegador mediante Local Storage.
+        </p>
+        <br>
+        <p>
+            El mayor desafío técnico fue dominar las rutas relativas para los recursos estáticos —especialmente imágenes y hojas de estilo— y garantizar un despliegue impecable en GitHub Pages. Aprendí a configurar correctamente el atributo base href y a depurar errores de carga de activos para que la aplicación funcione tanto en desarrollo como en producción.
+        </p>
+        <br>
+        <p>
+            Durante el desarrollo profundicé en los conceptos de persistencia: comprendí cuándo es suficiente utilizar Local Storage y en qué casos conviene emplear una base de datos tradicional o un backend real. Este proyecto forma parte de mi profundización en frontend en la carrera de Ingeniería de Software que curso actualmente.
+        </p>
+        <br>
+        <p>
+            Para la interfaz, integré Bootstrap vía CDN; aunque aún no personalicé tipografías con Google Fonts, aprendí su implementación, así como el uso de la biblioteca de iconos de Font Awesome. De este modo obtuve un diseño coherente, cercano y accesible. Cada componente —formularios, tarjetas de opinión y botones de navegación— fue optimizado para ser responsive y mantener la coherencia visual en todos los dispositivos.
+        </p>
+
+    <div class="tecnologias">
+      <h2>Tecnologías usadas:</h2>
+      <div class="iconos">
+        <div><img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"><span>HTML</span></div>
+        <div><img src="https://img.icons8.com/color/48/css3.png" alt="CSS"><span>CSS</span></div>
+        <div><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
+        <div><img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap"><span>Bootstrap</span></div>
+      </div>
+    </div>
+
+    <div class="retos">
+      <h2>Retos afrontados y aprendizajes:</h2>
+      <ul>
+        <li>Gestión de rutas relativas para HTML, CSS, JS e imágenes.</li>
+        <li>Despliegue en GitHub Pages y configuración de base de URLs.</li>
+        <li>Comprensión de Local Storage vs. bases de datos y rol del backend.</li>
+        <li>Integración de Bootstrap vía CDN y descarga local.</li>
+        <li>Importación de fuentes con Google Fonts y uso de Font Awesome.</li>
+      </ul>
+    </div>
+
+    <div class="enlaces">
+      <a href="https://github.com/guillermoSoftwareEngineer/FrontendPoli" target="_blank">Ver código en GitHub</a>
+      <a href="https://guillermosoftwareengineer.github.io/FrontendPoli/" target="_blank">Ver proyecto en GitHub Pages</a>
+    </div>
+
+    <div class="volver">
+      <a href="./proyectos.html">← Volver a proyectos</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
