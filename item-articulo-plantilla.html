@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artículo Técnico | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./item-articulo-plantilla.css" />
+</head>
+<body>
+
+  <!-- HEADER SIMPLIFICADO como en Proyectos -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV DEL PORTAFOLIO -->
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO DEL ARTÍCULO -->
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Título del Artículo</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · 13 mayo 2025</p>
+
+      <img src="./images/calculadora-detalles.png" alt="Imagen principal del artículo" class="article-image">
+
+      <section class="article-section">
+        <h2>Subtítulo del primer bloque</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi sed feugiat porta, sapien ligula sagittis metus.</p>
+        <p>Morbi in urna ac eros ultrices cursus. Aenean varius, magna non dignissim viverra, vel vehicula orci eros nec justo.</p>
+      </section>
+
+      <!-- SECCIÓN CROQUIS -->
+      <section class="croquis-section">
+        <div class="croquis-image">
+          <img src="./images/AnalisisData.png" alt="Imagen relacionada al contenido" />
+        </div>
+        <div class="croquis-content">
+          <h3 class="croquis-title">Título del bloque a la derecha</h3>
+          <div class="croquis-text">
+            <p>Este bloque simula el estilo visual solicitado, con el título arriba y un recuadro de texto redondeado a la derecha de una imagen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Conclusión</h2>
+        <p>Comprender estos conceptos permite desarrollar soluciones más seguras y eficientes en el contexto de la electrónica y el desarrollo web moderno.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER DEL PORTAFOLIO -->
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT MENÚ HAMBURGUESA -->
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
