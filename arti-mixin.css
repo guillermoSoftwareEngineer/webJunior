@@ -1,0 +1,75 @@
+/* arti-mixin.css  */
+:root {
+  --azul: #1e90ff;
+  --fondo: #0d1117;
+  --texto: #ffffff;
+  --gris: #c0c0c0;
+  --borde: #1e90ff;
+  --card-fondo: #0f172a;
+  --card-borde: #1e293b;
+  --sombra: rgba(30, 144, 255, 0.4);
+  --fuente: 'Poppins', sans-serif;
+}
+
+/* Estructura base */
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+}
+
+/* Sección crítica - Distribución imagen/texto */
+.croquis-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.croquis-image {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.croquis-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--card-borde);
+  box-shadow: 0 4px 15px var(--sombra);
+  transition: transform 0.3s ease;
+}
+
+.croquis-content {
+  background: var(--card-fondo);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-borde);
+  width: 100%;
+}
+
+/* Breakpoint específico para 1024px */
+@media (min-width: 1024px) {
+  .croquis-section {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 4rem;
+  }
+
+  .croquis-image {
+    width: 380px;
+    margin: 0;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .croquis-content {
+    flex: 1;
+    padding: 2.5rem 3rem;
+  }
+}

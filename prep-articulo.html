@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preprocesadores CSS | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./prep-articulo.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Preprocesadores CSS: Potenciando tu flujo de trabajo</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · 15 mayo 2025</p>
+
+      <img src="./images/hero-prepos.png" alt="Preprocesadores CSS" class="article-image">
+
+      <section class="article-section">
+        <h2>¿Qué son los preprocesadores CSS?</h2>
+        <p>Los preprocesadores CSS son herramientas fundamentales en el desarrollo frontend moderno que extienden las capacidades del CSS tradicional. Funcionan como una capa intermedia entre tu código y el CSS que el navegador interpreta, permitiéndote escribir estilos con características avanzadas que luego se compilan a CSS estándar.</p>
+        
+        <p>Imagina que el CSS plano es como escribir documentos en un editor de texto básico, mientras que los preprocesadores te dan acceso a un procesador de textos completo con atajos, plantillas y funciones avanzadas que mejoran tu productividad.</p>
+      </section>
+
+      <section class="croquis-section">
+        <div class="croquis-image">
+          <img src="./images/image-prepo.png" alt="Flujo de trabajo con preprocesadores" />
+        </div>
+        <div class="croquis-content">
+          <h3 class="croquis-title">¿Cómo funcionan?</h3>
+          <div class="croquis-text">
+            <p>El proceso básico de trabajo con preprocesadores consta de tres pasos:</p>
+            <br>
+            <ol>
+              <li>Escribes tus estilos en el lenguaje del preprocesador (Sass, Less, Stylus)</li> <br>
+              <li>El preprocesador compila tu código a CSS estándar</li> <br>
+              <li>El navegador interpreta el CSS generado</li> <br>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Características principales</h2>
+        <p>Los preprocesadores modernos ofrecen un conjunto de características poderosas que transforman la forma en que escribes CSS. Estas son las 10 más relevantes:</p>
+      </section>
+
+      <section class="article-section feature-section">
+        <h3 id="variables">1. Variables</h3>
+        <p>Las variables te permiten almacenar valores reutilizables como colores, fuentes o tamaños en un solo lugar. Cambiar el valor de una variable actualiza automáticamente todos los lugares donde se usa.</p>
+        
+        <div class="code-comparison">
+          <div class="code-example">
+            <h4>Sass</h4>
+            <pre><code>$color-primario: #1e90ff; // Define una variable 
+$espaciado-base: 1rem; // Define una variable 
+
+.header {
+background-color: $color-primario; // Color de fondo usando variable 
+padding: $espaciado-base; // Color de fondo usando variable 
+}
+            </code></pre>
+          </div>
+          <div class="code-example">
+            <h4>CSS Resultante</h4>
+            <pre><code>.header {
+  background-color: #1e90ff;
+  padding: 1rem;
+}</code></pre>
+          </div>
+        </div>
+        <!-- <p class="feature-link"><a href="./variables.html">Ver las demas caracteristicas →</a></p> -->
+      </section>
+
+      <section class="article-section feature-section">
+        <h3 id="anidacion">2. Anidación (Nesting)</h3>
+        <p>La anidación te permite reflejar la estructura jerárquica de tu HTML en tus estilos, haciendo el código más legible y organizado.</p>
+        
+        <div class="code-comparison">
+          <div class="code-example">
+            <h4>Sass</h4>
+            <pre><code>
+nav { 
+  ul { 
+    margin: 0; 
+    padding: 0; 
+
+    li { 
+    display: inline-block;
+     // ítems uno al lado del otro.
+
+    a { 
+    color: #333; // color del texto del enlace a un gris oscuro.
+    &:hover { // Inicia el estado "hover" (cuando el cursor está sobre el enlace).
+    color: $color-primario; // Cambia el color del texto 
+        } 
+      } 
+    } 
+  } 
+}  
+        </code></pre>
+          </div>
+          <div class="code-example">
+            <h4>CSS Resultante</h4>
+            <pre><code>nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #333;
+}
+
+nav ul li a:hover {
+  color: #1e90ff;
+}</code></pre>
+          </div>
+        </div>
+        <!-- <p class="feature-link"><a href="./anidacion.html">Ver las demas caracteristicas →</a></p> -->
+      </section>
+
+      <!-- Secciones adicionales para cada característica -->
+      <section class="article-section feature-list">
+        <h3>Otras características importantes</h3>
+        <ul>
+          <li><a href="./arti-mixin.html">3.Mixins (click aqui para saber mas)</a> <br>- Funciones reutilizables para bloques de estilos</li>
+          <li><a href="./en-construccion.html">4.Funciones (click aqui para saber mas)</a> <br>- Operaciones y manipulaciones de valores</li>
+          <li><a href="./en-construccion.html">5.Importaciones (click aqui para saber mas)</a> <br>- Modularización de tu código</li>
+          <li><a href="./en-construccion.html">6.Operadores (click aqui para saber mas)</a> <br>- Matemáticas directamente en CSS</li>
+          <li><a href="./en-construccion.html">7.Herencia (click aqui para saber mas)</a> <br>- Compartir propiedades entre selectores</li>
+          <li><a href="./en-construccion.html">8.Condicionales (click aqui para saber mas)</a> <br>- Lógica en tus estilos</li>
+          <li><a href="./en-construccion.html">9.Bucles (click aqui para saber mas)</a> <br>- Generar CSS dinámicamente</li>
+          <li><a href="./en-construccion.html">10.Namespaces (click aqui para saber mas)</a> <br>- Organización avanzada</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>Conclusión</h2>
+        <p>Los preprocesadores CSS representan un salto cualitativo en la forma de escribir estilos para la web. Al dominar estas herramientas, no solo mejorarás tu productividad sino que también podrás crear código más mantenible, organizado y escalable.</p>
+        <p>Como desarrollador frontend, aprender preprocesadores es una inversión que pagará dividendos a lo largo de tu carrera, permitiéndote trabajar de manera más eficiente en proyectos de cualquier tamaño.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

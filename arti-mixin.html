@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mixins en Sass | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./prep-articulo.css"> <!-- CSS base -->
+<link rel="stylesheet" href="./prep-mixins.css"> <!-- Estilos específicos -->
+</head>
+<body>
+
+  <!-- Header idéntico al anterior -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav idéntico al anterior -->
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido específico de Mixins -->
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Mixins en Sass: Funciones para tu CSS</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · 16 mayo 2025</p>
+
+
+      <section class="article-section">
+        <h2>¿Qué son los Mixins?</h2>
+        <p>Los mixins son una de las características más poderosas de Sass, permitiéndote crear bloques de estilos reutilizables que pueden aceptar parámetros, similar a las funciones en lenguajes de programación.</p>
+        
+        <div class="croquis-section">
+          <div class="croquis-image">
+            <img src="./images/mixin.png" alt="Diagrama de Mixins" />
+          </div>
+          <div class="croquis-content">
+            <h3 class="croquis-title">¿Por qué usar mixins?</h3>
+            <div class="croquis-text">
+              <p>Los mixins te ayudan a:</p>
+              <ul>
+                <li>Eliminar código duplicado</li>
+                <li>Mantener estilos consistentes</li>
+                <li>Simplificar cambios globales</li>
+                <li>Crear componentes modulares</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Sintaxis Básica</h2>
+        <p>Un mixin se define con <code>@mixin</code> y se incluye con <code>@include</code>:</p>
+        
+        <div class="code-comparison">
+          <div class="code-example">
+            <h4>Sass (Definición)</h4>
+            <pre><code>@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+}</code></pre>
+          </div>
+          <div class="code-example">
+            <h4>Uso</h4>
+            <pre><code>.nav {
+  @include reset-list;
+}
+
+.card {
+  @include box-shadow(0, 2px, 10px, rgba(0,0,0,0.1));
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Mixins Avanzados</h2>
+        <p>Los mixins pueden incluir lógica condicional y bucles:</p>
+        
+        <div class="code-example">
+          <pre><code>@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 900px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+// Uso:
+.header {
+  font-size: 2rem;
+  
+  @include responsive(phone) {
+    font-size: 1.5rem;
+  }
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Conclusión</h2>
+        <p>Los mixins son herramientas fundamentales para crear CSS mantenible y escalable. Dominarlos te permitirá:</p>
+        <ul>
+          <li>Reducir drásticamente la repetición de código</li>
+          <li>Crear sistemas de diseño consistentes</li>
+          <li>Implementar lógica compleja en tus estilos</li>
+          <li>Mejorar la legibilidad de tu código</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer idéntico al anterior -->
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
