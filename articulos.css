@@ -29,6 +29,7 @@
     padding: 1rem;
   }
   .hero-content .logo-img img {
+    display: none;
     width: 80px;
   }
   
@@ -37,6 +38,11 @@
     background-color: #10172a;
     position: relative;
   }
+
+nav button img {
+  border-radius: 8px;
+}
+
   .menu-toggle {
     display: none;
     background: none;
@@ -78,6 +84,7 @@
     font-size: 2rem;
     color: var(--azul);
     margin-bottom: 2rem;
+    margin-top: 4rem;
   }
   
   /* Cards */
@@ -205,5 +212,17 @@
     .menu-toggle {
       display: none;
     }
+  }
+
+  /* Estilos para que el logo en pantallas mayores a 768px se vea */
+  @media (min-width: 769px) {
+    .hero-content .logo-img img {
+      display: block;
+    }
+  }
+
+  /* Eliminar bullets de todas las listas */
+  ul, ol {
+    list-style: none;
   }
   

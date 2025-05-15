@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importaciones en Preprocesadores CSS | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./prep-articulo.css">
+  <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Importaciones en Preprocesadores CSS: Organiza tus Estilos</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · 20 mayo 2025</p> <section class="article-section">
+        <h2>¿Qué son las Importaciones?</h2>
+        <p>La directiva <code>@import</code> en preprocesadores CSS como Sass y Less te permite dividir tu CSS en múltiples archivos y luego combinarlos en un único archivo CSS compilado. Esto facilita la organización, el mantenimiento y la reutilización de tus estilos.</p>
+
+        <div class="croquis-section">
+          <div class="croquis-image">
+            <img src="./images/import.png" alt="Diagrama de Importaciones" /> </div>
+          <div class="croquis-content">
+            <h3 class="croquis-title">¿Por qué usar importaciones?</h3>
+            <div class="croquis-text">
+              <p>Las importaciones te ayudan a:</p>
+              <ul>
+                <li>Organizar tu CSS en archivos lógicos (ej., _variables.scss, _mixins.scss, _base.scss).</li><br>
+                <li>Mejorar la mantenibilidad al facilitar la búsqueda y modificación de estilos.</li><br>
+                <li>Reutilizar código en diferentes partes de tu proyecto.</li><br>
+                <li>Crear una estructura de estilos más clara y escalable.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Sintaxis Básica</h2>
+        <p>La sintaxis para importar archivos es sencilla:</p>
+        <div class="code-example">
+          <h4>Sass/Less</h4>
+          <pre><code>@import 'base';
+@import 'components/buttons';
+@import 'utils/variables';
+@import 'theme.less';</code></pre>
+        </div>
+        <p>Al importar, generalmente se omite la extensión del archivo (<code>.scss</code>, <code>.less</code>, <code>.css</code>) y los guiones bajos iniciales (<code>_</code>) que suelen indicar archivos parciales o "partials".</p>
+      </section>
+
+      <section class="article-section">
+        <h2>Archivos Parciales (Partials)</h2>
+        <p>Los archivos parciales son archivos SCSS o Less que contienen fragmentos de CSS que no se deben compilar en un archivo CSS separado. Se utilizan para almacenar variables, mixins, funciones, etc., y se importan a otros archivos para ser utilizados.</p>
+        <div class="code-example">
+          <h4>Ejemplo de un parcial (_variables.scss)</h4>
+          <pre><code>$primary-color: #1e90ff;
+$secondary-color: #0f172a;
+$font-stack: 'Poppins', sans-serif;
+</code></pre>
+          <h4>Importación en otro archivo (main.scss)</h4>
+          <pre><code>@import 'variables';
+
+body {
+  background-color: $secondary-color;
+  font-family: $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Consideraciones al Importar</h2>
+        <ul>
+          <li>Evita importar archivos CSS regulares si estás utilizando un preprocesador, ya que esto puede no aprovechar todas las funcionalidades del preprocesador.</li><br>
+          <li>Organiza tus archivos de manera lógica para facilitar la navegación y el mantenimiento.</li><br>
+          <li>Considera la jerarquía de tus importaciones; los estilos definidos más tarde pueden sobrescribir los anteriores.</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>Conclusión</h2>
+        <p>Las importaciones son una característica esencial de los preprocesadores CSS que te permiten estructurar tu código de manera eficiente, promoviendo la reutilización y facilitando la colaboración en proyectos grandes. Dominar las importaciones te ayudará a escribir CSS más organizado y mantenible.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

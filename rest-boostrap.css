@@ -22,6 +22,7 @@ body {
 }
 .hero-content .logo-img img {
   width: 80px;
+  display: none;
 }
 
 /* Nav */
@@ -29,6 +30,11 @@ body {
   background-color: #10172a;
   position: relative;
 }
+
+nav button img {
+  border-radius: 8px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -63,7 +69,7 @@ body {
 /* Contenedor principal */
 .detalle-proyecto {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 4rem auto;
   background-color: #111;
   padding: 2rem;
   border-radius: 10px;
@@ -247,3 +253,9 @@ body {
     height: 30px;
   }
 }
+  /* Estilos para que el logo en pantallas mayores a 768px se vea */
+  @media (min-width: 769px) {
+    .hero-content .logo-img img {
+      display: block;
+    }
+  }

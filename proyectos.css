@@ -34,6 +34,7 @@ body {
 
 .hero-content .logo-img img {
   width: 80px;
+  display: none;
 }
 
 /* Nav */
@@ -77,6 +78,9 @@ body {
 
 .nav a:hover {
   color: var(--azul);
+}
+.proyectos{
+  margin-top: 4rem;
 }
 
 /* Sección proyectos */
@@ -231,6 +235,10 @@ body {
     display: block;
   }
 
+  nav button img {
+  border-radius: 8px;
+  }
+
   .nav ul {
     display: none;
     flex-direction: column;
@@ -257,3 +265,11 @@ body {
     display: none;
   }
 }
+
+   /* Estilos para que el logo en pantallas mayores a 768px se vea */
+  @media (min-width: 769px) {
+    .hero-content .logo-img img {
+      display: block;
+    }
+  }
+  

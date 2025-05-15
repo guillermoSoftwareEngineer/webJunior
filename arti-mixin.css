@@ -1,4 +1,4 @@
-/* arti-mixin.css  */
+/* arti-mixin.css */
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
@@ -19,7 +19,6 @@
   min-height: 100vh;
 }
 
-/* Sección crítica - Distribución imagen/texto */
 .croquis-section {
   display: flex;
   flex-direction: column;
@@ -50,13 +49,14 @@
   border-radius: 8px;
   border: 1px solid var(--card-borde);
   width: 100%;
+  text-align: center; 
 }
 
 /* Breakpoint específico para 1024px */
 @media (min-width: 1024px) {
   .croquis-section {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center; 
     justify-content: space-evenly;
     gap: 4rem;
   }
@@ -71,5 +71,6 @@
   .croquis-content {
     flex: 1;
     padding: 2.5rem 3rem;
+    text-align: center; /
   }
 }

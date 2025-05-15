@@ -22,6 +22,7 @@ body {
 }
 .hero-content .logo-img img {
   width: 80px;
+  display: none;
 }
 
 /* Nav */
@@ -29,6 +30,11 @@ body {
   background-color: #10172a;
   position: relative;
 }
+
+nav button img {
+  border-radius: 8px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -102,6 +108,7 @@ body {
   text-align: center;
   color: #1e90ff;
   margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
   font-size: 2rem;
 }
 
@@ -254,3 +261,9 @@ body {
     font-size: 0.9rem;
   }
 }
+  /* Estilos para que el logo en pantallas mayores a 768px se vea */
+  @media (min-width: 769px) {
+    .hero-content .logo-img img {
+      display: block;
+    }
+  }

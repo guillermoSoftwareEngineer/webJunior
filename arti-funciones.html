@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funciones en Preprocesadores CSS | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./prep-articulo.css">  <!-- se usan las misms clases del arti-mixin para no repetir codigo -->
+  <link rel="stylesheet" href="./arti-mixin.css"> </head> <!-- se usan las misms clases del arti-mixin para no repetir codigo -->
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-img">
+        <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Funciones en Preprocesadores CSS: Potencia tu Estilo</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · 18 mayo 2025</p> <section class="article-section">
+        <h2>¿Qué son las Funciones en Preprocesadores?</h2>
+        <p>Al igual que en JavaScript o Python, los preprocesadores CSS como Sass y Less te permiten definir funciones. Estas funciones pueden realizar cálculos, manipular valores y retornar resultados que luego se utilizan en tus estilos. Esto añade una capa de dinamismo y reutilización a tu CSS.</p>
+
+        <div class="croquis-section">
+          <div class="croquis-image">
+            <img src="./images/funciones.png" alt="Diagrama de Funciones" /> </div>
+          <div class="croquis-content">
+            <h3 class="croquis-title">¿Por qué usar funciones?</h3>
+            <div class="croquis-text">
+              <p>Las funciones te ayudan a:</p>
+              <ul>
+                <li>Realizar cálculos complejos de forma sencilla.</li><br>
+                <li>Mantener la coherencia en valores derivados (ej., colores más oscuros o claros).</li><br>
+                <li>Encapsular lógica de estilo reutilizable.</li><br>
+                <li>Hacer tu código más legible y mantenible.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Sintaxis Básica en Sass</h2>
+        <p>En Sass, las funciones se definen con la directiva <code>@function</code>, seguida del nombre de la función y sus argumentos entre paréntesis. El valor que la función retorna se especifica con <code>@return</code>.</p>
+
+        <div class="code-comparison">
+          <div class="code-example">
+            <h4>Sass (Definición de Función)</h4>
+            <pre><code>@function darken-color($color, $amount) {
+  @return darken($color, $amount);
+}
+
+@function calculate-rem($pixels) {
+  @return ($pixels / 16px) * 1rem;
+}</code></pre>
+          </div>
+          <div class="code-example">
+            <h4>Sass (Uso de la Función)</h4>
+            <pre><code>.button {
+  background-color: darken-color($azul, 10%);
+  padding: calculate-rem(16px) calculate-rem(32px);
+}
+
+h2 {
+  margin-bottom: calculate-rem(24px);
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Ejemplo Práctico: Paleta de Colores</h2>
+        <p>Una aplicación común de las funciones es generar variaciones de una paleta de colores base.</p>
+        <div class="code-example">
+          <pre><code>$primary-color: #1e90ff;
+
+@function lighten-color($color, $amount) {
+  @return lighten($color, $amount);
+}
+
+.button-primary {
+  background-color: $primary-color;
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: lighten-color($primary-color, 10%);
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>Conclusión</h2>
+        <p>Las funciones en los preprocesadores CSS son una herramienta poderosa para escribir CSS más inteligente y eficiente. Al permitir la abstracción de lógica y la reutilización de código, contribuyen significativamente a la mantenibilidad y escalabilidad de tus proyectos.</p><br>
+        <ul>
+          <li>1. Realizan cálculos y manipulaciones de valores dinámicamente.</li><br>
+          <li>2. Promueven la consistencia en valores derivados.</li><br>
+          <li>3. Reducen la repetición de código y mejoran la legibilidad.</li><br>
+          <li>4. Facilitan la creación de sistemas de diseño más robustos.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
