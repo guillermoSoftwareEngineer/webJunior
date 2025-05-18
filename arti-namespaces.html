@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namespaces en Preprocesadores CSS | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./prep-articulo.css">
+    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Namespaces en Preprocesadores CSS: Organiza y Evita Colisiones</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 30 mayo 2025</p> <section class="article-section">
+                <h2>¿Qué son los Namespaces?</h2>
+                <p>En preprocesadores CSS como Sass y Less, los namespaces (espacios de nombres) son patrones o convenciones que te ayudan a organizar tu código CSS y evitar colisiones entre nombres de clases, funciones o mixins, especialmente en proyectos grandes o cuando trabajas con librerías de terceros.</p>
+
+                <div class="croquis-section">
+                    <div class="croquis-image">
+                        <img src="./images/namespaces.png" alt="Diagrama de Namespaces" />
+                    </div>
+                    <div class="croquis-content">
+                        <h3 class="croquis-title">¿Por qué usar namespaces?</h3>
+                        <div class="croquis-text">
+                            <p>Los namespaces te ayudan a:</p>
+                            <ul>
+                                <li>Prevenir conflictos de nombres entre tus estilos y los de librerías externas.</li><br>
+                                <li>Organizar tu código CSS en módulos lógicos y temáticos.</li><br>
+                                <li>Mejorar la mantenibilidad y la legibilidad de proyectos grandes.</li><br>
+                                <li>Facilitar la colaboración en equipos donde diferentes desarrolladores pueden trabajar en la misma base de código.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Convenciones de Nombres como Namespaces</h2>
+                <p>La forma más común de implementar namespaces en CSS con preprocesadores es a través de convenciones de nombres para tus clases.</p>
+                <div class="code-example">
+                    <h4>Ejemplo de convención de nombres (BEM - Block, Element, Modifier)</h4>
+                    <pre><code>/* Bloque: Componente de botón */
+.button { /* Estilos base del botón */ }
+.button__label { /* Elemento: Etiqueta dentro del botón */ }
+.button--primary { /* Modificador: Estilo para el botón primario */ }
+.button--disabled { /* Modificador: Estilo para el botón deshabilitado */ }
+
+/* Bloque: Componente de formulario */
+.form { /* Estilos base del formulario */ }
+.form__input { /* Elemento: Campo de entrada del formulario */ }
+.form__button { /* Elemento: Botón dentro del formulario */ }
+.form--search { /* Modificador: Estilo para un formulario de búsqueda */ }
+</code></pre>
+                    <p>BEM es una convención popular que utiliza prefijos y separadores para indicar la relación entre bloques, elementos y modificadores.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Utilizando Prefijos</h2>
+                <p>Otra técnica común es utilizar prefijos para agrupar estilos relacionados con un módulo o componente específico.</p>
+                <div class="code-example">
+                    <h4>Ejemplo de prefijos</h4>
+                    <pre><code>/* Estilos para el módulo de alertas */
+.alert { /* Estilos base de la alerta */ }
+.alert-title { /* Título de la alerta */ }
+.alert-message { /* Mensaje de la alerta */ }
+.alert-success { /* Estilo para alertas de éxito */ }
+.alert-error { /* Estilo para alertas de error */ }
+
+/* Estilos para el módulo de navegación */
+.nav { /* Estilos base de la navegación */ }
+.nav-item { /* Elemento de la lista de navegación */ }
+.nav-link { /* Enlace de navegación */ }
+.nav-primary { /* Estilo para la navegación principal */ }
+</code></pre>
+                    <p>El prefijo <code>.alert-</code> y <code>.nav-</code> actúan como namespaces para los estilos relacionados.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Namespaces en Mixins y Funciones (Sass)</h2>
+                <p>En Sass, puedes agrupar mixins y funciones dentro de otros mixins para crear namespaces.</p>
+                <div class="code-example">
+                    <h4>Ejemplo de namespaces en Mixins (Sass)</h4>
+                    <pre><code>@mixin button {
+  @mixin base {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @mixin primary {
+    @include base;
+    background-color: var(--azul);
+    color: var(--texto);
+  }
+
+  @mixin secondary {
+    @include base;
+    background-color: var(--gris);
+    color: var(--texto);
+  }
+}
+
+.my-primary-button {
+  @include button.primary;
+}
+
+.my-secondary-button {
+  @include button.secondary;
+}</code></pre>
+                    <p>Aunque no es un namespace formal, esta estructura ayuda a organizar mixins relacionados.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Consideraciones al Usar Namespaces</h2>
+                <ul>
+                    <li>Elige una convención de nombres consistente y síguela en todo tu proyecto.</li><br>
+                    <li>Sé descriptivo con tus nombres para que el propósito de cada clase o función sea claro.</li><br>
+                    <li>Considera el tamaño de tu proyecto; los namespaces son más cruciales en proyectos grandes con muchos desarrolladores o dependencias.</li><br>
+                    <li>No exageres con los namespaces, ya que pueden hacer que tus nombres de clase sean demasiado largos y difíciles de leer.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Conclusión</h2>
+                <p>Implementar namespaces en tus proyectos de CSS con preprocesadores es una práctica fundamental para mantener un código organizado, evitar conflictos de nombres y mejorar la escalabilidad. Ya sea a través de convenciones de nombres o agrupando mixins y funciones, los namespaces contribuyen a un flujo de trabajo más eficiente y colaborativo.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

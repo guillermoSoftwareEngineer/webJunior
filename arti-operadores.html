@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operadores en Preprocesadores CSS | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./prep-articulo.css">
+    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Operadores en Preprocesadores CSS: Cálculos en tus Estilos</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 22 mayo 2025</p> <section class="article-section">
+                <h2>¿Qué son los Operadores?</h2>
+                <p>Al igual que en lenguajes de programación, los preprocesadores CSS como Sass y Less te permiten utilizar operadores para realizar cálculos directamente en tu código de estilos. Esto añade dinamismo y flexibilidad a la hora de definir valores.</p>
+
+                <div class="croquis-section">
+                    <div class="croquis-image">
+                        <img src="./images/operadores.png" alt="Diagrama de Operadores" />
+                    </div>
+                    <div class="croquis-content">
+                        <h3 class="croquis-title">¿Por qué usar operadores?</h3>
+                        <div class="croquis-text">
+                            <p>Los operadores te ayudan a:</p>
+                            <ul>
+                                <li>Realizar cálculos aritméticos (+, -, *, /, %) directamente en tus estilos.</li><br>
+                                <li>Comparar valores (==, !=, >, <, >=, <=) en directivas condicionales.</li><br>
+                                <li>Manipular valores booleanos (and, or, not) en lógica de estilos.</li><br>
+                                <li>Concatenar strings o combinar valores de diferentes tipos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Operadores Aritméticos</h2>
+                <p>Los operadores aritméticos te permiten realizar cálculos matemáticos directamente en tus valores CSS.</p>
+                <div class="code-example">
+                    <h4>Sass/Less</h4>
+                    <pre><code>$base-width: 100px;
+$padding: 10px;
+
+.element {
+  width: $base-width * 2; // Ancho será 200px
+  margin-left: $base-width / 4; // Margen izquierdo será 25px
+  padding: $padding * 1.5; // Padding será 15px
+  font-size: 16px + 2px; // Tamaño de fuente será 18px
+  line-height: 2 - 0.5; // Interlineado será 1.5
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Operadores de Comparación</h2>
+                <p>Los operadores de comparación se utilizan principalmente dentro de directivas condicionales (@if, @else if, @else) para aplicar estilos basados en ciertas condiciones.</p>
+                <div class="code-example">
+                    <h4>Sass</h4>
+                    <pre><code>$theme: 'dark';
+
+.box {
+  padding: 1rem;
+  @if $theme == 'dark' {
+    background-color: #333;
+    color: #fff;
+  } @else {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+}</code></pre>
+                    <h4>Less</h4>
+                    <pre><code>@theme: 'dark';
+
+.box {
+  padding: 1rem;
+  background-color: if(@theme == 'dark', #333, #f0f0f0);
+  color: if(@theme == 'dark', #fff, #333);
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Operadores Lógicos</h2>
+                <p>Los operadores lógicos (and, or, not) te permiten combinar o negar condiciones en tus directivas condicionales.</p>
+                <div class="code-example">
+                    <h4>Sass</h4>
+                    <pre><code>$is-large: true;
+$is-dark-theme: false;
+
+.button {
+  padding: 1rem 1.5rem;
+  @if $is-large and not $is-dark-theme {
+    font-size: 1.2rem;
+    font-weight: bold;
+  } @else {
+    font-size: 1rem;
+  }
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Consideraciones al Usar Operadores</h2>
+                <ul>
+                    <li>Asegúrate de que las unidades sean compatibles al realizar operaciones aritméticas (ej., no puedes sumar píxeles y ems directamente sin conversión).</li><br>
+                    <li>Utiliza paréntesis para controlar la precedencia de las operaciones y hacer tu código más legible.</li><br>
+                    <li>Los operadores de comparación y lógicos son muy útiles para crear estilos adaptativos y temáticos.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Conclusión</h2>
+                <p>Los operadores en los preprocesadores CSS te brindan la capacidad de realizar cálculos y tomar decisiones directamente en tus hojas de estilo. Esto no solo reduce la necesidad de escribir CSS repetitivo, sino que también abre la puerta a estilos más dinámicos y mantenibles.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

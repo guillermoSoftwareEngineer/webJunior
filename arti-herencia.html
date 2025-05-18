@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herencia en Preprocesadores CSS | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./prep-articulo.css">
+    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Herencia en Preprocesadores CSS: Comparte y Extiende Estilos</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 24 mayo 2025</p> <section class="article-section">
+                <h2>¿Qué es la Herencia?</h2>
+                <p>En preprocesadores CSS como Sass y Less, la herencia (a través de directivas como <code>@extend</code> en Sass y mixins sin argumentos en Less) te permite compartir las propiedades de un selector CSS con otro. Es una forma poderosa de evitar la repetición de código y mantener la coherencia en tus estilos.</p>
+
+                <div class="croquis-section">
+                    <div class="croquis-image">
+                        <img src="./images/herencia.png" alt="Diagrama de Herencia" />
+                    </div>
+                    <div class="croquis-content">
+                        <h3 class="croquis-title">¿Por qué usar herencia?</h3>
+                        <div class="croquis-text">
+                            <p>La herencia te ayuda a:</p>
+                            <ul>
+                                <li>Compartir estilos base entre múltiples elementos.</li><br>
+                                <li>Evitar la duplicación de código CSS.</li><br>
+                                <li>Mantener la consistencia visual en elementos relacionados.</li><br>
+                                <li>Facilitar la modificación de estilos comunes en un solo lugar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Herencia en Sass (@extend)</h2>
+                <p>En Sass, la directiva <code>@extend</code> se utiliza para heredar las propiedades de un selector a otro.</p>
+                <div class="code-example">
+                    <h4>Sass (Definición de un estilo base)</h4>
+                    <pre><code>.button-base {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}</code></pre>
+                    <h4>Sass (Extending el estilo base)</h4>
+                    <pre><code>.button-primary {
+  @extend .button-base;
+  background-color: var(--azul);
+
+  &:hover {
+    background-color: darken(var(--azul), 10%);
+  }
+}
+
+.button-secondary {
+  @extend .button-base;
+  background-color: var(--gris);
+
+  &:hover {
+    background-color: darken(var(--gris), 10%);
+  }
+}</code></pre>
+                </div>
+                <p>En el CSS compilado, Sass agrupará los selectores que extienden el mismo estilo base, reduciendo la repetición de propiedades.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>Herencia en Less (Mixins sin Argumentos)</h2>
+                <p>En Less, puedes lograr un efecto similar a la herencia utilizando mixins sin argumentos.</p>
+                <div class="code-example">
+                    <h4>Less (Definición de un mixin base)</h4>
+                    <pre><code>.button-base() {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: @texto;
+  text-decoration: none;
+  cursor: pointer;
+}</code></pre>
+                    <h4>Less (Incluyendo el mixin base)</h4>
+                    <pre><code>.button-primary {
+  .button-base();
+  background-color: @azul;
+
+  &:hover {
+    background-color: darken(@azul, 10%);
+  }
+}
+
+.button-secondary {
+  .button-base();
+  background-color: @gris;
+
+  &:hover {
+    background-color: darken(@gris, 10%);
+  }
+}</code></pre>
+                </div>
+                <p>Al incluir un mixin sin argumentos, las propiedades del mixin se copian al selector actual.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>Diferencias Clave</h2>
+                <ul>
+                    <li>**Sass (@extend):** Crea relaciones de herencia reales en el CSS compilado, agrupando selectores.</li><br>
+                    <li>**Less (Mixins sin Argumentos):** Copia las propiedades del mixin al selector donde se incluye.</li><br>
+                    <li>La elección entre ambos a menudo depende de la preferencia personal y las necesidades específicas del proyecto. <code>@extend</code> en Sass puede generar un CSS más semántico en algunos casos.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Consideraciones al Usar Herencia</h2>
+                <ul>
+                    <li>Utiliza la herencia para compartir estilos base y evitar la repetición.</li><br>
+                    <li>No abuses de la herencia para estilos que no tienen una relación clara, ya que puede dificultar la comprensión del código.</li><br>
+                    <li>Considera la especificidad de los selectores al usar la herencia; los estilos extendidos pueden ser sobrescritos por estilos más específicos.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Conclusión</h2>
+                <p>La herencia es una característica fundamental de los preprocesadores CSS que promueve la reutilización de código y la consistencia en tus estilos. Ya sea utilizando <code>@extend</code> en Sass o mixins en Less, comprender y aplicar la herencia de manera efectiva puede mejorar significativamente la organización y mantenibilidad de tu CSS.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condicionales en Preprocesadores CSS | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./prep-articulo.css">
+    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Condicionales en Preprocesadores CSS: Estilos Dinámicos</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 26 mayo 2025</p> <section class="article-section">
+                <h2>¿Qué son las Condicionales?</h2>
+                <p>Al igual que en la programación, los preprocesadores CSS como Sass y Less te permiten usar directivas condicionales (<code>@if</code>, <code>@else if</code>, <code>@else</code> en Sass y <code>if</code> en Less) para aplicar estilos basados en el valor de variables o expresiones booleanas. Esto te permite crear estilos dinámicos y adaptables.</p>
+
+                <div class="croquis-section">
+                    <div class="croquis-image">
+                        <img src="./images/condicionales.png" alt="Diagrama de Condicionales" />
+                    </div>
+                    <div class="croquis-content">
+                        <h3 class="croquis-title">¿Por qué usar condicionales?</h3>
+                        <div class="croquis-text">
+                            <p>Las condicionales te ayudan a:</p>
+                            <ul>
+                                <li>Aplicar diferentes estilos según el valor de una variable (ej., tema claro u oscuro).</li><br>
+                                <li>Crear estilos basados en breakpoints o características del dispositivo.</li><br>
+                                <li>Definir estilos alternativos para diferentes estados (ej., activo, inactivo).</li><br>
+                                <li>Implementar lógica de estilo compleja directamente en tu CSS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Condicionales en Sass (@if, @else if, @else)</h2>
+                <p>Sass proporciona las directivas <code>@if</code>, <code>@else if</code> y <code>@else</code> para controlar qué bloques de estilo se aplican.</p>
+                <div class="code-example">
+                    <h4>Sass (Ejemplo de tema)</h4>
+                    <pre><code>$theme: 'dark';
+
+.container {
+  padding: 1rem;
+  @if $theme == 'dark' {
+    background-color: var(--fondo);
+    color: var(--texto);
+    border: 1px solid var(--card-borde);
+  } @else if $theme == 'light' {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+  } @else {
+    background-color: lightblue;
+    color: darkblue;
+    border: 1px solid blue;
+  }
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Condicionales en Less (if)</h2>
+                <p>Less utiliza la función <code>if()</code> para lograr un comportamiento condicional en la asignación de valores.</p>
+                <div class="code-example">
+                    <h4>Less (Ejemplo de tema)</h4>
+                    <pre><code>@theme: 'dark';
+
+.container {
+  padding: 1rem;
+  background-color: if(@theme == 'dark', @fondo, if(@theme == 'light', #f9f9f9, lightblue));
+  color: if(@theme == 'dark', @texto, if(@theme == 'light', #333, darkblue));
+  border: 1px solid if(@theme == 'dark', @card-borde, if(@theme == 'light', #ccc, blue));
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Combinando Condicionales con Operadores</h2>
+                <p>Puedes combinar operadores lógicos (<code>and</code>, <code>or</code>, <code>not</code> en Sass) con condicionales para crear expresiones más complejas.</p>
+                <div class="code-example">
+                    <h4>Sass (Ejemplo con operadores lógicos)</h4>
+                    <pre><code>$is-large: true;
+$is-dark-theme: true;
+
+.button {
+  padding: 1rem 1.5rem;
+  color: white;
+  @if $is-large and $is-dark-theme {
+    background-color: darken(var(--fondo), 20%);
+    font-size: 1.2rem;
+  } @else if $is-large and not $is-dark-theme {
+    background-color: lighten(lightblue, 10%);
+    font-size: 1.2rem;
+  } @else {
+    background-color: var(--azul);
+    font-size: 1rem;
+  }
+}</code></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Consideraciones al Usar Condicionales</h2>
+                <ul>
+                    <li>Utiliza condicionales para adaptar estilos basados en variables semánticas (ej., <code>$theme</code>, <code>$is-mobile</code>).</li><br>
+                    <li>Evita anidar demasiadas condicionales, ya que puede dificultar la lectura del código. Considera usar funciones o mixins para lógica más compleja.</li><br>
+                    <li>Prueba tus estilos en diferentes escenarios para asegurarte de que las condicionales funcionan como esperas.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Conclusión</h2>
+                <p>Las condicionales en los preprocesadores CSS te permiten llevar la lógica directamente a tus estilos, creando componentes más flexibles y adaptables. Al controlar qué estilos se aplican según ciertas condiciones, puedes construir interfaces de usuario más dinámicas y fáciles de mantener.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>

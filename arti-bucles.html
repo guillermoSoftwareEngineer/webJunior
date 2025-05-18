@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucles en Preprocesadores CSS | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./prep-articulo.css">
+    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Bucles en Preprocesadores CSS: Genera Estilos Repetitivos Fácilmente</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 28 mayo 2025</p> <section class="article-section">
+                <h2>¿Qué son los Bucles?</h2>
+                <p>Los preprocesadores CSS como Sass y Less te permiten utilizar bucles para generar bloques de código CSS repetitivo de forma automática. Esto es especialmente útil para crear sistemas de grid, animaciones con múltiples pasos o estilos basados en listas de valores.</p>
+
+                <div class="croquis-section">
+                    <div class="croquis-image">
+                        <img src="./images/bucles.png" alt="Diagrama de Bucles" />
+                    </div>
+                    <div class="croquis-content">
+                        <h3 class="croquis-title">¿Por qué usar bucles?</h3>
+                        <div class="croquis-text">
+                            <p>Los bucles te ayudan a:</p>
+                            <ul>
+                                <li>Generar múltiples clases con patrones de nombres y estilos consistentes.</li><br>
+                                <li>Crear sistemas de grid flexibles con un número variable de columnas.</li><br>
+                                <li>Definir animaciones con una serie de fotogramas basados en una lista de valores.</li><br>
+                                <li>Iterar sobre listas de colores, tamaños u otros valores para generar estilos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Bucles en Sass (@for, @each, @while)</h2>
+                <p>Sass ofrece varias directivas de bucle:</p>
+                <div class="code-example">
+                    <h4>Sass (@for - iterar a través de un rango)</h4>
+                    <pre><code>@for $i from 1 through 5 {
+  .col-#{$i} {
+    width: (100% / 5) * $i;
+  }
+}</code></pre>
+                    <p>Este bucle generará clases como <code>.col-1</code>, <code>.col-2</code>, ..., <code>.col-5</code> con anchos correspondientes.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>Sass (@each - iterar sobre una lista)</h4>
+                    <pre><code>$colors: (primary: var(--azul), secondary: var(--gris), accent: #ffcc00);
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    background-color: $color;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.3rem;
+  }
+}</code></pre>
+                    <p>Este bucle generará clases como <code>.btn-primary</code>, <code>.btn-secondary</code> y <code>.btn-accent</code> con sus respectivos colores de fondo.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>Sass (@while - iterar mientras una condición sea verdadera)</h4>
+                    <pre><code>$i: 1;
+@while $i <= 3 {
+  .item-#{$i} {
+    margin-top: $i * 0.5rem;
+  }
+  $i: $i + 1;
+}</code></pre>
+                    <p>Este bucle generará clases como <code>.item-1</code>, <code>.item-2</code> y <code>.item-3</code> con diferentes márgenes superiores.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Bucles en Less (loop y each)</h2>
+                <p>Less también proporciona mecanismos para la iteración:</p>
+                <div class="code-example">
+                    <h4>Less (loop - bucle recursivo)</h4>
+                    <pre><code>.generate-columns(@n, @i: 1) when (@i <= @n) {
+  .col-@{i} {
+    width: (100% / @n) * @i;
+  }
+  .generate-columns(@n, @i + 1);
+}
+
+.grid {
+  .generate-columns(4); // Genera 4 columnas
+}</code></pre>
+                    <p>Este mixin recursivo genera clases de columna similares al <code>@for</code> de Sass.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>Less (each - iterar sobre un valor delimitado o lista)</h4>
+                    <pre><code>@colors: primary @azul, secondary @gris, accent #ffcc00;
+
+each(@color in @colors) {
+  .btn-extract(extract(@color, 1)) {
+    background-color: extract(@color, 2);
+    color: @texto;
+    padding: 1rem 1.5rem;
+    border-radius: 0.3rem;
+  }
+}</code></pre>
+                    <p>Este bucle genera clases similares al <code>@each</code> de Sass.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Consideraciones al Usar Bucles</h2>
+                <ul>
+                    <li>Utiliza bucles para generar estilos repetitivos y evitar la escritura manual de código similar.</li><br>
+                    <li>Asegúrate de que las condiciones de tus bucles (@while en Sass) tengan un punto de terminación para evitar bucles infinitos.</li><br>
+                    <li>Considera la legibilidad del código generado por los bucles; nombres de clase claros y consistentes son importantes.</li><br>
+                    <li>Los bucles son una herramienta poderosa para la creación de sistemas de diseño escalables y personalizables.</li>
+                </ul>
+            </section>
+
+            <section class="article-section">
+                <h2>Conclusión</h2>
+                <p>Los bucles en los preprocesadores CSS son una herramienta invaluable para automatizar la generación de estilos repetitivos. Ya sea creando sistemas de grid flexibles o iterando sobre conjuntos de valores, los bucles te permiten escribir CSS de manera más eficiente y mantenible.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>
