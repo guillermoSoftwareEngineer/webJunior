@@ -32,6 +32,10 @@ body {
     line-height: 1.6;
 }
 
+.hidden {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -205,13 +209,61 @@ img {
     border: 1px solid var(--card-borde);
     font-size: 0.9rem;
     line-height: 1.4;
+    position: relative; /* Para posicionar el botón dentro */
 }
 
-.code-example pre {
-    color: var(--gris);
-    font-family: monospace;
-    white-space: pre-wrap;
+.code-example #codigoArduinoCorto {  /* Selector más específico */
+    max-height: 200px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
 }
+
+.code-example #codigoArduinoCorto.expanded { /* Selector más específico */
+    max-height: none;
+}
+
+.code-example #codigoArduinoCompleto { /* Selector más específico */
+    display: none; /* Inicialmente oculto */
+}
+
+.code-example #codigoArduinoCompleto.expanded { /* Selector más específico */
+    display: block;
+}
+
+.code-example button {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--azul);
+    color: var(--texto); /* Usar la variable de color de texto */
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color var(--transition-default);
+    margin-top: var(--spacing-sm);
+}
+
+.code-example button:hover,
+.code-example button:focus {
+    background-color: #006ddc; /* Un tono más oscuro del azul */
+}
+
+.code-example button.hidden {
+    display: none;
+}
+
+.code-example .codigoArduinoCorto.hidden{
+    display: none;
+}
+
+.code-example .codigoArduinoCompleto.hidden{
+    display: none;
+}
+
+
 
 .croquis-section {
     display: flex;

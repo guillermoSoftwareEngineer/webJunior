@@ -94,7 +94,8 @@
                 <h2>Código Inicial de Arduino</h2>
                 <p>Aquí te presento el código base con el que comenzaremos a interactuar con nuestra mascota virtual. Este código incluye la inicialización de la pantalla OLED y la configuración de los pines de los botones.</p>
                 <div class="code-example">
-                    <pre><code>
+                    
+                    <pre><code id="codigoArduinoCorto" >
 //CONEXION OLED -> ARDUINO (NANO o UNO)
   
 // OLED		UNO / NANO	
@@ -119,7 +120,14 @@
 OLED myOLED(SDA, SCL, 8);  // Objeto display OLED
 extern uint8_t SmallFont[]; //seleccion de fuente
 
-// 1. DECLARACIÓN DE EMOJIS EN MEMORIA FLASH (PROGMEM)
+</code></pre>
+
+
+<button id="verMasCodigo">Ver más Codigo</button> 
+
+
+
+<pre><code id="codigoArduinoCompleto" class="hidden">// 1. DECLARACIÓN DE EMOJIS EN MEMORIA FLASH (PROGMEM)
 //la declaracion de las variables se hace con uint8_t por los 8 bits que maneja (1 byte). Cada elemento del array representa un valor entre 0 y 255.
 
 // --------------------------------------------------
@@ -445,7 +453,11 @@ void mostrarMensajeInicial() {
   myOLED.print("Seleccione emoji", CENTER, 32);
   myOLED.update();
 }
+</code>
+
                     </code></pre>
+                    <button id="verMenosCodigo" class="hidden">Ver menos código</button>
+                    </div>           
                 </div>
             </section>
 
@@ -476,7 +488,7 @@ void mostrarMensajeInicial() {
             <section class="article-section">
                 <h2>¡Mascota Virtual en Acción! (Video)</h2>
                 <div class="youtube-video">
-                    <iframe src="https://youtu.be/zlcOqFEGZcQ" title="Mascota Virtual Arduino Parte 1 Funcionando" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <video src="https://www.youtube.com/watch?v=dSh6O6elG2c" title="Mascota Virtual Arduino Parte 1 Funcionando" controls allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></video>
                 </div>
                 <p>Echa un vistazo a este breve video para ver esta primera parte del proyecto funcionando, mostrando la inicialización de la pantalla y la preparación para la interacción con los botones.</p>
             </section>
@@ -504,6 +516,31 @@ void mostrarMensajeInicial() {
         toggle.addEventListener("click", () => {
             navLinks.classList.toggle("show");
         });
+
+
+
+//LOGICA DE LA EXTENSION DE BOTON DEL CODIGO
+const verMasCodigoBtn = document.getElementById('verMasCodigo');
+const codigoCompleto = document.getElementById('codigoArduinoCompleto');
+const codigoCorto = document.getElementById('codigoArduinoCorto');
+const verMenosCodigoBtn = document.getElementById('verMenosCodigo');
+
+if (verMasCodigoBtn && codigoCompleto && codigoCorto && verMenosCodigoBtn) {
+
+    verMasCodigoBtn.addEventListener('click', () => {
+        codigoCorto.style.display = 'none';  // Ocultar código corto
+        codigoCompleto.style.display = 'block'; // Mostrar código completo
+        verMasCodigoBtn.style.display = 'none'; // Ocultar botón "Ver más"
+        verMenosCodigoBtn.style.display = 'block'; // Mostrar botón "Ver menos"
+    });
+
+    verMenosCodigoBtn.addEventListener('click', () => {
+        codigoCompleto.style.display = 'none';  // Ocultar código completo
+        codigoCorto.style.display = 'block'; // Mostrar código corto
+        verMenosCodigoBtn.style.display = 'none'; // Ocultar botón "Ver menos"
+        verMasCodigoBtn.style.display = 'block'; // Mostrar botón "Ver más"
+    });
+}
     </script>
 
 </body>
