@@ -94,8 +94,7 @@
                 <h2>Código Inicial de Arduino</h2>
                 <p>Aquí te presento el código base con el que comenzaremos a interactuar con nuestra mascota virtual. Este código incluye la inicialización de la pantalla OLED y la configuración de los pines de los botones.</p>
                 <div class="code-example">
-                    
-                    <pre><code id="codigoArduinoCorto" >
+                    <pre><code id="codigoArduinoCorto">
 //CONEXION OLED -> ARDUINO (NANO o UNO)
   
 // OLED		UNO / NANO	
@@ -123,11 +122,13 @@ extern uint8_t SmallFont[]; //seleccion de fuente
 </code></pre>
 
 
-<button id="verMasCodigo">Ver más Codigo</button> 
+<button id="verMasCodigo">Ver el total del Codigo</button> 
 
 
 
-<pre><code id="codigoArduinoCompleto" class="hidden">// 1. DECLARACIÓN DE EMOJIS EN MEMORIA FLASH (PROGMEM)
+<pre><code id="codigoArduinoCompleto" class="hidden">
+
+// 1. DECLARACIÓN DE EMOJIS EN MEMORIA FLASH (PROGMEM)
 //la declaracion de las variables se hace con uint8_t por los 8 bits que maneja (1 byte). Cada elemento del array representa un valor entre 0 y 255.
 
 // --------------------------------------------------
@@ -453,12 +454,10 @@ void mostrarMensajeInicial() {
   myOLED.print("Seleccione emoji", CENTER, 32);
   myOLED.update();
 }
-</code>
-
                     </code></pre>
                     <button id="verMenosCodigo" class="hidden">Ver menos código</button>
                     </div>           
-                </div>
+                
             </section>
 
 
@@ -510,35 +509,29 @@ void mostrarMensajeInicial() {
     </footer>
 
     <script>
-        const toggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
-
-        toggle.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-        });
-
 
 
 //LOGICA DE LA EXTENSION DE BOTON DEL CODIGO
 const verMasCodigoBtn = document.getElementById('verMasCodigo');
 const codigoCompleto = document.getElementById('codigoArduinoCompleto');
 const codigoCorto = document.getElementById('codigoArduinoCorto');
-const verMenosCodigoBtn = document.getElementById('verMenosCodigo');
+const verMenosCodigoBtn = document.getElementById('verMenosCodigo'); // Obtener el nuevo botón
 
-if (verMasCodigoBtn && codigoCompleto && codigoCorto && verMenosCodigoBtn) {
+if (verMasCodigoBtn && codigoCompleto && codigoCorto && verMenosCodigoBtn) { // Asegurarse de que el nuevo botón exista
+    verMenosCodigoBtn.classList.add('hidden'); // Ocultar inicialmente el botón "Ver menos"
 
     verMasCodigoBtn.addEventListener('click', () => {
-        codigoCorto.style.display = 'none';  // Ocultar código corto
-        codigoCompleto.style.display = 'block'; // Mostrar código completo
-        verMasCodigoBtn.style.display = 'none'; // Ocultar botón "Ver más"
-        verMenosCodigoBtn.style.display = 'block'; // Mostrar botón "Ver menos"
+        codigoCorto.classList.add('hidden');
+        codigoCompleto.classList.remove('hidden');
+        verMasCodigoBtn.classList.add('hidden'); // Ocultar "Ver más"
+        verMenosCodigoBtn.classList.remove('hidden'); // Mostrar "Ver menos"
     });
 
     verMenosCodigoBtn.addEventListener('click', () => {
-        codigoCompleto.style.display = 'none';  // Ocultar código completo
-        codigoCorto.style.display = 'block'; // Mostrar código corto
-        verMenosCodigoBtn.style.display = 'none'; // Ocultar botón "Ver menos"
-        verMasCodigoBtn.style.display = 'block'; // Mostrar botón "Ver más"
+        codigoCompleto.classList.add('hidden');
+        codigoCorto.classList.remove('hidden');
+        verMenosCodigoBtn.classList.add('hidden'); // Ocultar "Ver menos"
+        verMasCodigoBtn.classList.remove('hidden'); // Mostrar "Ver más"
     });
 }
     </script>

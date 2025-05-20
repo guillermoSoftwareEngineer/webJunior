@@ -1,3 +1,4 @@
+
 /* Variables principales */
 :root {
     --azul: #1e90ff;
@@ -212,23 +213,7 @@ img {
     position: relative; /* Para posicionar el botón dentro */
 }
 
-.code-example #codigoArduinoCorto {  /* Selector más específico */
-    max-height: 200px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
 
-.code-example #codigoArduinoCorto.expanded { /* Selector más específico */
-    max-height: none;
-}
-
-.code-example #codigoArduinoCompleto { /* Selector más específico */
-    display: none; /* Inicialmente oculto */
-}
-
-.code-example #codigoArduinoCompleto.expanded { /* Selector más específico */
-    display: block;
-}
 
 .code-example button {
     position: absolute;
