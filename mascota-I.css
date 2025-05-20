@@ -201,6 +201,14 @@ img {
     margin-bottom: var(--spacing-md);
 }
 
+.article-section p a:hover {
+    color: var(--azul);
+}
+
+.article-section li a:hover {
+    color: var(--azul);
+}
+
 .code-example {
     background-color: #111827;
     border-radius: var(--border-radius-md);
@@ -257,25 +265,40 @@ img {
     margin: var(--spacing-lg) 0;
 }
 
-.croquis-image {
-    border-radius: var(--border-radius-md);
-    border: 1px solid var(--card-borde);
-    box-shadow: 0 4px 15px var(--sombra);
-    overflow: hidden;
-}
-
-.croquis-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 .croquis-content {
     background-color: rgba(var(--card-fondo-rgb, 15, 23, 42), 0.8);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-md);
     border: 1px solid var(--card-borde);
     text-align: center;
+}
+
+/* CLASES APLICADAS AL DIAGRAMA CON ID PARA CENTRAR  */
+
+#diagrama-circuito-section {
+    text-align: center; 
+}
+
+.diagrama-circuito-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--sombra);
+    margin: var(--spacing-md) auto;
+    max-width: 800px; /
+}
+
+.diagrama-circuito-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain; 
 }
 
 .croquis-content h3 {

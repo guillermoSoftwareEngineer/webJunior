@@ -466,7 +466,7 @@ void mostrarMensajeInicial() {
                 <h2>Conexión Pull-Up para Botones</h2>
                 <div class="croquis-section">
                     <div class="croquis-image">
-                        <img src="./images/pull_up_resistor.png" alt="Diagrama de Conexión Pull-Up" />
+                        <img src="./images/PULLUP.png" alt="Diagrama de Conexión Pull-Up" />
                     </div>
                     <div class="croquis-content">
                         <h3>¿Qué es una Conexión Pull-Up?</h3>
@@ -476,18 +476,19 @@ void mostrarMensajeInicial() {
                 <p>En el código, las líneas <code>pinMode(buttonPinUp, INPUT_PULLUP);</code> configuran los pines de los botones para utilizar la resistencia pull-up interna del Arduino, simplificando el circuito externo.</p>
             </section>
 
-            <section class="article-section">
+            <section class="article-section" id="diagrama-circuito-section">
                 <h2>Diagrama del Circuito (Activado por botones)</h2>
-                <div class="croquis-image">
-                    <img src="./images/arduino_oled_buttons_diagram_part1.png" alt="Diagrama del Circuito Arduino, OLED y Botones (Parte 1)" />
+                <div class="diagrama-circuito-image">
+                    <img src="./images/ESQUEMA-BOTONES.png" alt="Diagrama del Circuito Arduino, OLED y Botones (Parte 1)" />
                 </div>
                 <p>Este diagrama muestra la conexión básica de la pantalla OLED a los pines I2C del Arduino (SDA y SCL) y la conexión de los tres botones a los pines digitales 2, 3 y 4, utilizando la configuración pull-up interna.</p>
             </section>
 
             <section class="article-section">
-                <h2>¡Mascota Virtual en Acción! (Video)</h2>
+                <h2>¡Botones de Emociones para Mascota Virtual en Acción! (Video)</h2>
+                <p>Recuerda activar la mejor calidad en youtube, para mejor visualizacion del video</p>
                 <div class="youtube-video">
-                    <video src="https://www.youtube.com/watch?v=dSh6O6elG2c" title="Mascota Virtual Arduino Parte 1 Funcionando" controls allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></video>
+                    <iframe src="https://www.youtube.com/embed/4NTLSf6uXFc" title="Mascota Virtual Arduino Parte 1 Funcionando" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <p>Echa un vistazo a este breve video para ver esta primera parte del proyecto funcionando, mostrando la inicialización de la pantalla y la preparación para la interacción con los botones.</p>
             </section>
