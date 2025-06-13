@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ley de Ohm | Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./mascota-I.css">
+    <link rel="stylesheet" href="./leyOhm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks" class="nav-links">
+            <li class="close-menu-item">
+                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+            </li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">Ley de Ohm</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · 13 Junio 2025 <span id="publish-date"></span></p>
+
+            <section class="article-section">
+                <h2>Introducción</h2>
+                <p>La Ley de Ohm es uno de los principios fundamentales en el campo de la electricidad y la electrónica, ya que establece una relación matemática clave entre tres magnitudes esenciales: el voltaje (V), la corriente (I) y la resistencia (R). Su formulación, expresada como V = I × R, permite analizar y diseñar circuitos eléctricos de manera eficiente, garantizando el correcto funcionamiento de dispositivos y sistemas.</p>
+                <p>Esta ley es indispensable porque facilita el cálculo de valores desconocidos en un circuito, ayuda a prevenir fallos por sobrecargas y es la base para entender conceptos más avanzados en ingeniería eléctrica. Sin ella, el desarrollo de tecnologías modernas, desde electrodomésticos hasta sistemas complejos de comunicación, sería mucho más complicado.</p>
+            </section>
+
+            <section class="article-section">
+                <h2>El triángulo de la Ley de Ohm</h2>
+                <p>El triángulo de la Ley de Ohm es una herramienta visual muy útil para recordar y aplicar rápidamente las tres fórmulas fundamentales de la ley de Ohm, que relacionan voltaje (V), corriente (I) y resistencia (R)</p>
+                <div class="centered-image-container">
+                    <img src="./images/ohm.png" alt="Imagen Centrada" class="responsive-image" />
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Cómo usar el triangulo?</h2>
+                <p>Imagina el triángulo dividido en tres partes: en la parte superior está la V (voltaje), y en la parte inferior, una al lado de la otra, están la I (corriente) y la R (resistencia).</p>
+                <p>Si quieres calcular una variable, tapa esa letra en el triángulo:</p>
+                <ul>
+                    <li>Si tapas V, quedan I y R juntas abajo: eso significa que V = I × R.</li>
+                    <li>Si tapas I, quedan V arriba y R abajo: eso significa que I = V / R.</li>
+                    <li>Si tapas R, quedan V arriba y I abajo: eso significa que R = V / I.</li>
+                </ul>
+                <p>Esta regla mnemotécnica te permite recordar fácilmente qué operación realizar según la variable que necesitas calcular: multiplicar si las letras están juntas abajo, o dividir si una está arriba de la otra</p>
+            </section>
+
+            <section class="article-section image-left">
+                <h2>Circuito en serie</h2>
+                <div class="content-with-image reversed">
+                    <img src="./images/Ohm-serie.png" alt="Placeholder Image" class="section-image" />
+                    <p>Un circuito en serie es aquel donde todos los componentes están conectados uno tras otro, formando un único camino por el que fluye la corriente eléctrica. En este tipo de circuito, la corriente es la misma para todos los elementos, pero el voltaje se reparte entre ellos. Si uno de los componentes se interrumpe o falla, todo el circuito deja de funciona</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Ejemplo de Circuito en serie</h2>
+                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en serie, donde evidenciamos lo anteriormente mencionado</p>
+                <div class="centered-image-container">
+                    <img src="./images/ckt-serie.png" alt="Imagen Centrada" class="responsive-image" />
+                </div>
+            </section>
+
+            <section class="article-section image-right">
+                <h2>Circuito en paralelo</h2>
+                <div class="content-with-image">
+                    <img src="./images/Ohm-paralelo.png" alt="Placeholder Image" class="section-image" />
+                    <p>Un circuito en paralelo es una configuración eléctrica donde los componentes están conectados en múltiples caminos o ramas, de modo que cada uno tiene sus terminales unidos a los mismos dos puntos. Esto hace que el voltaje sea el mismo en todos los componentes, pero la corriente se divide entre las diferentes ramas según la resistencia de cada una. Si un componente falla, los demás siguen funcionando porque la corriente puede fluir por las otras vías. Además, la resistencia total del circuito en paralelo es menor que la de cualquiera de los componentes individuales. Este tipo de circuito es común en el cableado doméstico y permite que dispositivos funcionen de forma independiente sin afectar a otros.</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Ejemplo de Circuito en Paralelo</h2>
+                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en paralelo, donde evidenciamos lo anteriormente mencionado</p>
+                <div class="centered-image-container">
+                    <img src="./images/ckt-paralelo.png" alt="Imagen Centrada" class="responsive-image" />
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+          
+    // script de menu hamburguesa
+          
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    </script> 
+</body>
+</html>
