@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ley de Ohm | Guillermo Vásquez</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <link rel="stylesheet" href="./mascota-I.css">
-    <link rel="stylesheet" href="./leyOhm.css">
+    <!-- Solo enlaza el archivo CSS combinado -->
+    <link rel="stylesheet" href="./leyOhm.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -20,12 +20,12 @@
     </header>
 
     <nav class="nav">
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-            <img src="./images/favicon.png" alt="Ícono de menú">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <img src="./images/favicon.png" alt="Ícono de menu">
         </button>
         <ul id="navLinks" class="nav-links">
             <li class="close-menu-item">
-                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
+                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menu">
                     <i class="fas fa-times"></i>
                 </button>
             </li>
@@ -41,7 +41,7 @@
     <main class="article-container">
         <article>
             <h1 class="article-title">Ley de Ohm</h1>
-            <p class="article-meta">Publicado por Guillermo Vásquez · 13 Junio 2025 <span id="publish-date"></span></p>
+            <p class="article-meta">Publicado por Guillermo Vásquez · <span id="publish-date"></span></p>
 
             <section class="article-section">
                 <h2>Introducción</h2>
@@ -53,14 +53,13 @@
                 <h2>El triángulo de la Ley de Ohm</h2>
                 <p>El triángulo de la Ley de Ohm es una herramienta visual muy útil para recordar y aplicar rápidamente las tres fórmulas fundamentales de la ley de Ohm, que relacionan voltaje (V), corriente (I) y resistencia (R)</p>
                 <div class="centered-image-container">
-                    <img src="./images/ohm.png" alt="Imagen Centrada" class="responsive-image" />
+                    <img src="./images/ohm.png" alt="Triángulo de la Ley de Ohm" class="responsive-image" />
                 </div>
             </section>
 
             <section class="article-section">
                 <h2>Cómo usar el triangulo?</h2>
                 <p>Imagina el triángulo dividido en tres partes: en la parte superior está la V (voltaje), y en la parte inferior, una al lado de la otra, están la I (corriente) y la R (resistencia).</p>
-                <p>Si quieres calcular una variable, tapa esa letra en el triángulo:</p>
                 <ul>
                     <li>Si tapas V, quedan I y R juntas abajo: eso significa que V = I × R.</li>
                     <li>Si tapas I, quedan V arriba y R abajo: eso significa que I = V / R.</li>
@@ -71,8 +70,8 @@
 
             <section class="article-section image-left">
                 <h2>Circuito en serie</h2>
-                <div class="content-with-image reversed">
-                    <img src="./images/Ohm-serie.png" alt="Placeholder Image" class="section-image" />
+                <div class="content-with-image"> 
+                    <img src="./images/Ohm-serie.png" alt="Diagrama de circuito en serie" class="section-image" data-zoom-src="./images/Ohm-serie.png" />
                     <p>Un circuito en serie es aquel donde todos los componentes están conectados uno tras otro, formando un único camino por el que fluye la corriente eléctrica. En este tipo de circuito, la corriente es la misma para todos los elementos, pero el voltaje se reparte entre ellos. Si uno de los componentes se interrumpe o falla, todo el circuito deja de funciona</p>
                 </div>
             </section>
@@ -80,15 +79,16 @@
             <section class="article-section">
                 <h2>Ejemplo de Circuito en serie</h2>
                 <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en serie, donde evidenciamos lo anteriormente mencionado</p>
+                <p>(Click en la imagen par ampliar)</p>
                 <div class="centered-image-container">
-                    <img src="./images/ckt-serie.png" alt="Imagen Centrada" class="responsive-image" />
+                    <img src="./images/ckt-serie.png" alt="Ejemplo simulado de circuito en serie" class="responsive-image zoomable-image" data-zoom-src="./images/ckt-serie.png" />
                 </div>
             </section>
 
             <section class="article-section image-right">
                 <h2>Circuito en paralelo</h2>
                 <div class="content-with-image">
-                    <img src="./images/Ohm-paralelo.png" alt="Placeholder Image" class="section-image" />
+                    <img src="./images/Ohm-paralelo.png" alt="Diagrama de circuito en paralelo" class="section-image" data-zoom-src="./images/Ohm-paralelo.png" />
                     <p>Un circuito en paralelo es una configuración eléctrica donde los componentes están conectados en múltiples caminos o ramas, de modo que cada uno tiene sus terminales unidos a los mismos dos puntos. Esto hace que el voltaje sea el mismo en todos los componentes, pero la corriente se divide entre las diferentes ramas según la resistencia de cada una. Si un componente falla, los demás siguen funcionando porque la corriente puede fluir por las otras vías. Además, la resistencia total del circuito en paralelo es menor que la de cualquiera de los componentes individuales. Este tipo de circuito es común en el cableado doméstico y permite que dispositivos funcionen de forma independiente sin afectar a otros.</p>
                 </div>
             </section>
@@ -96,12 +96,16 @@
             <section class="article-section">
                 <h2>Ejemplo de Circuito en Paralelo</h2>
                 <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en paralelo, donde evidenciamos lo anteriormente mencionado</p>
+                <p>(Click en la imagen par ampliar)</p>
                 <div class="centered-image-container">
-                    <img src="./images/ckt-paralelo.png" alt="Imagen Centrada" class="responsive-image" />
+                    <img src="./images/ckt-paralelo.png" alt="Ejemplo simulado de circuito en paralelo" class="responsive-image zoomable-image" data-zoom-src="./images/ckt-paralelo.png" />
                 </div>
             </section>
 
         </article>
+        <section class="article-navigation-button">
+            <a href="./articulos.html" class="main-action-button">Volver a Artículos</a>
+        </section>
     </main>
 
     <footer class="footer">
@@ -118,29 +122,105 @@
         </div>
     </footer>
 
+    <!-- Lightbox/Modal para imágenes -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-lightbox-button">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
     <script>
-          
-    // script de menu hamburguesa
-          
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-    const toggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const closeMenuButton = document.getElementById('closeMenuButton');
+            const publishDateSpan = document.getElementById('publish-date');
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(tab => tab.classList.remove('active'));
+            // 1. Manejo del menu de navegacion (mobile first)
+            if (menuToggle && navLinks) { 
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show'); 
+                    const isExpanded = navLinks.classList.contains('show');
+                    menuToggle.setAttribute('aria-expanded', isExpanded); 
 
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
+                    // Muestra u oculta el boton de cerrar menu
+                    const closeMenuItem = document.querySelector('.close-menu-item');
+                    if (closeMenuItem) { 
+                        if (isExpanded) {
+                            closeMenuItem.style.display = 'block';
+                        } else {
+                            closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
 
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
+                // Cierra el menu cuando se hace clic en el boton "X"
+                if (closeMenuButton) { 
+                    closeMenuButton.addEventListener('click', () => {
+                        navLinks.classList.remove('show'); 
+                        menuToggle.setAttribute('aria-expanded', false);
+                        closeMenuButton.closest('.close-menu-item').style.display = 'none';
+                    });
+                }
 
+                // Cierra el menu si se hace clic fuera de el en moviles
+                document.addEventListener('click', (event) => {
+                    if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
+                        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && (closeMenuButton && !closeMenuButton.contains(event.target))) {
+                            navLinks.classList.remove('show');
+                            menuToggle.setAttribute('aria-expanded', false);
+                            const closeMenuItem = document.querySelector('.close-menu-item');
+                            if (closeMenuItem) closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Cierra el menu si se redimensiona la ventana a un tamaño de escritorio
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        navLinks.classList.remove('show');
+                        menuToggle.setAttribute('aria-expanded', false);
+                        const closeMenuItem = document.querySelector('.close-menu-item');
+                        if (closeMenuItem) closeMenuItem.style.display = 'none';
+                    }
+                });
+            }
+
+            // 2. Insertar la fecha actual de publicación
+            if (publishDateSpan) { 
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
+            }
+
+            // 3. Manejo del Lightbox/Modal de imágenes
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeLightboxButton = document.querySelector('.close-lightbox-button');
+            const zoomableImages = document.querySelectorAll('.zoomable-image'); // Selecciona las imágenes con la clase zoomable-image
+
+            zoomableImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    const zoomSrc = this.getAttribute('data-zoom-src');
+                    if (zoomSrc) {
+                        lightbox.style.display = 'block';
+                        lightboxImage.src = zoomSrc;
+                    }
+                });
+            });
+
+            closeLightboxButton.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+                lightboxImage.src = ''; // Limpiar la imagen al cerrar
+            });
+
+            // Cierra el lightbox si se hace clic fuera de la imagen (en el overlay)
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    lightboxImage.src = '';
+                }
+            });
+        });
     </script> 
 </body>
 </html>
