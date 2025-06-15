@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ley de Ohm | Guillermo Vásquez</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <!-- Solo enlaza el archivo CSS combinado -->
     <link rel="stylesheet" href="./leyOhm.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -135,7 +134,7 @@
             const closeMenuButton = document.getElementById('closeMenuButton');
             const publishDateSpan = document.getElementById('publish-date');
 
-            // 1. Manejo del menu de navegacion (mobile first)
+            //  Manejo del menu de navegacion (mobile first)
             if (menuToggle && navLinks) { 
                 menuToggle.addEventListener('click', () => {
                     navLinks.classList.toggle('show'); 
@@ -185,14 +184,14 @@
                 });
             }
 
-            // 2. Insertar la fecha actual de publicación
+            //  Insertar la fecha actual de publicación
             if (publishDateSpan) { 
                 const today = new Date();
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
                 publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
             }
 
-            // 3. Manejo del Lightbox/Modal de imágenes
+            //  Manejo del Lightbox/Modal de imágenes
             const lightbox = document.getElementById('imageLightbox');
             const lightboxImage = document.getElementById('lightboxImage');
             const closeLightboxButton = document.querySelector('.close-lightbox-button');
