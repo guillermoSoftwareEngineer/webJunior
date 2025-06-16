@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Menus Hamburguesas | Botones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./botones.css"> 
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks" class="nav-links">
+            <li class="close-menu-item">
+                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+            </li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content-wrapper">
+        <section class="detalle-proyecto">
+            <div class="contenedor-detalle">
+                <h1 class="titulo">Menus Hamburguesas</h1>
+
+                <div class="imagen-proyecto">
+                    <img src="./images/hamburguesa.jpeg" alt="Vista previa del proyecto Menús Hamburguesa">
+                </div>
+
+                <p class="descripcion">
+                    Proyecto personal enfocado en el diseño, implementación y optimización de  menús hamburguesa responsive para web. Este proyecto consistió en construir una colección de menús interactivos utilizando tecnologías frontend fundamentales: HTML, CSS y JavaScript. 
+                    <br><br>
+                    Se exploraron diferentes tipos de despliegue, animaciones de apertura y cierre, y la adaptación a diversos tamaños de pantalla, aplicando técnicas de  <code>media queries</code>, <code>transition</code> y <code>transform</code>. 
+                    <br><br>
+                    A través de este desarrollo, reforcé conceptos clave como la importancia del diseño móvil primero (mobile-first), la usabilidad y la experiencia de usuario (UX/UI) en la navegación, el control de estados interactivos mediante JavaScript y CSS, y la optimización de las interacciones para lograr fluidez en múltiples dispositivos. También se incluye enlace a video explicativo para ver el comportamiento de cada tipo de menú.
+                    <br><br>
+                    Además, el proyecto me permitió experimentar con la creación de componentes reutilizables, aprendiendo a generar interfaces intuitivas, respetar los principios de accesibilidad y mantener un balance estético entre funcionalidad y diseño moderno. Actualmente, esta colección de  menús hamburguesa representa un hito en mi formación en desarrollo frontend y mi compromiso por dominar técnicas avanzadas de UI/UX.
+                </p>
+
+                <div class="tecnologias">
+                    <h2>Tecnologías utilizadas</h2>
+                    <div class="iconos">
+                        <div class="icono">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
+                            <span>HTML</span>
+                        </div>
+                        <div class="icono">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" />
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="icono">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
+                            <span>CSS</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="retos-aprendizajes">
+                    <h2>Retos y aprendizajes</h2>
+                    <ul>
+                        <li>Implementación de menús hamburguesa completamente responsive.</li>
+                        <li>Diseño de animaciones fluidas para apertura y cierre de menús.</li>
+                        <li>Optimización para diferentes tamaños de pantalla y dispositivos.</li>
+                        <li>Mejora de la usabilidad y experiencia de usuario (UX/UI) en la navegación móvil.</li>
+                        <li>Integración de JavaScript para controlar el estado de los menús.</li>
+                    </ul>
+                </div>
+
+                <div class="enlaces">
+                    <a href="https://github.com/guillermoSoftwareEngineer/Hamburge_menu" target="_blank">Repositorio en GitHub</a>
+                    <a href="https://guillermosoftwareengineer.github.io/Hamburge_menu/" target="_blank">Ver en GitHub Pages</a>
+                </div>
+
+                <div class="volver">
+                    <a href="./proyectos.html">← Volver a proyectos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const closeMenuButton = document.getElementById('closeMenuButton');
+            // 'publishDateSpan' no existe en esta página, pero el código es seguro con el 'if'
+            const publishDateSpan = document.getElementById('publish-date'); 
+
+            if (menuToggle && navLinks) { 
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show'); 
+                    const isExpanded = navLinks.classList.contains('show');
+                    menuToggle.setAttribute('aria-expanded', isExpanded); 
+
+                    const closeMenuItem = document.querySelector('.close-menu-item');
+                    if (closeMenuItem) { 
+                        if (isExpanded) {
+                            closeMenuItem.style.display = 'block';
+                        } else {
+                            closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
+
+                if (closeMenuButton) { 
+                    closeMenuButton.addEventListener('click', () => {
+                        navLinks.classList.remove('show'); 
+                        menuToggle.setAttribute('aria-expanded', false);
+                        closeMenuButton.closest('.close-menu-item').style.display = 'none';
+                    });
+                }
+
+                document.addEventListener('click', (event) => {
+                    if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
+                        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && (closeMenuButton && !closeMenuButton.contains(event.target))) {
+                            navLinks.classList.remove('show');
+                            menuToggle.setAttribute('aria-expanded', false);
+                            const closeMenuItem = document.querySelector('.close-menu-item');
+                            if (closeMenuItem) closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        navLinks.classList.remove('show');
+                        menuToggle.setAttribute('aria-expanded', false);
+                        const closeMenuItem = document.querySelector('.close-menu-item');
+                        if (closeMenuItem) closeMenuItem.style.display = 'none';
+                    }
+                });
+            }
+
+            if (publishDateSpan) { 
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
+            }
+        });
+    </script>
+</body>
+</html>
