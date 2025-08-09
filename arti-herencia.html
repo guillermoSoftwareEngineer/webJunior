@@ -169,12 +169,17 @@
     </footer>
 
     <script>
+        // Lógica para el menú de hamburguesa
         const toggle = document.getElementById("menuToggle");
         const navLinks = document.getElementById("navLinks");
+        const menuToggleImage = toggle.querySelector("img");
 
+        if (toggle && navLinks) {
         toggle.addEventListener("click", () => {
             navLinks.classList.toggle("show");
+            toggle.classList.toggle("active");
         });
+        }
     </script>
 
 </body>

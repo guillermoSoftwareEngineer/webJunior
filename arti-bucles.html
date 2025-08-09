@@ -6,7 +6,7 @@
     <title>Bucles en Preprocesadores CSS | Guillermo Vásquez</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
     <link rel="stylesheet" href="./prep-articulo.css">
-    <link rel="stylesheet" href="./arti-mixin.css"> </head>
+    <!-- <link rel="stylesheet" href="./arti-mixin.css"> </head> -->
 <body>
 
     <header class="hero">
@@ -164,12 +164,17 @@ each(@color in @colors) {
     </footer>
 
     <script>
+        // Lógica para el menú de hamburguesa
         const toggle = document.getElementById("menuToggle");
         const navLinks = document.getElementById("navLinks");
+        const menuToggleImage = toggle.querySelector("img");
 
+        if (toggle && navLinks) {
         toggle.addEventListener("click", () => {
             navLinks.classList.toggle("show");
+            toggle.classList.toggle("active");
         });
+        }
     </script>
 
 </body>
