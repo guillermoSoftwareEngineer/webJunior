@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energia Solar| Guillermo Vásquez</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./leyOhm.css"> 
+    <!-- esta archivo css es el mismo de ley de ohm para economizar recursos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-img">
+                <img src="./images/logo.png" alt="Logo Guillermo Vásquez" />
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+            <img src="./images/favicon.png" alt="Ícono de menú">
+        </button>
+        <ul id="navLinks" class="nav-links">
+            <li class="close-menu-item">
+                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+            </li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./sobre-mi.html">Sobre mí</a></li>
+            <li><a href="./proyectos.html">Proyectos</a></li>
+            <li><a href="./slides.html">Slides</a></li>
+            <li><a href="./articulos.html">Artículos</a></li>
+            <li><a href="./contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <article>
+            <h1 class="article-title">¡Energía del Sol en tu Tejado!</h1>
+            <p class="article-meta">Publicado por Guillermo Vásquez · <span id="publish-date"></span></p>
+
+            <section class="article-section">
+                <h2>¿Qué es un Sistema Fotovoltaico?</h2>
+                <p>Un sistema fotovoltaico es un conjunto de componentes que transforma la luz solar en energía eléctrica que puedes usar en tu casa o negocio. La palabra "fotovoltaico" se divide en dos partes: "foto" que significa "luz" y "voltaico" que se refiere a "electricidad". ¡Es literalmente un sistema de luz-electricidad!</p>
+            </section>
+
+            <section class="article-section">
+                <h2>¿Cómo funciona?</h2>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <div class="centered-image-container">
+                    <img src="./images/enrgiaSolar.png" alt="Representación del sistema de números binarios" class="responsive-image zoomable-image" data-zoom-src="./images/binario.jpg" />
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Explicación de la imagen de ejemplo anterior</h2>
+                <ul>
+                    <li>En la primera fila aparecen las potencias de 2 (de derecha a izquierda): 2<sup>3</sup>, 2<sup>2</sup>, 2<sup>1</sup>, 2<sup>0</sup>.</li>
+                    <li>La segunda fila muestra el valor decimal que representa cada potencia: 8, 4, 2 y 1.</li>
+                    <li>En la tercera fila se coloca un número binario: 0, 1, 0, 1. Cada dígito (bit) se alinea con su potencia de 2.</li>
+                    <li>Finalmente, solo se suman los valores donde hay un 1 en el binario. En este caso, hay un 1 en las posiciones de 2<sup>2</sup> (4) y 2<sup>0</sup> (1), así que 4 + 1 = 5.</li>
+                </ul>
+                <p>Así se muestra cómo el número binario "0101" equivale a "5" en decimal</p>
+            </section>
+
+            <section class="article-section image-left">
+                <h2>¿Los números en base 10 con los que contamos?</h2>
+                <div class="content-with-image"> 
+                    <img src="./images/decimales.jpeg" alt="Ilustración de los dígitos del sistema decimal" class="section-image " />
+                    <p>En base 10, que es el sistema decimal que usamos para contar, los números con los que contamos están formados por diez dígitos básicos: <br><br> 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9</p> 
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Display 7 Segmentos</h2>
+                <p>Un display de 7 segmentos es un dispositivo electrónico utilizado para mostrar números decimales de forma visual mediante la activación de siete segmentos luminosos, generalmente LEDs, dispuestos en forma de un número 8. Cada segmento puede encenderse o apagarse de manera independiente para formar los dígitos del 0 al 9, así como algunas letras básicas. Estos segmentos están etiquetados con letras de la 'a' a la 'g', lo que facilita su control y conexión en circuitos electrónicos.</p>
+                <div class="centered-image-container">
+                    <img src="./images/display7.png" alt="Diagrama de un display de 7 segmentos" class="responsive-image zoomable-image" data-zoom-src="./images/display7.png" />
+                </div>
+                <p>El funcionamiento del display consiste en encender combinaciones específicas de estos segmentos para representar cada número. Por ejemplo, al activar todos los segmentos se forma el número 8, mientras que al encender solo ciertos segmentos se pueden formar otros números como el 0 o el 4. Existen dos tipos principales según su conexión interna: ánodo común y cátodo común, que determinan cómo se suministra la corriente para encender los LEDs. Debido a su simplicidad, bajo costo y claridad visual, los displays de 7 segmentos se usan ampliamente en dispositivos como relojes digitales, calculadoras y medidores electrónicos.</p>
+                <p>(Clic en la imagen para ampliar)</p>
+                <div class="centered-image-container">
+                    <img src="./images/anodo-comun.png" alt="Diagrama de conexión de ánodo común" class="responsive-image zoomable-image" data-zoom-src="./images/anodo-comun.png" />
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Tabla de verdad</h2>
+                <p>Esta tabla muestra cómo un contador convierte números binarios (entrada) en su representación decimal y cómo estos valores se visualizan en dos displays de 7 segmentos: uno para las decenas y otro para las unidades.</p>
+                <p>En la columna "ENTRADA", se presentan los valores binarios de 4 bits (de 0000 a 1111, es decir, de 0 a 15 en decimal). La columna "DECIMAL" indica el valor equivalente en base 10. Para cada número, la tabla especifica qué segmentos deben encenderse en el display de decenas y en el de unidades. Las columnas etiquetadas de "a" a "g" bajo "DISPLAY (7S) DECENAS" y "DISPLAY (7S) UNIDADES" muestran con un 1 si el segmento correspondiente debe estar encendido y con un 0 si debe estar apagado.</p>
+                <p>(Clic en la imagen para ampliar)</p>
+                <div class="centered-image-container">
+                    <img src="./images/tabla-contador.png" alt="Tabla de verdad de contador binario a decimal" class="responsive-image zoomable-image" data-zoom-src="./images/tabla-contador.png" />
+                </div>
+            </section>
+
+            <section class="article-section image-left">
+                <h2>POS (Producto de Sumas)</h2>
+                <div class="content-with-image"> 
+                    <img src="./images/pos.png" alt="Ejemplo de expresión lógica POS" class="section-image zoomable-image" data-zoom-src="./images/POS.png" />
+                    <p>En electrónica digital, el método POS (Producto de Sumas) es una forma de expresar funciones lógicas donde la función se representa como el producto (AND) de varias sumas (OR) de variables o sus negaciones. Es una técnica utilizada para simplificar y diseñar circuitos digitales, especialmente en la implementación de funciones booleanas. En el método POS, se identifican las combinaciones de entrada para las cuales la función es cero y se forman sumas de variables que se multiplican entre sí para obtener la expresión final. Esto contrasta con el método SOP (Suma de Productos), que se basa en la suma de productos. El método POS es útil para diseñar circuitos con puertas NOR y NAND, facilitando la optimización y reducción de componentes. <br>(Clic en la imagen para ampliar)</p>
+                </div>
+            </section>
+
+            <section class="article-section image-right">
+                <h2>SOP (Suma de Productos)</h2>
+                <div class="content-with-image">
+                    <img src="./images/sop.png" alt="Ejemplo de expresión lógica SOP" class="section-image zoomable-image" data-zoom-src="./images/sop.png" />
+                    <p>El método SOP (Suma de Productos) en electrónica digital es una forma de expresar funciones lógicas donde la función se representa como la suma (OR) de varios productos (AND) de variables o sus negaciones. Cada término producto corresponde a una combinación específica de variables que produce una salida 1 en la función. Para obtener la expresión SOP, se identifican las filas de la tabla de verdad donde la salida es 1 y se escribe un término AND para cada una, combinando las variables en forma directa o negada según corresponda. Finalmente, estos términos se suman (OR) para formar la función completa. Este método es ampliamente utilizado para simplificar y diseñar circuitos digitales mediante puertas AND y OR. <br>(Clic en la imagen para ampliar)</p>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>De Tabla de verdad a esquema lógico</h2>
+                <p>Para facilitar el desarrollo de cada parte del circuito, podemos usar la aplicación en la siguiente página: <a target="_blank" href="http://www.32x8.com/var4.html"> de simplificación</a> . En ella podemos seleccionar el número de entradas; por ejemplo, para números de hasta 15 necesitamos 4 bits de entrada (binarios). También podemos elegir el método de salida del circuito equivalente, ya sea POS o SOP, e incluso visualizar los mapas de Karnaugh, los grupos y el diagrama final del circuito equivalente.</p>
+                <p>Esto se realiza para cada uno de los displays de 7 segmentos, tanto para las decenas como para las unidades. Hay casos especiales en algunos segmentos; por ejemplo, en el display de decenas, los segmentos b y c siempre están encendidos, por lo que, para simplificar el software, lo más conveniente es conectar estos segmentos a la línea de VCC (positivo de la alimentación). De igual forma, el segmento g del display de decenas siempre está apagado, por lo que es más conveniente enviarlo a GND (tierra o negativo de la alimentación).</p>             
+                <p>(Clic en la imagen para ampliar)</p>
+                <div class="centered-image-container">
+                    <img src="./images/software-simplificacion.jpg" alt="Captura de pantalla de software de simplificación de circuitos" class="responsive-image zoomable-image" data-zoom-src="./images/software-simplificacion.jpg" />
+                </div>
+                <p>El último paso sería ensamblar el circuito en <a href="https://sourceforge.net/projects/circuit/">Logisim</a> </p>
+                <div class="centered-image-container">
+                    <img src="./images/contador-logisim.jpg" alt="Esquema del circuito contador en Logisim" class="responsive-image zoomable-image" data-zoom-src="./images/contador-logisim.jpg" />
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Resumen Contador binario a decimal 0 a 15 (Video)</h2>
+                <p>Recuerda activar la mejor calidad en YouTube, para mejor visualización del video</p>
+                <div class="youtube-video">
+                    <iframe src="https://www.youtube.com/embed/1zw9dIKt8ag" title="Mascota Virtual Arduino Parte 1 Funcionando" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p>Echa un vistazo a este video para ver el resumen de todo lo tratado en este contador.</p>
+            </section>
+
+        </article>
+        <section class="article-navigation-button">
+            <a href="./articulos.html" class="main-action-button">Volver a Artículos</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
+                LinkedIn
+            </a>
+        </div>
+    </footer>
+
+    <!-- Lightbox/Modal para imágenes -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-lightbox-button">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            const closeMenuButton = document.getElementById('closeMenuButton');
+            const publishDateSpan = document.getElementById('publish-date');
+
+            // Manejo del menu de navegacion (mobile first)
+            if (menuToggle && navLinks) { 
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show'); 
+                    const isExpanded = navLinks.classList.contains('show');
+                    menuToggle.setAttribute('aria-expanded', isExpanded); 
+
+                    // Muestra u oculta el boton de cerrar menu
+                    const closeMenuItem = document.querySelector('.close-menu-item');
+                    if (closeMenuItem) { 
+                        if (isExpanded) {
+                            closeMenuItem.style.display = 'block';
+                        } else {
+                            closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Cierra el menu cuando se hace clic en el boton "X"
+                if (closeMenuButton) { 
+                    closeMenuButton.addEventListener('click', () => {
+                        navLinks.classList.remove('show'); 
+                        menuToggle.setAttribute('aria-expanded', false);
+                        closeMenuButton.closest('.close-menu-item').style.display = 'none';
+                    });
+                }
+
+                // Cierra el menu si se hace clic fuera de el en moviles
+                document.addEventListener('click', (event) => {
+                    if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
+                        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && (closeMenuButton && !closeMenuButton.contains(event.target))) {
+                            navLinks.classList.remove('show');
+                            menuToggle.setAttribute('aria-expanded', false);
+                            const closeMenuItem = document.querySelector('.close-menu-item');
+                            if (closeMenuItem) closeMenuItem.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Cierra el menu si se redimensiona la ventana a un tamaño de escritorio
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        navLinks.classList.remove('show');
+                        menuToggle.setAttribute('aria-expanded', false);
+                        const closeMenuItem = document.querySelector('.close-menu-item');
+                        if (closeMenuItem) closeMenuItem.style.display = 'none';
+                    }
+                });
+            }
+
+            // Insertar la fecha actual de publicación
+            if (publishDateSpan) { 
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
+            }
+
+            // Manejo del Lightbox/Modal de imágenes
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeLightboxButton = document.querySelector('.close-lightbox-button');
+            const zoomableImages = document.querySelectorAll('.zoomable-image'); // Selecciona las imágenes con la clase zoomable-image
+
+            zoomableImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    const zoomSrc = this.getAttribute('data-zoom-src');
+                    if (zoomSrc) {
+                        lightbox.style.display = 'block';
+                        lightboxImage.src = zoomSrc;
+                    }
+                });
+            });
+
+            closeLightboxButton.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+                lightboxImage.src = ''; // Limpiar la imagen al cerrar
+            });
+
+            // Cierra el lightbox si se hace clic fuera de la imagen (en el overlay)
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    lightboxImage.src = '';
+                }
+            });
+        });
+    </script> 
+</body>
+</html>
