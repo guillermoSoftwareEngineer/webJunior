@@ -509,6 +509,35 @@ img {
     }
 }
 
+.feature-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.feature-list li:before {
+  content: "→";
+  color: var(--azul);
+  position: absolute;
+  left: 0;
+}
+
+.feature-list a {
+  color: var(--borde);
+  text-decoration: none;
+}
+
+.feature-list a:hover {
+  color: var(--azul);
+  text-decoration: underline;
+}
+
+
 /* ========================================================================== */
 /* 7. Footer */
 /* ========================================================================== */
