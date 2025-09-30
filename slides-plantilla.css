@@ -175,9 +175,9 @@ nav button img {
   }
 }
 
-  /* Estilos para que el logo en pantallas mayores a 768px se vea */
-  @media (min-width: 769px) {
-    .hero-content .logo-img img {
-      display: block;
-    }
+/* Estilos para que el logo en pantallas mayores a 768px se vea */
+@media (min-width: 769px) {
+  .hero-content .logo-img img {
+    display: block;
   }
+}

@@ -20,7 +20,6 @@
     font-family: var(--fuente);
     padding: 2rem;
   }
-  
   /* Hero */
   .hero {
     display: flex;
@@ -32,7 +31,6 @@
     display: none;
     width: 80px;
   }
-  
   /* Nav */
   .nav {
     background-color: #10172a;
@@ -73,7 +71,6 @@ nav button img {
   .nav a:hover {
     color: var(--azul);
   }
-  
   /* Sección Artículos */
   .articulos-section {
     max-width: 1200px;
@@ -86,7 +83,6 @@ nav button img {
     margin-bottom: 2rem;
     margin-top: 4rem;
   }
-  
   /* Cards */
   .articles-container {
     display: grid;
@@ -135,7 +131,6 @@ nav button img {
   .article-content a:hover {
     background-color: #0077cc;
   }
-  
   /* Botones finales */
   .botones-finales {
     margin-top: 3rem;
@@ -156,7 +151,6 @@ nav button img {
   .boton:hover {
     background-color: #0077cc;
   }
-  
   /* Footer */
   .footer {
     text-align: center;
@@ -184,7 +178,6 @@ nav button img {
     width: 20px;
     height: 20px;
   }
-  
   /* Responsive */
   @media (max-width: 768px) {
     .menu-toggle {

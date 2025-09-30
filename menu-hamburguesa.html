@@ -20,15 +20,10 @@
     </header>
 
     <nav class="nav">
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
             <img src="./images/favicon.png" alt="Ícono de menú">
         </button>
-        <ul id="navLinks" class="nav-links">
-            <li class="close-menu-item">
-                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
-                    <i class="fas fa-times"></i>
-                </button>
-            </li>
+        <ul id="navLinks">
             <li><a href="./index.html">Inicio</a></li>
             <li><a href="./sobre-mi.html">Sobre mí</a></li>
             <li><a href="./proyectos.html">Proyectos</a></li>
@@ -114,64 +109,16 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            const closeMenuButton = document.getElementById('closeMenuButton');
-            // 'publishDateSpan' no existe en esta página, pero el código es seguro con el 'if'
-            const publishDateSpan = document.getElementById('publish-date'); 
+        // Lógica para el menú de hamburguesa
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-            if (menuToggle && navLinks) { 
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('show'); 
-                    const isExpanded = navLinks.classList.contains('show');
-                    menuToggle.setAttribute('aria-expanded', isExpanded); 
-
-                    const closeMenuItem = document.querySelector('.close-menu-item');
-                    if (closeMenuItem) { 
-                        if (isExpanded) {
-                            closeMenuItem.style.display = 'block';
-                        } else {
-                            closeMenuItem.style.display = 'none';
-                        }
-                    }
-                });
-
-                if (closeMenuButton) { 
-                    closeMenuButton.addEventListener('click', () => {
-                        navLinks.classList.remove('show'); 
-                        menuToggle.setAttribute('aria-expanded', false);
-                        closeMenuButton.closest('.close-menu-item').style.display = 'none';
-                    });
-                }
-
-                document.addEventListener('click', (event) => {
-                    if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
-                        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && (closeMenuButton && !closeMenuButton.contains(event.target))) {
-                            navLinks.classList.remove('show');
-                            menuToggle.setAttribute('aria-expanded', false);
-                            const closeMenuItem = document.querySelector('.close-menu-item');
-                            if (closeMenuItem) closeMenuItem.style.display = 'none';
-                        }
-                    }
-                });
-
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth >= 768) {
-                        navLinks.classList.remove('show');
-                        menuToggle.setAttribute('aria-expanded', false);
-                        const closeMenuItem = document.querySelector('.close-menu-item');
-                        if (closeMenuItem) closeMenuItem.style.display = 'none';
-                    }
-                });
-            }
-
-            if (publishDateSpan) { 
-                const today = new Date();
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
-            }
+        if (toggle && navLinks) {
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            toggle.classList.toggle("active");
         });
+        }
     </script>
 </body>
 </html>

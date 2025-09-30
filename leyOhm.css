@@ -448,10 +448,13 @@ img {
 
 .youtube-video {
     position: relative;
-    width: 100%;
+    max-width: 680px; /* Limita el tamaño máximo del video */
+    width: 100%; /* Permite que sea más pequeño si el contenedor es estrecho */
     padding-bottom: 56.25%;
     margin-bottom: var(--spacing-lg);
     border-radius: var(--border-radius-md);
+    margin-left: auto;  /* Centra el contenedor horizontalmente */
+    margin-right: auto; /* Centra el contenedor horizontalmente */
     overflow: hidden;
     box-shadow: 0 4px 15px var(--sombra);
 }

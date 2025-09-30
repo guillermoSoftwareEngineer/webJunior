@@ -19,15 +19,10 @@
     </header>
 
     <nav class="nav">
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
             <img src="./images/favicon.png" alt="Ícono de menú">
         </button>
-        <ul id="navLinks" class="nav-links">
-            <li class="close-menu-item">
-                <button class="close-menu-button" id="closeMenuButton" aria-label="Cerrar menú">
-                    <i class="fas fa-times"></i>
-                </button>
-            </li>
+        <ul id="navLinks">
             <li><a href="./index.html">Inicio</a></li>
             <li><a href="./sobre-mi.html">Sobre mí</a></li>
             <li><a href="./proyectos.html">Proyectos</a></li>
@@ -162,63 +157,19 @@
     </div>
 
     <script>
+        // Lógica para el menú de hamburguesa
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (toggle && navLinks) {
+            toggle.addEventListener("click", () => {
+                navLinks.classList.toggle("show");
+                toggle.classList.toggle("active");
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            const closeMenuButton = document.getElementById('closeMenuButton');
             const publishDateSpan = document.getElementById('publish-date');
-
-            // Manejo del menu de navegacion (mobile first)
-            if (menuToggle && navLinks) { 
-                menuToggle.addEventListener('click', () => {
-                    navLinks.classList.toggle('show'); 
-                    const isExpanded = navLinks.classList.contains('show');
-                    menuToggle.setAttribute('aria-expanded', isExpanded); 
-
-                    // Muestra u oculta el boton de cerrar menu
-                    const closeMenuItem = document.querySelector('.close-menu-item');
-                    if (closeMenuItem) { 
-                        if (isExpanded) {
-                            closeMenuItem.style.display = 'block';
-                        } else {
-                            closeMenuItem.style.display = 'none';
-                        }
-                    }
-                });
-
-                // Cierra el menu cuando se hace clic en el boton "X"
-                if (closeMenuButton) { 
-                    closeMenuButton.addEventListener('click', () => {
-                        navLinks.classList.remove('show'); 
-                        menuToggle.setAttribute('aria-expanded', false);
-                        closeMenuButton.closest('.close-menu-item').style.display = 'none';
-                    });
-                }
-
-                // Cierra el menu si se hace clic fuera de el en moviles
-                document.addEventListener('click', (event) => {
-                    if (window.innerWidth < 768 && navLinks.classList.contains('show')) {
-                        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && (closeMenuButton && !closeMenuButton.contains(event.target))) {
-                            navLinks.classList.remove('show');
-                            menuToggle.setAttribute('aria-expanded', false);
-                            const closeMenuItem = document.querySelector('.close-menu-item');
-                            if (closeMenuItem) closeMenuItem.style.display = 'none';
-                        }
-                    }
-                });
-
-                // Cierra el menu si se redimensiona la ventana a un tamaño de escritorio
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth >= 768) {
-                        navLinks.classList.remove('show');
-                        menuToggle.setAttribute('aria-expanded', false);
-                        const closeMenuItem = document.querySelector('.close-menu-item');
-                        if (closeMenuItem) closeMenuItem.style.display = 'none';
-                    }
-                });
-            }
-
-            // Insertar la fecha actual de publicación
             if (publishDateSpan) { 
                 const today = new Date();
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -229,7 +180,7 @@
             const lightbox = document.getElementById('imageLightbox');
             const lightboxImage = document.getElementById('lightboxImage');
             const closeLightboxButton = document.querySelector('.close-lightbox-button');
-            const zoomableImages = document.querySelectorAll('.zoomable-image'); // Selecciona las imágenes con la clase zoomable-image
+            const zoomableImages = document.querySelectorAll('.zoomable-image');
 
             zoomableImages.forEach(image => {
                 image.addEventListener('click', function() {
@@ -243,10 +194,9 @@
 
             closeLightboxButton.addEventListener('click', () => {
                 lightbox.style.display = 'none';
-                lightboxImage.src = ''; // Limpiar la imagen al cerrar
+                lightboxImage.src = '';
             });
 
-            // Cierra el lightbox si se hace clic fuera de la imagen (en el overlay)
             lightbox.addEventListener('click', (event) => {
                 if (event.target === lightbox) {
                     lightbox.style.display = 'none';
@@ -254,6 +204,6 @@
                 }
             });
         });
-    </script> 
+    </script>
 </body>
 </html>
