@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Modelo de Atención | Guillermo Vásquez</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="./leyOhm.css">
+  <link rel="stylesheet" href="./arti-atencion.css" />
+</head>
+<body>
+
+  <!-- NAV DEL PORTAFOLIO -->
+  <nav class="nav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <img src="./images/favicon.png" alt="Ícono de menú">
+    </button>
+    <ul id="navLinks">
+      <li><a href="./index.html">Inicio</a></li>
+      <li><a href="./sobre-mi.html">Sobre mí</a></li>
+      <li><a href="./proyectos.html">Proyectos</a></li>
+      <li><a href="./slides.html">Slides</a></li>
+      <li><a href="./articulos.html">Artículos</a></li>
+      <li><a href="./contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO DEL ARTÍCULO -->
+  <main class="article-container">
+    <article>
+      <h1 class="article-title">Descifrando el Cerebro de GPT-2: El Modelo de Atención</h1>
+      <p class="article-meta">Publicado por Guillermo Vásquez · <span id="publish-date"></span></p>
+
+      <img src="./images/modeloAtencion.png" alt="Cerebro de una IA" class="article-image zoomable-image" data-zoom-src="./images/LLMs1.png">
+
+      <section class="article-section">
+        <p>El Modelo de Atención es la herramienta clave que permite a las inteligencias artificiales (IA), como GPT-2, entender el lenguaje humano con un contexto profundo. Este proceso, que ocurre constantemente durante el entrenamiento de la red neuronal, funciona como un equipo de detectives que resuelven un misterio frase por frase.</p>
+        <p>Utilizaremos la frase de ejemplo para entender el proceso: <strong>"La mujer sirvió el pastel, y ella sonrió."</strong></p>
+        <p>El misterio a resolver es: ¿A quién se refiere el pronombre "ella"?</p>
+      </section>
+
+      <section class="article-section">
+        <h2>1. La Transformación Inicial: De Palabra a Flecha</h2>
+        <p>En el cerebro de la IA, cada palabra comienza siendo un vector, una flecha en un espacio matemático de muchas dimensiones. Para facilitar la comprensión, usaremos el término flecha.</p>
+        <p>Esta flecha inicial solo conoce la similitud general de la palabra, lo que conocimos antes como <a style="color: blue;" href="./arti-llm.html">embeddings</a>. Para el proceso de atención, esta flecha (vector) se transforma en tres flechas especializadas, es decir ahora se represeenta con tres flechas de tres valores diferentes:</p>
+      </section>
+      
+      <section class="article-section">
+        <h3>El Rol del Entrenamiento</h3>
+        <p>El Modelo de Atención es la arquitectura de la red. Al inicio del entrenamiento, los números dentro de las matrices de peso (que llamaremos tarjetas de identificación o etiquetas de clasificación) son aleatorios, por lo que las flechas apuntan a lugares sin sentido. El entrenamiento se encarga de ajustar esos números para que las flechas apunten a direcciones coherentes. Si la IA se equivoca, utiliza el mecanismo de Backpropagation (el cual explicaremos en un futuro artículo) para corregir la dirección de estas flechas.</p>
+      </section>
+
+      <section class="article-section">
+        <h2 style="text-align: center;">Las Tres Flechas Especializadas</h2>
+          <div class="centered-image-container">
+        <img src="./images/kqv.jpg" alt="Representación del un espacio 3d y las palabras como vectores" class="responsive-image zoomable-image" data-zoom-src="./images/tokenization.png" />
+          </div>        
+        <p>Cada palabra genera tres flechas que tienen roles fijos:</p>
+        
+        <p ><strong style="color: blue;">La Pregunta (Q - Query):</strong> <br><br> Esta flecha sale de la palabra que estamos analizando (ej., "ella") y apunta en la dirección de la información que necesita. Su propósito es preguntar: "¿Cuál palabra requiere más atención?"</p>
+        
+        <p ><strong style="color: blue;">La Etiqueta (K - Key):</strong> <br><br> Esta flecha sale de todas las demás palabras (ej., "mujer"). Es el rótulo de identificación que indica su identidad (ej., "Soy un sujeto femenino").</p>
+        
+        <p ><strong style="color: blue;">El Contenido (V - Value):</strong> <br><br> Esta flecha contiene el Conjunto de Clasificación de la Palabra. Incluye todas las propiedades conocidas de la palabra (sinónimos, categorías), pero aún no sabe cómo esa palabra está siendo usada en esta frase específica.</p>
+      </section>
+
+      <section class="article-section">
+        <h2>2. La Amistad Vectorial: Alineación y Producto Punto</h2>
+        <p>El paso crucial es medir la "amistad" entre la flecha Q (Pregunta) y la flecha K (Etiqueta) de las demás palabras.</p>
+        <h3>La Geometría de los Vectores</h3>
+        <p>Las flechas Q y K son los vectores completos que salen del origen. En un plano tridimensional, un vector se define por sus coordenadas (x, y, z).</p>
+        <h3>Alineación: El Significado de la Amistad</h3>
+        <p>Cuando decimos que las flechas están alineadas, nos referimos a que apuntan en la misma dirección general en el espacio. Esta alineación es conceptual: significa que la idea de la pregunta coincide con la idea de la etiqueta.</p>
+        <img src="https://placehold.co/900x500/0f172a/ffffff?text=Alineacion+Conceptual+de+Vectores" alt="Placeholder para imagen de alineación conceptual de vectores Q y K en un espacio 3D." class="article-image zoomable-image" data-zoom-src="https://placehold.co/1200x700/0f172a/ffffff?text=Alineacion+Conceptual+de+Vectores">
+      </section>
+
+      <section class="article-section">
+        <h3>El Producto Punto: Medir la Alineación</h3>
+        <p>El Producto Punto es la fórmula matemática que usamos para obtener un único número que nos dice qué tan alineadas están estas dos flechas:</p>
+        <ul>
+            <li>Si el Producto Punto es <strong>Alto y Positivo</strong>, se produce la Máxima Alineación.</li>
+            <li>Si el Producto Punto es <strong>Cero</strong>, se produce la Irrelevancia (son perpendiculares).</li>
+            <li>Si el Producto Punto es <strong>Negativo</strong>, se produce la Oposición.</li>
+        </ul>
+        <img src="https://placehold.co/900x500/0f172a/ffffff?text=Producto+Punto+(Alineacion,+Irrelevancia,+Oposicion)" alt="Placeholder para imagen explicando los 3 casos de producto punto." class="article-image zoomable-image" data-zoom-src="https://placehold.co/1200x700/0f172a/ffffff?text=Producto+Punto">
+        <h3>Video Sugerido (Producto Punto)</h3>
+        <p>Para entender visualmente por qué esta operación matemática mide la alineación:</p>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/Kz9XW7A6p5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>3. El Enfoque y la Construcción del Contexto</h2>
+        <h3>Softmax: Repartiendo el 100%</h3>
+        <p>La IA toma los números de amistad y los convierte en porcentajes usando la función Softmax. Esto es esencial porque obliga a la IA a repartir el 100% de su atención. El resultado es que "mujer" obtiene el 85% de atención, "pastel" obtiene el 5%, y así sucesivamente.</p>
+        <h3>Video Sugerido (Softmax):</h3>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/dxU5B0I_I7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h3>La Suma Ponderada: La Nueva Flecha Final</h3>
+        <p>El modelo toma el Conjunto de Clasificación (V) de cada palabra y lo multiplica por su porcentaje de atención (Softmax). Suma todos esos resultados en una única flecha. Esta Suma Ponderada crea el Vector Final que es el nuevo significado contextualizado de la palabra.</p>
+        <p><strong>Significado Contextualizado:</strong> El Vector Final de "ella" es una nueva flecha que apunta a una nueva ubicación en el espacio. Esta nueva ubicación es la clave para la comprensión de la IA. No es que contenga la palabra de más atención, sino que la posición misma de la flecha ahora representa la idea compuesta: "Soy 'ella', pero con un 85% de las propiedades de la 'mujer', lo que significa que fui yo quien sonrió."</p>
+        <img src="https://placehold.co/900x500/0f172a/ffffff?text=Creacion+del+Vector+Final" alt="Placeholder para imagen de la suma ponderada que crea el vector final." class="article-image zoomable-image" data-zoom-src="https://placehold.co/1200x700/0f172a/ffffff?text=Creacion+del+Vector+Final">
+      </section>
+
+      <section class="article-section">
+        <h2>El Rol de la Supervisión Humana (RLHF)</h2>
+        <p>Aunque el mecanismo de atención se entrena inicialmente, el rendimiento de la IA se afina con el Refuerzo por Feedback Humano (RLHF). Esto significa que la IA recibe calificaciones de humanos sobre la calidad de sus respuestas y usa ese feedback para ajustar sus parámetros, garantizando que sus respuestas sean más útiles, seguras y alineadas con la intención humana.</p>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Guillermo Vásquez</p>
+    <div class="footer-links">
+      <a href="./images/correo.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+        Correo
+      </a>
+      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <div id="imageLightbox" class="lightbox">
+    <span class="close-lightbox-button">×</span>
+    <img class="lightbox-content" id="lightboxImage">
+  </div>
+
+  <script>
+    // Lógica para el menú de hamburguesa
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (toggle && navLinks) {
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            toggle.classList.toggle("active");
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Lógica para la fecha de publicación dinámica
+        const publishDateSpan = document.getElementById('publish-date');
+        if (publishDateSpan) { 
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
+        }
+
+        // Manejo del Lightbox/Modal de imágenes
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightboxButton = document.querySelector('.close-lightbox-button');
+        const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+        zoomableImages.forEach(image => {
+            image.addEventListener('click', function() {
+                const zoomSrc = this.getAttribute('data-zoom-src');
+                if (zoomSrc) {
+                    lightbox.style.display = 'block';
+                    lightboxImage.src = zoomSrc;
+                }
+            });
+        });
+
+        if(closeLightboxButton) {
+            closeLightboxButton.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+                lightboxImage.src = '';
+            });
+        }
+
+        if(lightbox) {
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    lightboxImage.src = '';
+                }
+            });
+        }
+    });
+  </script>
+
+</body>
+</html>
