@@ -1,39 +1,69 @@
-/* Reset básico */
+/* =======================
+   RESET BÁSICO
+======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =======================
+   BODY
+======================= */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #111;
   color: #fff;
 }
 
-/* Fondo con imagen */
+/* =======================
+   SECCIÓN SOBRE MÍ
+======================= */
 .sobre-mi {
-  background-image: url('./images/YoSobreMi.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
+  background-color: #111;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Contenedor del texto */
+/* CONTENEDOR GENERAL */
+.sobre-mi-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* =======================
+   IMAGEN PERFIL (SOFTWARE)
+======================= */
+.sobre-mi-imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  filter: brightness(0.92) contrast(0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* =======================
+   CONTENIDO TEXTO
+======================= */
 .sobre-mi-contenido {
-  max-width: 800px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.68);
+  padding: 2.5rem;
+  border-radius: 16px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* clase general para bloques individuales de texto biografia */
+/* BLOQUES */
 .bloque {
   margin-bottom: 2rem;
 }
@@ -49,14 +79,16 @@ body {
   line-height: 1.7;
 }
 
-/* Líneas divisoras de secciones de biografía */
+/* DIVISORES */
 hr {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 1.5rem 0;
+  margin: 1.8rem 0;
 }
 
-/* Botón de retorno al home */
+/* =======================
+   BOTÓN VOLVER
+======================= */
 .volver {
   text-align: center;
   margin-top: 2rem;
@@ -78,19 +110,42 @@ hr {
   background-color: #0077cc;
 }
 
-/* Responsive general */
+/* =======================
+   RESPONSIVE TABLET
+======================= */
+@media (max-width: 1024px) {
+  .sobre-mi-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-mi-imagen {
+    /* Ya no necesita ajustes de background, la imagen fluye natural */
+    max-height: 500px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .sobre-mi-contenido {
+    padding: 2rem;
+  }
+}
+
+/* =======================
+   RESPONSIVE MOBILE
+======================= */
 @media (max-width: 768px) {
   .sobre-mi {
-    flex-direction: column;
-    justify-content: center;
     padding: 2rem 1rem;
-    text-align: center;
+  }
+
+  .sobre-mi-imagen {
+    max-height: 400px;
   }
 
   .sobre-mi-contenido {
     max-width: 95%;
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 1.5rem;
+    text-align: center;
   }
 
   .bloque h2 {
@@ -102,30 +157,12 @@ hr {
   }
 }
 
-@media (max-width: 1142px) and (min-width: 769px) {
-  .sobre-mi-contenido {
-    max-width: 550px;
-    padding: 1.5rem;
-  }
-
-  .bloque h2 {
-    font-size: 1.6rem;
-  }
-
-  .bloque p {
-    font-size: 1rem;
-  }
-}
-
+/* =======================
+   MOBILE PEQUEÑO
+======================= */
 @media (max-width: 488px) {
-  .sobre-mi {
-    background-position: top center;
-    justify-content: center;
-  }
-
-  .sobre-mi-contenido {
-    max-width: 100%;
-    padding: 1.2rem;
+  .sobre-mi-imagen {
+    max-height: 300px;
   }
 
   .bloque h2 {
@@ -137,7 +174,9 @@ hr {
   }
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 .hero {
   display: flex;
   justify-content: center;
@@ -150,16 +189,19 @@ hr {
   display: none;
 }
 
-/* NAV */
+/* =======================
+   NAV
+======================= */
 .nav {
   background-color: #10172a;
   position: relative;
+  z-index: 1000;
 }
 
-  nav button img {
-    border-radius: 8px;
-  }
-  
+nav button img {
+  border-radius: 8px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -170,10 +212,12 @@ hr {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .menu-toggle img {
   width: 36px;
   height: 36px;
 }
+
 .nav ul {
   display: flex;
   justify-content: center;
@@ -181,25 +225,30 @@ hr {
   gap: 1rem;
   padding: 1rem;
 }
+
 .nav a {
   color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
+
 .nav a:hover {
   color: #1e90ff;
 }
 
-/* FOOTER */
+/* =======================
+   FOOTER
+======================= */
 .footer {
   text-align: center;
   padding: 2rem 1rem;
-  background-color: #0d1224;
+  background-color: transparent;
   color: #c0c0c0;
   margin-top: 3rem;
   font-size: 0.9rem;
 }
+
 .footer-links {
   margin-top: 0.5rem;
   display: flex;
@@ -207,6 +256,7 @@ hr {
   gap: 0.5rem;
   align-items: center;
 }
+
 .footer-links a {
   color: #1e90ff;
   text-decoration: none;
@@ -214,16 +264,20 @@ hr {
   align-items: center;
   gap: 0.5rem;
 }
+
 .footer-links img.icono-red {
   width: 20px;
   height: 20px;
 }
 
-/* NAV Responsive */
+/* =======================
+   NAV RESPONSIVE
+======================= */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+
   .nav ul {
     display: none;
     flex-direction: column;
@@ -234,21 +288,28 @@ hr {
     width: 100%;
     z-index: 999;
   }
+
+  .nav {
+    min-height: 60px;
+  }
+
   .nav ul.show {
     display: flex;
   }
+
   .nav ul li {
     padding: 0.5rem 0;
     text-align: center;
   }
 }
+
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
   }
 }
 
-/* Estilos para que el logo en pantallas mayores a 768px se vea */
+/* LOGO EN DESKTOP */
 @media (min-width: 769px) {
   .hero-content .logo-img img {
     display: block;

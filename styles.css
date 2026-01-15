@@ -47,7 +47,11 @@ body {
 
 .logo-img img {
   width: 100px;
-  margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 .nombre {
@@ -116,6 +120,7 @@ body {
   padding: 4rem 2rem;
   text-align: center;
   border-top: 1px solid #1c1c2a;
+  z-index: 1;
 }
 
 .seccion a {
@@ -264,4 +269,23 @@ body {
   .menu-toggle {
     display: none;
   }
+}
+
+@media (max-width: 1024px) {
+  .nombre { font-size: 2.4rem; }
+  .tagline { font-size: 1.1rem; }
+}
+
+@media (max-width: 768px) {
+  .hero { height: 70vh; }
+  .logo-img img { width: 80px; }
+  .nombre { font-size: 2rem; }
+  .tagline { font-size: 1rem; }
+}
+
+@media (max-width: 320px) {
+  .hero { height: 60vh; }
+  .logo-img img { width: 60px; }
+  .seccion { padding: 2rem 1rem; }
+  .seccion a { font-size: 1.4rem; }
 }

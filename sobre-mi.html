@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="./sobre-mi.css">
   <link rel="icon" type="image/png" href="./images/favicon.png">
 </head>
+
 <body>
 
   <header class="hero">
@@ -33,27 +35,50 @@
   </nav>
 
   <section class="sobre-mi">
-    <div class="sobre-mi-contenido">
-      <div class="bloque">
-        <h2>Quién soy</h2>
-        <p>
-          Mi nombre es Guillermo Vásquez. Soy estudiante de octavo semestre de Ingeniería de Software, tecnólogo en Electrónica e Instrumentación, y actualmente estoy desarrollando mi portafolio profesional para postularme a mi primer empleo como desarrollador trainee o junior.
-        </p>
-        <p>Mi pasión por la electrónica y el software me impulsa a buscar proyectos donde pueda fusionar ambos mundos, aplicando mis conocimientos en sistemas embebidos, automatización y desarrollo de software para crear soluciones innovadoras. Quiero aportar una perspectiva única, combinando lógica de programación con experiencia en hardware, ya sea en IoT, control industrial o procesamiento de señales. Mi objetivo es crecer en un entorno donde pueda seguir aprendiendo mientras contribuyo con soluciones técnicas integrales.</p>
-      </div>
-      <hr>
-      <div class="bloque">
-        <h2>Formación y enfoque</h2>
-        <p>
-          Cuento con más de 10 años de experiencia técnica en electrónica, especialmente en sistemas de potencia, automatización y mantenimiento de equipos. Esta trayectoria me ha permitido desarrollar habilidades sólidas en análisis de sistemas, pensamiento estructurado, y mejora continua, que ahora aplico en el desarrollo de soluciones desde el software.
-        </p>
-      </div>
-      <hr>
-      <div class="bloque">
-        <h2>Transición al desarrollo de software</h2>
-        <p>
-          Pasé de la electrónica a la ingeniería de software porque entendí que la integración entre hardware y software es el futuro. Esta visión me motivó a enfocarme en el desarrollo web, la programación y el diseño centrado en el usuario. He creado proyectos personales utilizando tecnologías como HTML, CSS y JavaScript, y actualmente me encuentro aprendiendo Angular. Además, estoy dando los primeros pasos para formarme en el desarrollo backend, con el propósito de construir un perfil más completo como ingeniero de software.
-        </p>
+    <div class="sobre-mi-wrapper">
+
+      <!-- Imagen perfil software -->
+      <img src="./images/YoSobreMi.jpg" alt="Foto de Guillermo Vásquez" class="sobre-mi-imagen">
+
+      <!-- Contenido -->
+      <div class="sobre-mi-contenido">
+
+        <div class="bloque">
+          <h2>Quién soy</h2>
+          <p>
+            Mi nombre es Guillermo Vásquez. Soy estudiante de octavo semestre de Ingeniería de Software, tecnólogo en
+            Electrónica e Instrumentación, y actualmente estoy desarrollando mi portafolio profesional para postularme a
+            mi primer empleo como desarrollador trainee o junior.
+          </p>
+          <p>
+            Mi pasión por la electrónica y el software me impulsa a buscar proyectos donde pueda fusionar ambos mundos,
+            aplicando mis conocimientos en sistemas embebidos, automatización y desarrollo de software para crear
+            soluciones innovadoras.
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="bloque">
+          <h2>Formación y enfoque</h2>
+          <p>
+            Cuento con más de 10 años de experiencia técnica en electrónica, especialmente en sistemas de potencia,
+            automatización y mantenimiento de equipos. Esta base técnica fortalece mi enfoque como ingeniero de
+            software, aportando criterio de ingeniería real y comprensión profunda de sistemas.
+          </p>
+        </div>
+
+        <hr>
+
+        <div class="bloque">
+          <h2>Transición al desarrollo de software</h2>
+          <p>
+            Pasé de la electrónica a la ingeniería de software al entender que el futuro está en la integración entre
+            hardware y software. Desarrollo proyectos con HTML, CSS y JavaScript, aprendo Angular y estoy construyendo
+            bases en backend para evolucionar hacia un perfil full-stack con criterio técnico sólido.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -77,18 +102,17 @@
   </footer>
 
   <script>
-        // Lógica para el menú de hamburguesa
-        const toggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
-        const menuToggleImage = toggle.querySelector("img");
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-        if (toggle && navLinks) {
-        toggle.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-            toggle.classList.toggle("active");
-        });
-        }
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        toggle.classList.toggle("active");
+      });
+    }
   </script>
 
 </body>
+
 </html>
