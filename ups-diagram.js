@@ -26,64 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const blockData = {
         "ac-input": {
             title: "¿Qué es la corriente AC?",
-            content: `
-                <div class="modal-section">
-                    <p>La electricidad es fundamental para los sistemas UPS (Uninterruptible Power System), diseñados precisamente para garantizar un suministro continuo de energía. La corriente alterna (AC, Alternating Current), representada por el símbolo eléctrico de una onda sinusoidal (~), es uno de los dos tipos de energía que dominan nuestro mundo. Se usa principalmente porque es más sencilla y económica transmitirla a largas distancias. El otro tipo es la corriente directa (DC, Direct Current).</p>
-                    
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/MuZtpko3TSM" title="Trailer La Guerra de las Corrientes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-
-                    <p>Dos grandes personajes del siglo pasado defendieron cada sistema: Thomas Alva Edison apostó por la DC, mientras que Nikola Tesla (con "k") defendió el AC. Ambos visionarios, científicos e inventores mundialmente reconocidos, representaban formas distintas de entender el futuro energético que hoy habitamos. Incluso llegaron a trabajar juntos, dejando marcas indelebles en la historia: Edison, creador de la bombilla incandescente, iluminó literalmente el mundo; Tesla, con su genialidad, nos legó inventos revolucionarios como el motor de inducción.</p>
-
-                    <div class="multimedia-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0; align-items: center;">
-                        <div class="movie-poster">
-                            <img src="./images/currentWar.jpg" alt="Póster La Guerra de las Corrientes" style="width: 100%; border-radius: 8px; box-shadow: 0 0 15px rgba(30,144,255,0.3);">
-                            <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Película "The Current War"</p>
-                        </div>
-                        <div class="biography-videos" style="display: flex; flex-direction: column; gap: 15px;">
-                            <div class="video-container" style="margin: 0;">
-                                <!-- Video Tesla -->
-                                <iframe src="https://www.youtube.com/embed/oESNo52Z-vo" title="Nikola Tesla Biografía" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                             <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin: 0 0 10px 0;">Nikola Tesla (AC)</p>
-                            
-                            <div class="video-container" style="margin: 0;">
-                                <!-- Video Edison -->
-                                <iframe src="https://www.youtube.com/embed/bfLK7PUMu5U" title="Thomas Edison Biografía" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin: 0;">Thomas Edison (DC)</p>
-                        </div>
-                    </div>
-
-                    <p>La influencia de esta rivalidad trasciende la ingeniería. La compañía de automóviles Tesla rinde homenaje a su legado, y la banda australiana AC/DC tomó su nombre al ver estas siglas en un electrodoméstico. Incluso, esta épica batalla tecnológica llegó al cine en la película "La guerra de las corrientes", que recrea la competencia entre estos gigantes.</p>
-
-                    <div class="multimedia-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
-                        <div class="image-container" style="background: #0f172a; border-radius: 8px; display: flex; flex-direction: column; justify-content: center;">
-                             <img src="./images/EddisonVrsTesla.png" alt="Tesla vs Edison" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
-                             <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Rivalidad: Edison vs Tesla</p>
-                        </div>
-                        <div class="image-container" style="background: #0f172a; border-radius: 8px; display: flex; flex-direction: column; justify-content: center;">
-                             <img src="./images/AcDc.jpg" alt="Diagrama AC vs DC" style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
-                             <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Diagrama: Diferencias AC/DC</p>
-                        </div>
-                    </div>
-
-                    <h3 style="color: var(--azul); margin-top: 2.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">Explicación: Corriente Alterna vs Directa</h3>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/boQ6hMpp7kI?start=121" title="Explicación AC vs DC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-
-                    <h3 style="color: var(--azul); margin-top: 2.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">Características de la Onda Sinusoidal</h3>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/CzvR_bm-624" title="Características de la Onda Sinusoidal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            `
+            // El contenido se carga desde el template HTML "content-ac-input"
+            content: document.getElementById("content-ac-input") ? document.getElementById("content-ac-input").innerHTML : "<p>Error: Template no encontrado</p>"
         },
         "main-switch": {
             title: "Interruptor Principal (Main Switch)",
-            content: "<p>Desconecta la alimentación de entrada para mantenimiento o seguridad.</p>"
+            content: document.getElementById("content-main-switch") ? document.getElementById("content-main-switch").innerHTML : "<p>Error: Template no encontrado</p>"
         },
         "fuse": {
             title: "Fusible (Fuse)",
@@ -155,20 +103,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    hotspots.forEach(hotspot => {
-        hotspot.addEventListener("click", () => {
-            const id = hotspot.getAttribute("data-id");
-            console.log("Click en hotspot:", id); // Depuración
+    // Lógica del Indicador de Scroll
+    const scrollIndicator = document.getElementById("scrollIndicator");
 
-            if (blockData[id]) {
-                modalTitle.textContent = blockData[id].title;
-                modalBody.innerHTML = blockData[id].content;
-                modal.style.display = "block";
-            } else {
-                console.warn("No hay datos para el ID:", id);
-            }
-        });
-    });
+    function checkScroll() {
+        if (!modalBody || !scrollIndicator) return;
+
+        // Tolerancia de 10px
+        if (modalBody.scrollTop + modalBody.clientHeight >= modalBody.scrollHeight - 10) {
+            scrollIndicator.innerHTML = 'Fin';
+        } else {
+            scrollIndicator.innerHTML = 'Scroll para ver más <span style="font-size: 1.2em;">↓</span>';
+        }
+    }
+
+    if (modalBody) {
+        modalBody.addEventListener("scroll", checkScroll);
+    }
 
     // Cerrar modal
     if (closeBtn) {
@@ -181,5 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    });
+
+    // Resetear scroll al cerrar, pero para la apertura necesitamos disparar checkScroll
+    // Modificamos el listener de los hotspots para chequear scroll al abrir
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener("click", () => {
+            const id = hotspot.getAttribute("data-id");
+            console.log("Click en hotspot:", id); // Depuración
+
+            if (blockData[id]) {
+                modalTitle.textContent = blockData[id].title;
+                modalBody.innerHTML = blockData[id].content;
+                modal.style.display = "block";
+
+                // Resetear scroll arriba
+                modalBody.scrollTop = 0;
+                // Verificar estado inicial del indicador (por si el contenido es corto)
+                setTimeout(checkScroll, 100);
+            } else {
+                console.warn("No hay datos para el ID:", id);
+            }
+        });
     });
 });

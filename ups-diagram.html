@@ -96,8 +96,7 @@
             </p>
 
             <figure style="margin: 2rem 0;">
-                <img src="./images/upsDiagram.jpg"
-                    alt="Diagrama Estándar UPS Online Doble Conversión"
+                <img src="./images/upsDiagram.jpg" alt="Diagrama Estándar UPS Online Doble Conversión"
                     style="max-width: 100%; border-radius: 8px; border: 1px solid var(--azul); box-shadow: 0 0 15px rgba(30, 144, 255, 0.2);">
                 <figcaption style="color: var(--gris); margin-top: 1rem; font-size: 0.9rem;">
                     Figura 1: Representación estándar simplificada de una UPS Online Doble Conversión.
@@ -107,7 +106,8 @@
             <p style="font-size: 1.1rem; line-height: 1.8;">
                 Aunque este diagrama simplificado es útil para entender el concepto general, una UPS moderna es una
                 máquina mucho más compleja.
-                El diagrama interactivo que desarrollamos arriba (primera imagen) pretende exponer esa complejidad, permitiendo explorar
+                El diagrama interactivo que desarrollamos arriba (primera imagen) pretende exponer esa complejidad,
+                permitiendo explorar
                 subsistemas críticos como el
                 <strong>PFC (Corrección de Factor de Potencia)</strong>, la lógica de control <strong>DSP</strong> y las
                 etapas de sensado que hacen posible la protección de cargas críticas.
@@ -116,12 +116,389 @@
     </section>
 
     <!-- Modal -->
+    <!-- Templates para contenido de Modales -->
+    <template id="content-ac-input">
+        <div class="modal-section">
+            <p>La electricidad es fundamental para los sistemas UPS (Uninterruptible Power System), diseñados
+                precisamente para garantizar un suministro continuo de energía. La corriente alterna (AC, Alternating
+                Current), representada por el símbolo eléctrico de una onda sinusoidal (~), es uno de los dos tipos de
+                energía que dominan nuestro mundo. Se usa principalmente porque es más sencilla y económica transmitirla
+                a largas distancias. El otro tipo es la corriente directa (DC, Direct Current).</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/MuZtpko3TSM" title="Trailer La Guerra de las Corrientes"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p>Dos grandes personajes del siglo pasado defendieron cada sistema: Thomas Alva Edison apostó por la DC,
+                mientras que Nikola Tesla defendió el AC. Ambos visionarios, científicos e inventores mundialmente
+                reconocidos, representaban formas distintas de entender el futuro energético que hoy habitamos. Incluso
+                llegaron a trabajar juntos, dejando marcas indelebles en la historia: Edison, creador de la bombilla
+                incandescente, iluminó literalmente el mundo; Tesla, con su genialidad, nos legó inventos
+                revolucionarios como el motor de inducción.</p>
+
+            <div class="multimedia-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0; align-items: center;">
+                <div class="movie-poster">
+                    <img src="./images/currentWar.jpg" alt="Póster La Guerra de las Corrientes"
+                        style="width: 100%; border-radius: 8px; box-shadow: 0 0 15px rgba(30,144,255,0.3);">
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Película "The
+                        Current War"</p>
+                </div>
+                <div class="biography-videos" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="video-container" style="margin: 0;">
+                        <!-- Video Tesla -->
+                        <iframe src="https://www.youtube.com/embed/oESNo52Z-vo" title="Nikola Tesla Biografía"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin: 0 0 10px 0;">Nikola
+                        Tesla (AC)</p>
+
+                    <div class="video-container" style="margin: 0;">
+                        <!-- Video Edison -->
+                        <iframe src="https://www.youtube.com/embed/bfLK7PUMu5U" title="Thomas Edison Biografía"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin: 0;">Thomas Edison (DC)
+                    </p>
+                </div>
+            </div>
+
+            <p>La influencia de esta rivalidad trasciende la ingeniería. La compañía de automóviles Tesla rinde homenaje
+                a su legado, y la banda australiana AC/DC tomó su nombre al ver estas siglas en un electrodoméstico.
+                Incluso, esta épica batalla tecnológica llegó al cine en la película "La guerra de las corrientes", que
+                recrea la competencia entre estos gigantes.</p>
+
+            <div class="multimedia-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
+                <div class="image-container"
+                    style="background: #0f172a; border-radius: 8px; display: flex; flex-direction: column; justify-content: center;">
+                    <img src="./images/EddisonVrsTesla.png" alt="Tesla vs Edison"
+                        style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Rivalidad:
+                        Edison vs Tesla</p>
+                </div>
+                <div class="image-container"
+                    style="background: #0f172a; border-radius: 8px; display: flex; flex-direction: column; justify-content: center;">
+                    <img src="./images/AcDc.jpg" alt="Diagrama AC vs DC"
+                        style="width: 100%; height: 300px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Diagrama:
+                        Diferencias AC/DC</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">
+                Explicación: Corriente Alterna vs Directa</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/boQ6hMpp7kI?start=121" title="Explicación AC vs DC"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px;">
+                Características de la Onda Sinusoidal</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CzvR_bm-624" title="Características de la Onda Sinusoidal"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <!-- Nueva Sección: Problemas de Energía -->
+            <h2 style="color: var(--azul); margin-top: 3rem; border-top: 2px solid var(--azul); padding-top: 20px;">
+                Problemas de la energía que soluciona una UPS</h2>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Caída de Tensión (SAG o Bajón)</h3>
+            <p>Las caídas de tensión, conocidas técnicamente como SAG (del inglés Sag, que significa hundimiento o
+                depresión) o bajones, son reducciones momentáneas del voltaje entre el 10% y el 90% del valor nominal,
+                con duraciones típicas de medio ciclo a varios segundos. Estos eventos son particularmente peligrosos
+                para fuentes de poder con PFC (Power Factor Correction) activo, ya que cuando el voltaje de entrada
+                desciende por debajo del rango de operación del conversor DC-DC, la fuente intenta compensar extrayendo
+                más corriente para mantener la potencia de salida constante (recordando que P = V × I), sobrecalentando
+                los semiconductores de primario. Las causas principales incluyen el arranque de motores de inducción de
+                gran tamaño (que pueden demandar 5 a 8 veces su corriente nominal durante el inrush, es decir, la
+                corriente de energización o arranque que fluye en el instante de conectar el equipo), la conexión
+                repentina de cargas resistivas como hornos industriales, o fases no lineales a tierra en la red de
+                distribución que crean desequilibrios de tensión. En sistemas informáticos, un SAG profundo provoca que
+                la PSU (Power Supply Unit) entre en modo de hold-up (retención o respaldo), utilizando la energía
+                almacenada en sus capacitores internos para mantener estable la salida durante los milisegundos que dura
+                la falla; si el evento supera el tiempo de retención típico (10-20 ms), el sistema reinicia
+                abruptamente.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Sobrevoltaje (Swell)</h3>
+            <p>El sobrevoltaje o Swell es el fenómeno opuesto al SAG, consistente en un aumento temporal de la tensión
+                entre el 110% y el 180% del nominal, generalmente causado por la desconexión repentina de cargas pesadas
+                en la misma fase o por fallas monofásicas en sistemas trifásicos que redistribuyen el voltaje hacia las
+                fases sanas. Cuando una carga inductiva grande (como un motor o transformador) se desconecta
+                repentinamente, la energía almacenada en el campo magnético del devanado debe disiparse, generando un
+                pico de voltaje que se suma al potencial de la línea. En instalaciones fotovoltaicas, los Swells pueden
+                producirse por el efecto de reflexión de ondas de voltaje cuando la generación supera la demanda local y
+                la energía no puede exportarse rápidamente a la red. Este tipo de evento acelera el envejecimiento de
+                aislamientos eléctricos y puede activar los DPS (Dispositivos de Protección contra Sobretensiones,
+                conocidos en otros países como SPD o supresores) o las protecciones internas OVP (Over Voltage
+                Protection) de las fuentes conmutadas, causando apagados preventivos no deseados para proteger la carga.
+            </p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Variaciones de Larga Duración</h3>
+            <p>Estas perturbaciones se caracterizan por mantener el voltaje fuera de los límites normales (alto o bajo)
+                por períodos superiores a 60 segundos, diferenciándose de los SAG o Swell por su persistencia temporal.
+                Una variación de bajo voltaje prolongada, conocida técnicamente como brownout (apagón parcial o
+                reducción de voltaje), suele ocurrir durante picos de demanda estacionales, cuando la red de
+                distribución no puede mantener la regulación de voltaje ante la caída de impedancia equivalente de los
+                transformadores. Por el contrario, las variaciones de alto voltaje pueden deberse a reguladores de
+                tensión defectuosos en subestaciones o a la desconexión masiva de carga en una zona. A diferencia de los
+                eventos transitorios, estas condiciones generan estrés térmico continuo en equipos: los motores operan
+                con corrientes mayores (para mantener el par constante, es decir, el torque o fuerza de giro necesaria
+                para mover la carga mecánica), los capacitores electrolíticos experimentan mayor corriente de rizado
+                (ripple current, que es la corriente alterna que atraviesa el capacitor superpuesta a la DC, causando
+                calentamiento interno), y las fuentes conmutadas trabajan fuera de su rango óptimo de eficiencia,
+                reduciendo su vida útil porque sus semiconductores (MOSFETs y diodos) operan con mayores pérdidas por
+                conmutación y conducción, acelerando la degradación térmica de los materiales.</p>
+
+            <div class="image-container" style="margin: 2rem 0; text-align: center;">
+                <img src="./images/ProCaliEnergia.jpg" alt="Problemas de Calidad de Energía"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Gráfico: Resumen
+                    de Problemas de Calidad de Energía</p>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Variación de Frecuencia</h3>
+            <p>La variación de frecuencia consiste en desviaciones del valor nominal de 50 Hz o 60 Hz del sistema
+                eléctrico, típicamente en rangos de ±0.5 Hz a ±2 Hz, aunque en condiciones extremas pueden ser mayores.
+                Esta perturbación es crítica en sistemas donde la velocidad de motores síncronos determina procesos
+                industriales (como en plantas de papel o textiles), ya que la velocidad rotacional (número de
+                revoluciones por minuto que gira el eje) es directamente proporcional a la frecuencia según la fórmula n
+                = 120f/p, donde n es la velocidad en rpm (revoluciones por minuto), f es la frecuencia de la red en Hz,
+                y p es el número de polos del motor (que determina su velocidad síncrona base). Las causas principales
+                son desbalances entre generación y carga: si la demanda supera la generación, la frecuencia cae (como
+                cuando un motor se carga y reduce sus rpm); si sobra generación, la frecuencia sube. En sistemas
+                conectados a red, estas variaciones son raras debido a la inercia de rotación de los generadores
+                sincrónicos masivos, pero en instalaciones con generación propia (islas eléctricas) o en países con
+                redes inestables, pueden dañar equipos sensibles a cristal de cuarzo (relojes, comunicaciones) o causar
+                resonancias mecánicas en turbinas.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Sobrecorriente Transitoria (Pico de Corriente)</h3>
+            <p>Estos eventos son ráfagas momentáneas de intensidad de corriente que exceden significativamente el valor
+                nominal del circuito, distintos a los picos de tensión aunque relacionados por la impedancia del sistema
+                según la ley de Ohm generalizada: V = I × Z, donde V es el voltaje resultante, I es la corriente que
+                circula, y Z es la impedancia total del circuito (que incluye la resistencia R más la reactancia
+                inductiva y capacitiva). Esta ecuación indica que una corriente elevada multiplicada por la impedancia
+                de la línea genera una caída de voltaje instantánea, afectando a equipos conectados en el mismo punto
+                común. Se manifiestan principalmente durante el arranque de equipos con motores (inrush current), donde
+                la corriente de magnetización del estator (la parte fija del motor donde están enrollados los cables de
+                cobre que generan el campo magnético) puede alcanzar 600% del valor de plena carga durante los primeros
+                ciclos, o en la energización de transformadores, donde el flujo remanente en el núcleo puede sumarse al
+                flujo aplicado causando saturación y corrientes asimétricas de hasta 10 veces el nominal. También se
+                producen por cortocircuitos parciales o arcos eléctricos. Estos picos de corriente generan caídas de
+                voltaje instantáneas en la impedancia de la línea (regulación de tensión), afectando a equipos
+                conectados en el mismo punto común, y pueden disparar breakers térmicos o fusibles de acción rápida de
+                manera indeseada.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Distorsión Armónica</h3>
+            <p>La distorsión armónica es la deformación de la onda senoidal pura de la red eléctrica causada por la
+                presencia de múltiplos enteros de la frecuencia fundamental (3ª, 5ª, 7ª armónica, etc.), típicamente
+                generados por cargas no lineales como rectificadores de onda completa, fuentes conmutadas, variadores de
+                velocidad VFD (del inglés Variable Frequency Drive, conocidos en español como variadores de frecuencia o
+                drives de velocidad variable) y equipos de iluminación LED. Estas cargas consumen corriente en pulsos
+                cortos durante los picos de voltaje de la onda fundamental, en lugar de hacerlo de manera sinusoidal
+                continua. El resultado es una onda con "dientes" o "mellones" que contiene componentes de 150 Hz, 250
+                Hz, 350 Hz (en sistema de 50 Hz). Los armónicos de orden impar (especialmente el 3º, 9º y 15º) se suman
+                en el conductor neutro, pudiendo llevarlo a sobrecarga térmica aun cuando las fases están balanceadas,
+                ya que en el neutro no se cancelan sino que se suman. Esto provoca calentamiento excesivo en
+                transformadores, vibración en motores (torque pulsante) y errores de medición en equipos de protección
+                que calculan valores RMS verdaderos.</p>
+        </div>
+    </template>
+
+    <template id="content-main-switch">
+        <div class="modal-section">
+            <h3 style="color: var(--azul); margin-top: 1rem;">Interruptores Automáticos en la Arquitectura de la UPS
+            </h3>
+            <p>Los interruptores automáticos o breakers (del inglés circuit breaker) constituyen la primera línea de
+                defensa en cualquier sistema de alimentación ininterrumpida, instalándose tanto en la entrada de red
+                como en la salida hacia la carga crítica para garantizar la seguridad del equipo y del personal. Dentro
+                de una UPS, estos dispositivos cumplen una función dual: protegen el propio sistema UPS contra fallas
+                internas o externas, y aíslan la carga cuando se detectan condiciones anómalas que podrían propagarse
+                desde la red eléctrica. Su principio de operación combina dos mecanismos distintos que actúan en
+                diferentes escalas de tiempo: un elemento térmico que responde a sobrecargas prolongadas generando calor
+                por el efecto Joule (donde la potencia disipada P equivale al cuadrado de la corriente I multiplicada
+                por la resistencia R del conductor, es decir P = I² × R). Y un elemento magnético instantáneo que
+                reacciona a picos de corriente por cortocircuito mediante una bobina de solenoide que genera un campo
+                magnético proporcional a la intensidad.</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/XAVAaPI4o_U"
+                    title="Funcionamiento del Interruptor Automático" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Tipología de Polos y Configuraciones en UPS</h3>
+            <p>La selección del breaker según su número de polos es determinante para el tipo de instalación eléctrica y
+                el nivel de aislamiento requerido, especialmente considerando el sistema de puesta a tierra
+                implementado. En el sistema TN-S (Terra-Neutro Separado), estándar en centros de datos, el neutro de
+                protección (PE) y el neutro de trabajo (N) van separados desde el transformador hasta la carga,
+                proporcionando una referencia limpia; mientras que en el sistema TT (Terra-Tierra), común en edificios
+                residenciales, el neutro se conecta a tierra en el transformador de la compañía y las masas se conectan
+                a una puesta a tierra local independiente, lo que obliga al uso de protección diferencial por la alta
+                impedancia de retorno. Los breakers monopolares (1P) cortan únicamente el conductor de fase (línea) y se
+                emplean en circuitos monofásicos de control interno de la UPS, protección de ventiladores auxiliares, o
+                salidas individuales de PDU (Power Distribution Unit) donde no se requiere aislar el neutro. Sin
+                embargo, en instalaciones donde la seguridad exige desconectar completamente el circuito para
+                mantenimiento, o cuando se implementa protección diferencial en sistemas TT, se utilizan breakers
+                bipolares (2P), que accionan simultáneamente sobre la fase y el neutro mediante un mecanismo de
+                acoplamiento mecánico interno; esto es crítico en UPS monofásicas de alta capacidad o en el bypass
+                estático, donde un corte solo de fase podría dejar el neutro conectado a una referencia de tierra
+                elevada por capacitancias parásitas, creando riesgo de choque eléctrico. Para sistemas trifásicos, los
+                breakers tripolares (3P) interrumpen las tres fases (L1, L2, L3) simultáneamente y se instalan como
+                interruptores principales de entrada en UPS trifásicas, garantizando que ante una falla se desconecte
+                completamente el suministro de la red hacia el rectificador. Cuando el sistema trifásico incluye neutro
+                distribuido (TN-S o TT), se emplean breakers tetrapolares (4P), que añaden la apertura del neutro para
+                evitar que corrientes de retorno circulen por trayectorias no deseadas durante operación en modo
+                batería, situación común cuando la UPS conecta su propio neutro flotante o referido a tierra mediante
+                una impedancia de aislamiento.</p>
+
+            <div class="image-container" style="margin: 2rem 0; text-align: center;">
+                <img src="./images/tipBreakers.png" alt="Tipología de Breakers"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Tipos de Breakers
+                    y Polos</p>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Protección Térmica: El Principio del Bimetal y las Curvas
+                de Disparo</h3>
+            <p>El elemento térmico de un breaker opera basándose en la dilatación diferencial de metales, utilizando una
+                lámina bimetálica compuesta por dos aleaciones (generalmente acero y latón o acero y níquel) unidas
+                sólidamente que poseen coeficientes de expansión térmica distintos. Cuando la corriente circula por el
+                breaker, atraviesa esta lámina o pasa cerca de ella mediante un elemento calefactor en derivación
+                (shunt), generando calor proporcional al cuadrado de la corriente según la ley de Joule. A medida que la
+                temperatura aumenta, el metal con mayor coeficiente de expansión (típicamente el latón) se alarga más
+                que el otro, forzando a la lámina a curvarse hacia el lado del metal de menor expansión. Cuando la
+                sobrecarga persiste más allá del tiempo permitido por la curva de disparo (inversamente proporcional a
+                la magnitud de la sobrecarga: a mayor exceso de corriente, menor tiempo de actuación), la curvatura
+                acumulada empuja un mecanismo de liberación que desengancha los contactos principales, abriendo el
+                circuito de forma irreversible hasta el rearme manual.</p>
+            <p>La velocidad de respuesta térmica y el umbral del disparo magnético instantáneo se clasifican en curvas
+                de disparo estandarizadas (A, B, C, D), que definen el múltiplo de la corriente nominal (In) al cual
+                actúa el mecanismo magnético y la tolerancia temporal del bimetal. La Curva A es la más sensible,
+                diseñada para protección de circuitos con cargas puramente resistivas y baja impedancia, donde se
+                requiere disparo rápido ante sobrecorrientes mínimas; dispara su elemento magnético entre 2 y 3 veces
+                In, siendo ideal para protección de semiconductores y circuitos electrónicos sensibles donde hasta
+                pequeñas sobrecargas pueden ser dañinas, aunque su uso en UPS es limitado porque dispararía ante los
+                picos normales de arranque de equipos con capacitores de filtrado. La Curva B está diseñada para cargas
+                resistivas con baja corriente de arranque, disparando su mecanismo magnético entre 3 y 5 veces In; se
+                utiliza en protección de iluminación LED y circuitos domésticos, pero en el contexto de UPS se emplea
+                ocasionalmente solo en circuitos auxiliares de control o iluminación de emergencia, nunca en salidas
+                generales porque los servidores y equipos informáticos generan picos de encendido que activarían el
+                disparo intempestivo. La Curva C es el estándar para instalaciones mixtas y el más común en salidas de
+                UPS comerciales e industriales, disparando entre 5 y 10 veces In en el magnético; esto permite tolerar
+                los picos de arranque de fuentes conmutadas, computadoras y pequeños motores sin activarse, pero
+                respondiendo rápidamente ante cortocircuitos reales, soportando por ejemplo 80 A en un breaker de 16 A
+                durante aproximadamente 0.1 segundos antes del disparo magnético, o 23 A durante cerca de una hora antes
+                del disparo térmico. La Curva D está específicamente diseñada para cargas con alta corriente de arranque
+                (inrush), disparando entre 10 y 20 veces In; es obligatoria en UPS que alimentan transformadores,
+                motores de inducción, compresores de aire acondicionado o grandes fuentes conmutadas, donde la corriente
+                de magnetización inicial puede alcanzar 8 a 15 veces la nominal durante los primeros ciclos, tolerando
+                hasta 640 A en un breaker de 32 A durante 10 milisegundos sin disparar, permitiendo que el motor
+                arranque mientras protege contra cortocircuitos de valor superior. En los MCCB (Molded Case Circuit
+                Breaker) de media y alta capacidad dentro de la arquitectura UPS, estos umbrales son ajustables mediante
+                diales calibrados que varían la distancia entre la lámina bimetálica y el punto de disparo, permitiendo
+                configurar el tiempo de retardo para tolerar picos específicos de arranque de motores conectados a la
+                salida sin disparos intempestivos. En el siguiente video se comprende mucho mejor:</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/7VV8z4x7EYw" title="Curvas de Disparo Breakers"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Breakers de Caja Moldeada (MCCB) en Sistemas UPS</h3>
+            <p>En las UPS de mediana y gran capacidad (típicamente desde 10 kVA hasta varios MVA), los breakers de caja
+                moldeada o MCCB se instalan como interruptores principales de entrada (breaker de aislamiento de red) y
+                como protección de salida hacia los tableros de distribución. Estos dispositivos se caracterizan por su
+                carcasa fabricada en termoplástico moldeado de alta resistencia dieléctrica que encapsula los mecanismos
+                de arco y los contactos principales, soportando corrientes nominales (In) que van desde los 16 A hasta
+                los 1600 A según el modelo. Su capacidad de ruptura (Icu o corriente última de ruptura) alcanza valores
+                entre 25 kA y 150 kA, garantizando que puedan interrumpir fallas de cortocircuito severas en la entrada
+                de la UPS sin destruirse ni propagar el arco eléctrico hacia el interior del gabinete. Además, muchos
+                MCCB incluyen accesorios de disparo por bobina de mínima tensión (UV, Under Voltage) que desconectan
+                automáticamente la UPS si la red cae por debajo de un umbral crítico, protegiendo la batería de
+                descargas profundas accidentales.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Coordinación Selectiva y Capacidad de Ruptura</h3>
+            <p>La selección de breakers en una UPS debe respetar la coordinación selectiva, es decir, que el breaker de
+                la UPS tenga una capacidad de ruptura superior a la corriente de cortocircuito máxima calculada en el
+                punto de conexión a la red (Icc), y que sus curvas de disparo sean temporizadas para actuar antes que
+                los breakers aguas arriba (de la red pública) pero después que los protectores aguas abajo (de la
+                carga), creando una cascada de protección donde solo se aísla la sección fallada. Los breakers de
+                protección amplia (high breaking capacity) en la entrada de la UPS deben soportar no solo la corriente
+                nominal de operación continua, sino también los picos de corriente de cortocircuito que la red pueda
+                entregar, calculados mediante la impedancia de cortocircuito del transformador de distribución cercano
+                según la fórmula Z = V / (√3 × Icc), donde Z es la impedancia de la fuente en ohmios, V el voltaje línea
+                a línea en voltios, e Icc la corriente de cortocircuito trifásica disponible en amperios. Si un breaker
+                de entrada de UPS tiene capacidad de ruptura insuficiente, ante un cortocircuito grave podría explotar o
+                soldar sus contactos, propagando la falla hacia el interior del equipo y comprometiendo la integridad
+                física del sistema de baterías.</p>
+
+            <div class="image-container" style="margin: 2rem 0; text-align: center;">
+                <img src="./images/TablaSelecBreak.png" alt="Tabla Comparativa de Breakers"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Tabla Comparativa
+                    de Breakers en Sistemas UPS</p>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem; border-top: 1px solid var(--azul); padding-top: 20px;">
+                Glosario de Términos Técnicos en Breakers</h3>
+            <p>Si te fijas en los costados o frontales de los disyuntores, como vimos en el primer video de esta
+                seccion, hay varias convenciones, a continuacion puedes ver que significa cada uno:</p>
+            <p><strong>In (Corriente Nominal):</strong> Es la corriente máxima que el breaker puede conducir
+                indefinidamente a temperatura ambiente sin dispararse por sobrecarga térmica. Por ejemplo, un breaker de
+                In = 32 A puede operar 24/7 a 32 A, pero si la corriente sube a 40 A (1.25 veces In), el bimetal
+                calentará y disparará en aproximadamente 1 hora según su curva característica.</p>
+            <p><strong>Icu (Corriente Última de Ruptura):</strong> También denominada Icn en normas IEC, representa la
+                máxima corriente de cortocircuito que el breaker puede interrumpir sin destruirse ni propagar el arco.
+                Si la corriente de falla en el punto de instalación es 20 kA, el breaker debe tener Icu ≥ 20 kA. En la
+                entrada de una UPS conectada a una subestación cercana, es común encontrar Icu de 65 kA o 100 kA.</p>
+            <p><strong>Ics (Corriente de Servicio de Ruptura):</strong> Es el porcentaje de Icu que el breaker puede
+                interrumpir y seguir operando normalmente después (típicamente 50%, 75% o 100% de Icu). Un breaker con
+                Icu = 50 kA e Ics = 100% puede abrir 50 kA y seguir usándose; si solo tiene Ics = 50%, después de abrir
+                25 kA debería reemplazarse por precaución.</p>
+            <p><strong>IΔn (Corriente de Fuga Nominal):</strong> Exclusivo de breakers diferenciales (RCCB/ID), indica
+                la corriente de desbalance fase-neutro que provoca el disparo instantáneo. Valores típicos: 10 mA
+                (protección personal directa en hospitales), 30 mA (protección general en húmedo), 100-300 mA
+                (protección contra incendios en seco).</p>
+            <p><strong>Botón T (Test/Trip):</strong> Presente únicamente en breakers diferenciales (RCCB e RCBO), es un
+                pulsador que simula una fuga de corriente interna para verificar que el mecanismo de disparo magnético
+                funcione correctamente. Debe pulsarse mensualmente para garantizar que la bobina diferencial no esté
+                bloqueada por suciedad o corrosión. No confundir con el botón de rearme tras disparo.</p>
+            <p><strong>Ue (Tensión Nominal de Empleo):</strong> Máximo voltaje que el breaker puede soportar
+                permanentemente sin riesgo de arco entre polos. Para UPS monofásicas: Ue = 230/240 VAC; para trifásicas:
+                Ue = 400/415 VAC o 690 VAC en industriales.</p>
+            <p><strong>Impedancia de Cortocircuito (Z):</strong> Determina la Icu requerida según Z = V / (√3 × Icc),
+                donde V es el voltaje línea-línea, e Icc la corriente de cortocircuito trifásica disponible. Una UPS
+                ubicada cerca del transformador de la subestación tendrá Z baja e Icc alta, exigiendo breakers con Icu ≥
+                65 kA.</p>
+        </div>
+    </template>
+
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 id="modalTitle">Título del Bloque</h2>
             <div id="modalBody">
                 <p>Selecciona un bloque para ver su información.</p>
+            </div>
+            <!-- Indicador de Scroll -->
+            <div class="scroll-indicator" id="scrollIndicator">
+                Scroll para ver más <span style="font-size: 1.2em;">↓</span>
             </div>
         </div>
     </div>

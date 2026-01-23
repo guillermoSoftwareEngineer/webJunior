@@ -201,7 +201,8 @@ body {
     /* Altura casi completa */
     border-radius: 12px;
     box-shadow: 0 0 30px var(--azul);
-    color: white;
+    color: #cbd5e1;
+    /* Gris claro amigable para la vista */
     position: relative;
     animation: zoomIn 0.3s ease;
     display: flex;
@@ -251,7 +252,38 @@ body {
     /* Scroll interno */
     flex: 1;
     padding-right: 10px;
-    /* Espacio para scrollbar */
+    padding-bottom: 40px;
+    /* Espacio para el indicador de scroll */
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to top, #0f172a 80%, transparent);
+    color: var(--azul);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0 0 12px 12px;
+    pointer-events: none;
+    /* Permitir scroll aunque el mouse esté encima */
+    letter-spacing: 1px;
+    animation: fadePulse 2s infinite;
+}
+
+@keyframes fadePulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Scrollbar personalizada para el modal */
@@ -343,6 +375,36 @@ body {
     .nav ul li {
         padding: 0.5rem 0;
         text-align: center;
+    }
+
+    /* Modal Responsive */
+    .modal-content {
+        padding: 1.5rem;
+        /* Menos padding en móvil */
+        width: 95%;
+        margin: 5% auto;
+        /* Más margen vertical */
+        height: 90vh;
+    }
+
+    #modalTitle {
+        font-size: 1.5rem;
+        /* Título más pequeño */
+        padding-right: 30px;
+        /* Espacio para el botón cerrar */
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 38px;
+        /* Botón más grande para tocar */
+    }
+
+    /* Ajuste para imágenes en móvil */
+    .image-container img {
+        box-shadow: 0 0 5px rgba(30, 144, 255, 0.2);
+        /* Sombra más ligera */
     }
 }
 
