@@ -222,7 +222,8 @@
                 para fuentes de poder con PFC (Power Factor Correction) activo, ya que cuando el voltaje de entrada
                 desciende por debajo del rango de operación del conversor DC-DC, la fuente intenta compensar extrayendo
                 más corriente para mantener la potencia de salida constante (recordando que P = V × I), sobrecalentando
-                los semiconductores de primario. Las causas principales incluyen el arranque de motores de inducción de
+                los semiconductores de primario (lo veremos mas a profundidad en etapas siguientes). Las causas
+                principales incluyen el arranque de motores de inducción de
                 gran tamaño (que pueden demandar 5 a 8 veces su corriente nominal durante el inrush, es decir, la
                 corriente de energización o arranque que fluye en el instante de conectar el equipo), la conexión
                 repentina de cargas resistivas como hornos industriales, o fases no lineales a tierra en la red de
@@ -274,9 +275,12 @@
                 eléctrico, típicamente en rangos de ±0.5 Hz a ±2 Hz, aunque en condiciones extremas pueden ser mayores.
                 Esta perturbación es crítica en sistemas donde la velocidad de motores síncronos determina procesos
                 industriales (como en plantas de papel o textiles), ya que la velocidad rotacional (número de
-                revoluciones por minuto que gira el eje) es directamente proporcional a la frecuencia según la fórmula n
-                = 120f/p, donde n es la velocidad en rpm (revoluciones por minuto), f es la frecuencia de la red en Hz,
-                y p es el número de polos del motor (que determina su velocidad síncrona base). Las causas principales
+                revoluciones por minuto que gira el eje) es directamente proporcional a la frecuencia según la
+                fórmula<br><br>
+                n = 120f/p <br> donde: <br> n es la velocidad en rpm (revoluciones por minuto) <br> f es la frecuencia
+                de la red en Hz <br>
+                y p es el número de polos del motor (que determina su velocidad síncrona base) <br><br> Las causas
+                principales
                 son desbalances entre generación y carga: si la demanda supera la generación, la frecuencia cae (como
                 cuando un motor se carga y reduce sus rpm); si sobra generación, la frecuencia sube. En sistemas
                 conectados a red, estas variaciones son raras debido a la inercia de rotación de los generadores
@@ -287,9 +291,11 @@
             <h3 style="color: var(--azul); margin-top: 2rem;">Sobrecorriente Transitoria (Pico de Corriente)</h3>
             <p>Estos eventos son ráfagas momentáneas de intensidad de corriente que exceden significativamente el valor
                 nominal del circuito, distintos a los picos de tensión aunque relacionados por la impedancia del sistema
-                según la ley de Ohm generalizada: V = I × Z, donde V es el voltaje resultante, I es la corriente que
-                circula, y Z es la impedancia total del circuito (que incluye la resistencia R más la reactancia
-                inductiva y capacitiva). Esta ecuación indica que una corriente elevada multiplicada por la impedancia
+                según la ley de Ohm generalizada: <br><br> V = I × Z br*2 <br><br> donde: <br> V es el voltaje
+                resultante <br> I es la corriente que
+                circula <br> y Z es la impedancia total del circuito (que incluye la resistencia R más la reactancia
+                inductiva y capacitiva) <br><br>
+                Esta ecuación indica que una corriente elevada multiplicada por la impedancia
                 de la línea genera una caída de voltaje instantánea, afectando a equipos conectados en el mismo punto
                 común. Se manifiestan principalmente durante el arranque de equipos con motores (inrush current), donde
                 la corriente de magnetización del estator (la parte fija del motor donde están enrollados los cables de
@@ -314,6 +320,86 @@
                 ya que en el neutro no se cancelan sino que se suman. Esto provoca calentamiento excesivo en
                 transformadores, vibración en motores (torque pulsante) y errores de medición en equipos de protección
                 que calculan valores RMS verdaderos.</p>
+        </div>
+
+        <div class="video-container" style="margin-top: 2rem;">
+            <!-- Video Principal Distorsión Armónica -->
+            <iframe src="https://www.youtube.com/embed/VeSGgMSbl_0" title="Explicación Distorsión Armónica"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <h3 style="color: var(--azul); margin-top: 2rem;">Profundización en distorsiones armónicas</h3>
+        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                1. ¿Qué son los armónicos? <a href="https://www.youtube.com/watch?v=sytJdzv_lLw" target="_blank"
+                    rel="noopener" style="color: var(--celeste); text-decoration: underline;">Definición</a>
+            </li>
+            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                2. ¿Qué efectos provocan los armónicos? <a href="https://www.youtube.com/watch?v=QJypizKfKfQ"
+                    target="_blank" rel="noopener"
+                    style="color: var(--celeste); text-decoration: underline;">Consecuencias</a>
+            </li>
+            <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                3. Soluciones para mitigar los armónicos <a href="https://www.youtube.com/watch?v=xPJUGu5KgI8"
+                    target="_blank" rel="noopener"
+                    style="color: var(--celeste); text-decoration: underline;">Soluciones</a>
+            </li>
+        </ul>
+
+        <!-- Sección Clases de Protección Diferencial -->
+        <h2 style="color: var(--azul); margin-top: 3rem; border-top: 2px solid var(--azul); padding-top: 20px;">
+            Clases de Protección Diferencial (Contra Fugas y Armónicos)
+        </h2>
+        <p style="margin-top: 1rem;">Los interruptores diferenciales (ID o RCCB) no solo se clasifican por su
+            sensibilidad (IΔn de 10mA, 30mA, etc.), sino por su capacidad para detectar diferentes tipos de corriente de
+            fuga, especialmente cuando hay armónicos o componentes de corriente continua involucrados.</p>
+
+        <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">Clase AC (Tipo
+            General)</h4>
+        <p>Detecta únicamente corrientes de fuga senoidales puras (50/60 Hz). Es el más básico y económico, pero queda
+            ciego ante fugas rectificadas (tipo pulsos de media onda) o corrientes con alto contenido armónico. Solo
+            sirve para cargas resistivas tradicionales; en una UPS moderna o con equipos electrónicos, puede no disparar
+            ante una fuga real peligrosa.</p>
+
+        <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">Clase A (Amplia)
+        </h4>
+        <p>Detecta tanto corriente alterna senoidal como corriente pulsante rectificada (media onda DC). Es el mínimo
+            exigible hoy en día para cualquier instalación con electrónica. En el contexto de UPS, es obligatorio porque
+            los rectificadores de entrada generan pulsos de corriente que un diferencial clase AC no detectaría como
+            fuga peligrosa.</p>
+
+        <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">Clase F
+            (Frecuencias Elevadas)</h4>
+        <p>Diseñado para soportar y detectar fugas en presencia de armónicos de alta frecuencia (hasta 1kHz) sin
+            dispararse falsamente por el ruido, pero sí ante fugas reales. Ideal para salidas de UPS que alimentan
+            variadores de velocidad (VFD), fuentes conmutadas o equipos con PFC activo, donde los armónicos de 3ª, 5ª y
+            7ª armónica son comunes. Tiene filtros que discriminan entre armónicos de funcionamiento normal y una
+            verdadera fuga a tierra.</p>
+
+        <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">Clase B
+            (Universal)</h4>
+        <p>El más completo: detecta AC, pulsos rectificados, corrientes de fuga con componente DC (corriente continua
+            pura que puede aparecer en fallas de aislamiento en equipos con rectificación) y frecuencias hasta 20kHz.
+            Esencial en instalaciones médicas, cargadores de vehículos eléctricos o UPS de tecnología avanzada donde una
+            fuga podría incluir componente DC que las clases anteriores ignorarían.</p>
+
+        <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">Relación con
+            Armónicos</h4>
+        <p>Los armónicos generan corrientes que circulan por el conductor de tierra de protección (PE) sin ser fugas
+            peligrosas (son "fugas funcionales" de filtros EMI). Un diferencial clase AC o A podría dispararse
+            intempestivamente (falso positivo) al sumar estos armónicos como si fueran una fuga. Las clases F y B tienen
+            filtros de frecuencia que ignoran estos armónicos de alta frecuencia, disparando solo cuando detectan la
+            fuga real a 50/60Hz o componente DC.</p>
+
+        <!-- Imagen Final Tabla de Protección -->
+        <div class="image-container" style="margin: 2rem 0; text-align: center;">
+            <img src="./images/protDif.jpg" alt="Tabla de Clases de Protección Diferencial"
+                style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+            <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Tabla: Clases de
+                Diferenciales y Aplicaciones <br> (No confundir con curvas de breakers)</p>
+        </div>
         </div>
     </template>
 
@@ -384,7 +470,7 @@
                 sobrecarga persiste más allá del tiempo permitido por la curva de disparo (inversamente proporcional a
                 la magnitud de la sobrecarga: a mayor exceso de corriente, menor tiempo de actuación), la curvatura
                 acumulada empuja un mecanismo de liberación que desengancha los contactos principales, abriendo el
-                circuito de forma irreversible hasta el rearme manual.</p>
+                circuito de forma irreversible hasta el rearme manual.</p> <br>
             <p>La velocidad de respuesta térmica y el umbral del disparo magnético instantáneo se clasifican en curvas
                 de disparo estandarizadas (A, B, C, D), que definen el múltiplo de la corriente nominal (In) al cual
                 actúa el mecanismo magnético y la tolerancia temporal del bimetal. La Curva A es la más sensible,
@@ -442,14 +528,17 @@
                 protección amplia (high breaking capacity) en la entrada de la UPS deben soportar no solo la corriente
                 nominal de operación continua, sino también los picos de corriente de cortocircuito que la red pueda
                 entregar, calculados mediante la impedancia de cortocircuito del transformador de distribución cercano
-                según la fórmula Z = V / (√3 × Icc), donde Z es la impedancia de la fuente en ohmios, V el voltaje línea
-                a línea en voltios, e Icc la corriente de cortocircuito trifásica disponible en amperios. Si un breaker
+                según la fórmula <br><br> Z = V / (√3 × Icc) <br><br> donde Z es la impedancia de la fuente en ohmios
+                <br> V el voltaje línea
+                a línea en voltios <br> Icc la corriente de cortocircuito trifásica disponible en amperios <br><br> Si
+                un breaker
                 de entrada de UPS tiene capacidad de ruptura insuficiente, ante un cortocircuito grave podría explotar o
                 soldar sus contactos, propagando la falla hacia el interior del equipo y comprometiendo la integridad
-                física del sistema de baterías.</p>
+                física del sistema de baterías.
+            </p>
 
             <div class="image-container" style="margin: 2rem 0; text-align: center;">
-                <img src="./images/TablaSelecBreak.png" alt="Tabla Comparativa de Breakers"
+                <img src="./images/TablaSelecBreak.jpg" alt="Tabla Comparativa de Breakers"
                     style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
                 <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Tabla Comparativa
                     de Breakers en Sistemas UPS</p>
@@ -459,33 +548,140 @@
                 Glosario de Términos Técnicos en Breakers</h3>
             <p>Si te fijas en los costados o frontales de los disyuntores, como vimos en el primer video de esta
                 seccion, hay varias convenciones, a continuacion puedes ver que significa cada uno:</p>
-            <p><strong>In (Corriente Nominal):</strong> Es la corriente máxima que el breaker puede conducir
+            <p><strong style="color: var(--azul);">In (Corriente Nominal):</strong> <br> Es la corriente máxima que el
+                breaker puede conducir
                 indefinidamente a temperatura ambiente sin dispararse por sobrecarga térmica. Por ejemplo, un breaker de
                 In = 32 A puede operar 24/7 a 32 A, pero si la corriente sube a 40 A (1.25 veces In), el bimetal
                 calentará y disparará en aproximadamente 1 hora según su curva característica.</p>
-            <p><strong>Icu (Corriente Última de Ruptura):</strong> También denominada Icn en normas IEC, representa la
+            <p><strong style="color: var(--azul);">Icu (Corriente Última de Ruptura):</strong> <br> También denominada
+                Icn en
+                normas IEC, representa la
                 máxima corriente de cortocircuito que el breaker puede interrumpir sin destruirse ni propagar el arco.
                 Si la corriente de falla en el punto de instalación es 20 kA, el breaker debe tener Icu ≥ 20 kA. En la
                 entrada de una UPS conectada a una subestación cercana, es común encontrar Icu de 65 kA o 100 kA.</p>
-            <p><strong>Ics (Corriente de Servicio de Ruptura):</strong> Es el porcentaje de Icu que el breaker puede
+            <p><strong style="color: var(--azul);">Ics (Corriente de Servicio de Ruptura):</strong> <br> Es el
+                porcentaje de
+                Icu que el breaker puede
                 interrumpir y seguir operando normalmente después (típicamente 50%, 75% o 100% de Icu). Un breaker con
                 Icu = 50 kA e Ics = 100% puede abrir 50 kA y seguir usándose; si solo tiene Ics = 50%, después de abrir
                 25 kA debería reemplazarse por precaución.</p>
-            <p><strong>IΔn (Corriente de Fuga Nominal):</strong> Exclusivo de breakers diferenciales (RCCB/ID), indica
+            <p><strong style="color: var(--azul);">IΔn (Corriente de Fuga Nominal):</strong> <br> Exclusivo de breakers
+                diferenciales (RCCB/ID), indica
                 la corriente de desbalance fase-neutro que provoca el disparo instantáneo. Valores típicos: 10 mA
                 (protección personal directa en hospitales), 30 mA (protección general en húmedo), 100-300 mA
                 (protección contra incendios en seco).</p>
-            <p><strong>Botón T (Test/Trip):</strong> Presente únicamente en breakers diferenciales (RCCB e RCBO), es un
+            <p><strong style="color: var(--azul);">Botón T (Test/Trip):</strong> <br> Presente únicamente en breakers
+                diferenciales (RCCB e RCBO), es un
                 pulsador que simula una fuga de corriente interna para verificar que el mecanismo de disparo magnético
                 funcione correctamente. Debe pulsarse mensualmente para garantizar que la bobina diferencial no esté
                 bloqueada por suciedad o corrosión. No confundir con el botón de rearme tras disparo.</p>
-            <p><strong>Ue (Tensión Nominal de Empleo):</strong> Máximo voltaje que el breaker puede soportar
+            <p><strong style="color: var(--azul);">Ue (Tensión Nominal de Empleo):</strong> <br> Máximo voltaje que el
+                breaker puede soportar
                 permanentemente sin riesgo de arco entre polos. Para UPS monofásicas: Ue = 230/240 VAC; para trifásicas:
                 Ue = 400/415 VAC o 690 VAC en industriales.</p>
-            <p><strong>Impedancia de Cortocircuito (Z):</strong> Determina la Icu requerida según Z = V / (√3 × Icc),
+            <p><strong style="color: var(--azul);">Impedancia de Cortocircuito (Z):</strong> <br> Determina la Icu
+                requerida
+                según Z = V / (√3 × Icc),
                 donde V es el voltaje línea-línea, e Icc la corriente de cortocircuito trifásica disponible. Una UPS
                 ubicada cerca del transformador de la subestación tendrá Z baja e Icc alta, exigiendo breakers con Icu ≥
                 65 kA.</p>
+        </div>
+    </template>
+
+    <template id="content-fuse">
+        <div class="modal-section">
+            <h3 style="color: var(--azul); margin-top: 1rem;">Fusible (Fuse): Protección Primaria y Última Línea de
+                Defensa</h3>
+            <p>El fusible constituye el elemento de protección más primitivo pero crítico dentro de la arquitectura de
+                entrada de una UPS. A diferencia de los breakers, que son dispositivos de conmutación reutilizables, el
+                fusible es un elemento sacrificial de acción irreversible diseñado para "morir" de forma controlada y
+                salvaguardar la integridad física del equipo y la instalación. Es un dispositivo pasivo que interrumpe
+                el flujo de energía mediante la fusión controlada de un elemento conductor cuando la corriente supera
+                valores letales para el cableado o los semiconductores de la etapa de entrada, actuando como respaldo
+                térmico de último recurso cuando la velocidad de respuesta requerida es incompatible con la inercia
+                mecánica de un breaker. No debe usarse como interruptor de maniobra para encender o apagar la UPS, ni
+                detecta fugas a tierra ni regula tensión; su lógica es puramente térmica, discriminando solo entre
+                magnitudes de energía, no entre tipos de falla.</p>
+
+            <div class="video-container" style="margin: 1.5rem 0;">
+                <iframe src="https://www.youtube.com/embed/FZiimGWvr8M" title="Explicación Fusibles" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Principio de Funcionamiento: Efecto Joule y
+                Características Temporizadas</h3>
+            <p>El fusible opera exclusivamente mediante el efecto Joule, donde la energía disipada como calor sigue la
+                relación P = I² × R, siendo P la potencia térmica generada, I la corriente instantánea y R la
+                resistencia del elemento fusible (generalmente aleación de plata, cobre o zinc con punto de fusión
+                preciso). Cuando la corriente excede el umbral nominal, el calor eleva la temperatura hasta el punto de
+                fusión, abriendo el circuito mediante vaporización controlada del conductor. Este proceso sigue una
+                curva tiempo-corriente característica que define su comportamiento: los fusibles Time Delay (retardados)
+                toleran breves sobrecorrientes como el inrush de magnetización de transformadores durante varios
+                segundos sin dispararse, mientras que los Fast Acting (rápidos) actúan en milisegundos ante cualquier
+                exceso, sacrificando la tolerancia a picos por velocidad de protección. La energía térmica acumulada
+                (I²t) determina el momento exacto de fusión: debe superar el límite admisible para que el elemento se
+                rompa, lo que explica por qué un pico breve no funde el fusible pero un valor sostenido sí.</p>
+
+            <div class="video-container" style="margin: 1.5rem 0;">
+                <iframe src="https://www.youtube.com/embed/QtrnGkbczt4" title="Tipos de Fusibles" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Parámetros Técnicos Críticos</h3>
+            <p><strong style="color: var(--azul);">In (Corriente Nominal):</strong> Es el valor de corriente continua
+                que el fusible puede conducir indefinidamente sin deteriorarse térmicamente; en UPS se selecciona
+                considerando la corriente RMS máxima de entrada incluyendo picos durante carga de baterías, con margen
+                del 25% para compensar temperatura ambiente dentro del gabinete.</p>
+            <p><strong style="color: var(--azul);">I²t (Energía de Fusión):</strong> Representa la energía térmica
+                necesaria para fundir el elemento (pre-arcing) y extinguir el arco eléctrico (total clearing), siendo
+                determinante para la coordinación con semiconductores: debe ser inferior al I²t de destrucción de los
+                diodos o IGBTs de la etapa posterior para garantizar que el fusible muera antes de que los transistores
+                se perforen térmicamente.</p>
+            <p><strong style="color: var(--azul);">Capacidad de Ruptura (Icn o Breaking Capacity):</strong> Es la
+                corriente máxima de cortocircuito que puede interrumpir sin explotar; debe superar la Icc calculada en
+                el punto de instalación según la impedancia de la red aguas arriba, pues un fusible con Icn insuficiente
+                ante un cortocircuito cercano al transformador puede fragmentarse violentamente.</p>
+
+            <div class="image-container" style="margin: 2rem 0; text-align: center;">
+                <img src="./images/fuse.png" alt="Tipos de Fusibles"
+                    style="width: 20%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Fusibles</p>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Tipología de Fusibles y Codificación IEC</h3>
+            <p>Los fusibles se clasifican según la norma IEC 60269 mediante códigos alfanuméricos que indican su función
+                y velocidad:</p>
+            <p><strong style="color: var(--azul);">gG (general purpose, uso general) o gL (línea):</strong> Son
+                retardados térmicamente, diseñados para protección de cables y equipos generales, soportando picos de
+                arranque sin disparos intempestivos; se emplean en UPS monofásicas de pequeña potencia donde la
+                protección de semiconductores no es crítica.</p>
+            <p><strong style="color: var(--azul);">aR (semiconductores):</strong> De la norma antigua ahora gR o aR
+                según velocidad, son ultrarrápidos, diseñados específicamente para proteger rectificadores y puentes de
+                diodos con tiempo de actuación en microsegundos y bajo I²t, siendo obligatorios en UPS industriales
+                trifásicas donde los semiconductores tienen baja tolerancia térmica.</p>
+            <p><strong style="color: var(--azul);">gBat (baterías):</strong> Específicos para protección de bancos de
+                baterías donde se requiere coordinación con la corriente de cortocircuito del acumulador.</p>
+            <p><strong style="color: var(--azul);">gPV (fotovoltaico):</strong> Diseñados para soportar corrientes
+                inversas y arcos en sistemas solares.</p>
+            <p><strong style="color: var(--azul);">gR (cables y semiconductores):</strong> De uso general para
+                semiconductores pero con características intermedias.</p>
+            <p><strong style="color: var(--azul);">aM (motores):</strong> Ultrarrápidos para protección de circuitos de
+                maniobra de motores donde la corriente de arranque es muy alta pero la protección debe ser rápida ante
+                cortocircuitos.</p>
+            <p>La letra inicial indica la velocidad: g (general, retardo permitido) o a (ultrarrápido), mientras que la
+                segunda letra indica la aplicación específica.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Coordinación Selectiva con el Main Switch</h3>
+            <p>El fusible debe coordinarse jerárquicamente con el breaker de entrada mediante selectividad amperimétrica
+                y cronológica. La filosofía de diseño determina si actúa como protección de respaldo: el breaker debería
+                disparar primero ante sobrecargas moderadas, mientras el fusible solo interviene ante fallas
+                catastróficas de cortocircuito que exceden la velocidad del breaker. Alternativamente, en diseños de
+                alta integridad donde el I²t del breaker es demasiado alto para proteger semiconductores, el fusible
+                puede ser el primario. Un error crítico frecuente es sobredimensionar el fusible "para que no se funda",
+                lo que anula la protección y puede provocar incendios, o sustituir fusibles aR por gG en UPS
+                industriales, exponiendo los rectificadores a destrucción térmica antes de que el fusible actúe.</p>
         </div>
     </template>
 
