@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         "rectifier": {
             title: "Rectificador",
-            content: "<p>Convierte la corriente alterna (AC) de entrada en corriente continua (DC). Esto es fundamental para cargar las baterías y alimentar el inversor.</p><div style=\"margin-top: 1.5rem; text-align: center;\"><img src=\"./images/enConstruccion.png\" alt=\"En Construcción\" style=\"max-width: 100%; height: auto; border-radius: 8px; opacity: 0.8;\"></div>"
+            content: document.getElementById("content-rectifier") ? document.getElementById("content-rectifier").innerHTML : "<p>Error: Template no encontrado</p>"
         },
         "dcdc": {
             title: "Convertidor DC/DC",

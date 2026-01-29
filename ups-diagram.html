@@ -40,8 +40,9 @@
     <!-- Sección Principal -->
     <section class="ups-section">
         <h1 class="titulo-seccion">Diagrama de Bloques - UPS Online</h1>
-        <h2 style="color: var(--azul); margin-bottom: 1.5rem; text-align: center;">haz click sobre cada modulo para saber mas</h2>
-        
+        <h2 style="color: var(--azul); margin-bottom: 1.5rem; text-align: center;">haz click sobre cada modulo para
+            saber mas</h2>
+
 
         <div class="diagram-scroll-container">
             <!-- Contenedor relativo para la imagen y los hotspots -->
@@ -686,6 +687,214 @@
                 industriales, exponiendo los rectificadores a destrucción térmica antes de que el fusible actúe.</p>
         </div>
     </template>
+    <template id="content-rectifier">
+        <div class="modal-section">
+            <h3 style="color: var(--azul); margin-top: 1rem;">La Etapa Rectificador: Más que un Simple Cambio de
+                Corriente</h3>
+            <p>Cuando miras el diagrama de bloques de una UPS, el rectificador aparece justo después de la
+                protección de entrada y antes de ese "depósito" de energía que llamamos DC Link. Su función esencial
+                es transformar la corriente alterna de la red en corriente continua, pero hacerlo bien implica
+                dominar unos cuantos conceptos de potencia eléctrica que suelen confundirse.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">El Triángulo de Potencias: Los Tres Actores Eléctricos
+            </h3>
+            <p>Antes de hablar de rectificadores, necesitamos visualizar cómo se comporta la energía en un sistema
+                de corriente alterna. Imagina un triángulo rectángulo donde cada lado representa una forma diferente
+                de potencia.</p>
+
+            <div class="image-container" style="margin: 2rem 0; text-align: center;">
+                <img src="./images/TrianguloP.jpg" alt="Triángulo de Potencias"
+                    style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(30,144,255,0.2);">
+                <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">Triángulo de
+                    Potencias</p>
+            </div>
+
+            <p><strong style="color: var(--azul);">En la base horizontal tenemos la Potencia Activa (P):</strong>
+                medida en vatios (W). Es la útil, la que realmente realiza el trabajo: mueve motores, calienta
+                resistencias, ilumina focos. Es la energía que tu empresa eléctrica te cobra como consumida.</p>
+            <p><strong style="color: var(--azul);">En el cateto vertical tenemos la Potencia Reactiva (Q):</strong>
+                medida en voltiamperios reactivos (VAR). Esta no produce trabajo útil, pero es necesaria para crear
+                los campos magnéticos en transformadores y motores. Es como la "espuma" de un vaso de cerveza: ocupa
+                espacio en el sistema (requiere cables más gruesos), pero no es lo que realmente bebes.</p>
+            <p><strong style="color: var(--azul);">La hipotenusa, que cierra el triángulo, es la Potencia Aparente
+                    (S):</strong> medida en voltiamperios (VA). Representa lo que "ve" la red eléctrica: la
+                combinación vectorial de la activa y la reactiva. Es por lo que la empresa eléctrica debe
+                dimensionar sus transformadores y cables, y es la base para calcular si te aplican penalizaciones en
+                la factura.</p>
+
+            <div class="multimedia-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 2rem 0;">
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/6LXYRIDVuIg" title="Potencia Eléctrica 1" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/nHcqTR3rryw" title="Potencia Eléctrica 2" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/K_FM_9HjudY" title="Potencia Eléctrica 3" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Factor de Potencia vs. Coseno de Phi: La Confusión
+                Moderna</h3>
+            <p>Durante años se usaron como sinónimos, pero en las instalaciones modernas con rectificadores (cargas
+                no lineales), son cosas distintas.</p>
+            <p>El coseno de phi (cos φ) es simplemente el ángulo entre la potencia activa y la aparente, pero solo
+                considera el desfase temporal entre la tensión y la corriente fundamental (la onda básica de 50 o 60
+                Hz). Es válido para motores y cargas lineales tradicionales. Es decir que en él se tiene en cuenta
+                la distorsión armónica.</p>
+            <p>El Factor de Potencia (FP o λ) es más completo: es la relación entre la potencia activa y la potencia
+                aparente total, pero incluye una tercera dimensión que el coseno de phi ignora: los armónicos.
+                Cuando un rectificador moderno corta la onda senoidal para convertirla en continua, genera
+                "suciedad" eléctrica (corrientes a múltiplos de la frecuencia fundamental). Esto crea una potencia
+                reactiva de distorsión (D) que es perpendicular al plano tradicional del triángulo de potencias. No
+                se tiene en cuenta la distorsión armónica.</p>
+
+            <div class="video-container" style="margin: 2rem 0;">
+                <iframe src="https://www.youtube.com/embed/xRkr8fwK090" title="Factor de Potencia vs Cos Phi"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p><strong>La diferencia práctica:</strong> Puedes tener un rectificador donde la corriente y la tensión
+                estén perfectamente en fase (cos φ ≈ 1.0), lo que técnicamente parece perfecto. Sin embargo, si esa
+                corriente está terriblemente distorsionada por los armónicos (como pasa en un rectificador básico de
+                diodos), el Factor de Potencia real puede caer a 0.7 o 0.8. Es decir, el coseno de phi te dice que
+                todo está bien, mientras el Factor de Potencia real revela que estás siendo un "mal vecino" para la
+                red y posiblemente pagando penalizaciones.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem;">Eficiencia vs. Factor de Potencia: No es lo Mismo</h3>
+            <p>Es fácil caer en la trampa de pensar que una UPS con alta eficiencia tiene buen factor de potencia,
+                pero miden cosas diferentes. La eficiencia te dice qué porcentaje de la energía que entra sale como
+                energía útil (el resto se pierde como calor). Un rectificador puede ser muy eficiente (96%) pero
+                tener un factor de potencia pobre (0.6) porque está distorsionando la red. Sería como un atleta que
+                corre muy rápido pero deja botellas tiradas por el camino: cumple su objetivo, pero contamina el
+                entorno.</p>
+
+            <h3 style="color: var(--azul); margin-top: 2rem; border-top: 2px solid var(--azul); padding-top: 20px;">
+                Las Familias de Rectificadores: Del Simple al Sofisticado</h3>
+            <p>No todos los rectificadores se comportan igual ante la red. Según el UPS Handbook de Kohler y las
+                referencias clásicas de Ross y Beaty, podemos dividirlos por cómo afrontan ese problema del factor
+                de potencia y los armónicos.</p>
+
+            <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">El
+                Rectificador Pasivo (El Básico)</h4>
+            <p>Imagina puente de diodos que simplemente "recortan" la mitad negativa de la onda alterna. Es robusto,
+                barato y casi indestructible. El problema es que consume corriente a "trompicones": solo absorbe
+                energía en los picos de la onda senoidal. Esto genera un factor de potencia terrible (alrededor de
+                0.6) y una distorsión armónica (THD) que puede superar el 80%. Es como beber con una pajita muy
+                fina: das sorbos grandes e intermitentes en lugar de un flujo constante. Se usa en UPS pequeñas de
+                tipo off-line donde el costo es prioridad absoluta y la calidad de red no es crítica.</p>
+
+            <div class="video-container" style="margin: 1.5rem 0;">
+                <iframe src="https://www.youtube.com/embed/jzibrKq4ing" title="Rectificador Pasivo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">El
+                Rectificador con PFC Activo (El Estándar Actual de las UPS Online)</h4>
+            <p>Aquí es donde entra la tecnología moderna. En lugar de diodos simples, utiliza transistores de
+                potencia como IGBTs (Transistores Bipolares de Puerta Aislada) controlados por microprocesadores
+                mediante una técnica llamada PWM (Modulación por Ancho de Pulso).</p>
+
+            <div class="video-container" style="margin: 1.5rem 0;">
+                <iframe src="https://www.youtube.com/embed/Tv_7XWf96gg?start=499&cc_load_policy=1&hl=es"
+                    title="PFC Activo y Factor de Potencia" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p
+                    style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px; background: rgba(30, 144, 255, 0.1); padding: 5px; border-radius: 4px;">
+                    La explicación sobre PFC comienza en 8:19. Ver completo para entender mejor el Factor de
+                    Potencia.</p>
+            </div>
+
+            <p>En esta parte el PWM activa el MOSFET o IGBT abriéndolo y cerrando a determinada frecuencia. Los
+                semiconductores que controlan esta etapa de switcheo o apertura y cierre, se usan principalmente
+                mosfets e IGBTs.</p>
+
+            <div class="multimedia-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 2rem 0;">
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/1KhQ--6mgKw" title="Cómo funciona el IGBT"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">
+                        Funcionamiento IGBT</p>
+                </div>
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/0WRkzKOBLOQ" title="Explicación PWM" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">
+                        Explicación PWM</p>
+                </div>
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/nxO4HdoH8Ko" title="Funcionamiento Conjunto"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p style="font-size: 0.8rem; text-align: center; color: var(--gris); margin-top: 5px;">
+                        Funcionamiento Conjunto</p>
+                </div>
+            </div>
+
+            <p>Internamente, este sistema emplea un circuito Boost (convertidor elevador). Piensa en él como una
+                bomba inteligente que, en lugar de dejar pasar el agua directamente, la "empuja" en ráfagas muy
+                rápidas (miles de veces por segundo) para mantener una presión perfectamente constante en un
+                depósito superior (el DC Link que se verá más adelante), incluso cuando la presión de entrada
+                fluctúa. Pero lo más importante es que modula esas ráfagas para que la corriente que extrae de la
+                red sea una onda senoidal perfecta, sincronizada con la tensión.</p>
+            <p>El resultado es un factor de potencia cercano a la unidad (0.99) y una distorsión armónica total
+                (THD) inferior al 5%. Es el estándar en centros de datos y equipos industriales críticos porque,
+                aunque es más complejo, cumple con todas las normativas actuales y evita penalizaciones en la
+                factura eléctrica.</p>
+
+            <div class="video-container" style="margin: 1.5rem 0;">
+                <iframe src="https://www.youtube.com/embed/Idj5TLWfRc8" title="Resultados PFC Activo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h4 style="color: var(--azul); margin-top: 1.5rem; font-size: 1.1rem; margin-bottom: 0.5rem;">
+                Rectificadores de 6 Pulsos vs. 12 Pulsos (Cuando la Potencia es Masiva)</h4>
+            <p>En UPS industriales de gran potencia (varios cientos de kVA), nos encontramos con otra clasificación
+                técnica. Un rectificador de 6 pulsos utiliza seis tiristores o diodos para rectificar la corriente
+                trifásica. Es el estándar tradicional, pero genera un THD de entrada alrededor del 30%, lo cual
+                puede ser problemático para la red vecina si no se filtra adecuadamente.</p>
+            <p>El rectificador de 12 pulsos utiliza dos juegos de rectificadores de 6 pulsos con un defasaje de 30
+                grados entre ellos, logrado mediante un transformador especial de desplazamiento de fase. Como
+                explica la guía técnica de ABB, esto hace que ciertos armónicos (como el 5º y el 7º) se cancelen
+                entre sí en el primario del transformador, reduciendo el THD de entrada de ~30% a ~10%. La
+                desventaja es que requiere un transformador específico más grande y costoso, aumentando el espacio y
+                el peso de la instalación.</p>
+
+            <div class="multimedia-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 2rem 0;">
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/Bqd10UayjmU"
+                        title="Rectificadores 6 vs 12 Pulsos Parte 1" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="video-container" style="margin: 0;">
+                    <iframe src="https://www.youtube.com/embed/932cwyjhHNI?playlist=932cwyjhHNI&loop=1"
+                        title="Rectificadores 6 vs 12 Pulsos Parte 2" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </template>
 
     <div id="infoModal" class="modal">
         <div class="modal-content">
@@ -718,10 +927,6 @@
 
     <!-- Script funcionalidad (Externa) -->
     <script src="./ups-diagram.js"></script>
-
-</body>
-
-</html>
 
 </body>
 
