@@ -155,4 +155,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- Lógica del Lightbox (Zoom de Imágenes) ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.querySelector('.close-lightbox');
+
+    // Delegación de eventos para imágenes dentro del modal (ya que el contenido es dinámico)
+    // También aplicable a imágenes estáticas si se añade la clase .image-container o son img directas
+    document.addEventListener('click', (e) => {
+        // Verificar si el clic fue en una imagen dentro del modal content o en un contenedor de imagen
+        const target = e.target;
+
+        // Si el clic es en una imagen que está dentro de .modal-content o .diagram-explanation
+        if (target.tagName === 'IMG' && (target.closest('.modal-content') || target.closest('.diagram-explanation'))) {
+            // Ignorar íconos pequeños (clase icono-red o similares si existieran) o logos
+            if (!target.classList.contains('icono-red') && !target.closest('.logo-img')) {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = target.src;
+            }
+        }
+    });
+
+    // Cerrar Lightbox con botón X
+    if (closeLightbox) {
+        closeLightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    }
+
+    // Cerrar Lightbox con clic fuera de la imagen
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            lightbox.style.display = 'none';
+        }
+    });
+
 });

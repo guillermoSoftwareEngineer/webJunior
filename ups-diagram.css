@@ -303,9 +303,14 @@ body {
     /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 30px auto;
+    /* Centrado y con separación vertical */
     border-radius: 8px;
     border: 1px solid #1e293b;
+    max-width: 850px;
+    /* Límite de ancho para pantallas grandes */
+    width: 100%;
+    /* Asegurar que ocupe el espacio disponible hasta el max-width */
 }
 
 .video-container iframe {
@@ -314,6 +319,97 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* --- Estilos Lightbox y Contenedores de Imagen --- */
+
+.image-container {
+    margin: 30px auto !important;
+    /* Forzar centrado y margenes */
+    max-width: 850px;
+    /* Ancho máximo para imágenes en contenido */
+    width: 100%;
+    text-align: center;
+    cursor: zoom-in;
+    /* Cursor de lupa para indicar interactividad */
+    transition: transform 0.2s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.02);
+    /* Ligero efecto de zoom al pasar el mouse */
+}
+
+/* Lightbox Overlay */
+#lightbox {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 2000;
+    /* Encima de todo (incluido el modal que es 1000) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.95);
+    /* Fondo casi negro opaco */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s;
+}
+
+/* Imagen dentro del Lightbox */
+#lightbox img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    /* Máximo 90% de la altura de la ventana */
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(30, 144, 255, 0.5);
+    animation: zoomIn 0.3s;
+}
+
+/* Botón cerrar Lightbox */
+#lightbox .close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+#lightbox .close-lightbox:hover,
+#lightbox .close-lightbox:focus {
+    color: var(--azul);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 /* Footer (Base Copiada) */
