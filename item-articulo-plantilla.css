@@ -1,7 +1,7 @@
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
-  --texto: #ffffff;
+  --texto: #e2e8f0;
   --gris: #c0c0c0;
   --borde: #1e90ff;
   --card-fondo: #0f172a;
@@ -186,7 +186,8 @@ body {
 /* Estilos para videos responsivos */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* Proporción 16:9 */
+  padding-bottom: 56.25%;
+  /* Proporción 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;

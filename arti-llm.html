@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LLMs | Guillermo Vásquez</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <link rel="stylesheet" href="./leyOhm.css"> 
+    <link rel="stylesheet" href="./leyOhm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
     <header class="hero">
@@ -39,36 +41,55 @@
 
             <section class="article-section">
                 <h2>Breve introducción</h2>
-                <p>¿Alguna vez te has preguntado cómo es posible que una inteligencia artificial pueda escribir, traducir, resumir y hasta crear código como si lo hiciera un humano? La respuesta se esconde en los LLM, una de las tecnologías más revolucionarias de nuestra era.</p>
-                <p>Aquí, exploraremos qué son, cómo se entrenan y qué los hace tan "inteligentes". Acompáñame a descubrir los mecanismos fundamentales que permiten a estas herramientas entender el lenguaje humano a una escala sin precedentes. Prepárate para una inmersión en la intersección entre la lingüística, la ciencia de datos y la inteligencia artificial.</p>
+                <p>¿Alguna vez te has preguntado cómo es posible que una inteligencia artificial pueda escribir,
+                    traducir, resumir y hasta crear código como si lo hiciera un humano? La respuesta se esconde en los
+                    LLM, una de las tecnologías más revolucionarias de nuestra era.</p>
+                <p>Aquí, exploraremos qué son, cómo se entrenan y qué los hace tan "inteligentes". Acompáñame a
+                    descubrir los mecanismos fundamentales que permiten a estas herramientas entender el lenguaje humano
+                    a una escala sin precedentes. Prepárate para una inmersión en la intersección entre la lingüística,
+                    la ciencia de datos y la inteligencia artificial.</p>
             </section>
 
             <section class="article-section">
                 <h2>¿Qué significa tokenizar el lenguaje?</h2>
-                <p>Los LLM, del inglés Large Language Models (modelos de lenguaje grandes), como ChatGPT, Gemini o Claude, son sistemas de predicción estadística que funcionan principalmente con base en complejos cálculos matemáticos.</p>
-                <p>El primer paso en su proceso es la tokenización del lenguaje. Esto consiste en tomar un texto y dividirlo en unidades más pequeñas llamadas tokens. Estas unidades pueden ser palabras, partes de palabras (sílabas) o incluso caracteres, dependiendo de cómo esté configurado el modelo.</p>
-                <p>El objetivo de la tokenización es que el LLM pueda procesar y entender el lenguaje humano de una manera estructurada, convirtiendo las palabras en un formato que la máquina pueda interpretar y trabajar con él.</p>
+                <p>Los LLM, del inglés Large Language Models (modelos de lenguaje grandes), como ChatGPT, Gemini o
+                    Claude, son sistemas de predicción estadística que funcionan principalmente con base en complejos
+                    cálculos matemáticos.</p>
+                <p>El primer paso en su proceso es la tokenización del lenguaje. Esto consiste en tomar un texto y
+                    dividirlo en unidades más pequeñas llamadas tokens. Estas unidades pueden ser palabras, partes de
+                    palabras (sílabas) o incluso caracteres, dependiendo de cómo esté configurado el modelo.</p>
+                <p>El objetivo de la tokenización es que el LLM pueda procesar y entender el lenguaje humano de una
+                    manera estructurada, convirtiendo las palabras en un formato que la máquina pueda interpretar y
+                    trabajar con él.</p>
                 <div class="centered-image-container">
-                    <img src="./images/tokenization.png" alt="Representación del un espacio 3d y las palabras como vectores" class="responsive-image zoomable-image" data-zoom-src="./images/tokenization.png" />
+                    <img src="./images/tokenization.png"
+                        alt="Representación del un espacio 3d y las palabras como vectores"
+                        class="responsive-image zoomable-image" data-zoom-src="./images/tokenization.png" />
                 </div>
             </section>
 
             <section class="article-section">
                 <h2>Tres Dimensiones a n-dimensiones</h2>
-                <p>Las palabras deben ser ordenadas como vectores dentro de un espacio tridimensional (con ejes X, Y, Z). Es decir, cada palabra existe en un punto de este espacio, lo que la hace equivalente a un vector que puede ser procesado. Por ejemplo, la palabra "perro" podría tener las coordenadas (7, 4, 8), aunque esto es solo un ejemplo.</p>
-                <p>Los humanos vivimos en un mundo de tres dimensiones y tenemos la capacidad de entender esto muy bien. Sin embargo, las máquinas pueden comprender 4, 5, 6 o incluso más dimensiones. Esto permite a los sistemas llegar a tener muchas más dimensiones (n-dimensiones), lo cual, junto con la matemática, hace que los Grandes Modelos de Lenguaje (LLMs) sean tan poderosos.</p>
-                <p>A continuación, hay un video donde un niño lo explica de forma excelente. Existe un mito sobre él, que dice que desapareció después de haber hecho este video. La verdad, no lo sé, pero lo que sí sé es que lo explica muy bien. Además, está en español.</p>
+                <p>Las palabras deben ser ordenadas como vectores dentro de un espacio tridimensional (con ejes X, Y,
+                    Z). Es decir, cada palabra existe en un punto de este espacio, lo que la hace equivalente a un
+                    vector que puede ser procesado. Por ejemplo, la palabra "perro" podría tener las coordenadas (7, 4,
+                    8), aunque esto es solo un ejemplo.</p>
+                <p>Los humanos vivimos en un mundo de tres dimensiones y tenemos la capacidad de entender esto muy bien.
+                    Sin embargo, las máquinas pueden comprender 4, 5, 6 o incluso más dimensiones. Esto permite a los
+                    sistemas llegar a tener muchas más dimensiones (n-dimensiones), lo cual, junto con la matemática,
+                    hace que los Grandes Modelos de Lenguaje (LLMs) sean tan poderosos.</p>
+                <p>A continuación, hay un video donde un niño lo explica de forma excelente. Existe un mito sobre él,
+                    que dice que desapareció después de haber hecho este video. La verdad, no lo sé, pero lo que sí sé
+                    es que lo explica muy bien. Además, está en español.</p>
             </section>
 
             <section class="article-section">
                 <h2>Video de las dimensiones</h2>
                 <p>Recuerda activar la mejor calidad en YouTube, para mejor visualización del video</p>
                 <div class="youtube-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/v20ERyVNJB4?start=7" 
-                        title="La 4ta Dimensión Explicada por un Estudiante - Doblado al Español" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    <iframe src="https://www.youtube.com/embed/v20ERyVNJB4?start=7"
+                        title="La 4ta Dimensión Explicada por un Estudiante - Doblado al Español" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
                 </div>
@@ -77,59 +98,71 @@
 
             <section class="article-section">
                 <h2>Los embeddings</h2>
-                    <p>son una forma de representar palabras, frases o incluso documentos completos como vectores numéricos en un espacio matemático de muchas dimensiones.<br><br></p> 
-                    <p>Las computadoras no “entienden” el lenguaje natural directamente. Necesitan convertirlo a números para poder procesarlo.</p>
-                    <p>Los embeddings son esa traducción: convierten un texto en una secuencia de números que capturan su significado y no solo su forma.</p>
-                
+                <p>son una forma de representar palabras, frases o incluso documentos completos como vectores numéricos
+                    en un espacio matemático de muchas dimensiones.<br><br></p>
+                <p>Las computadoras no “entienden” el lenguaje natural directamente. Necesitan convertirlo a números
+                    para poder procesarlo.</p>
+                <p>Los embeddings son esa traducción: convierten un texto en una secuencia de números que capturan su
+                    significado y no solo su forma.</p>
+
                 <div class="youtube-video">
-                    <iframe 
-                        src="https://www.youtube.com/embed/PnD2vaGL9tc" 
-                        title="La 4ta Dimensión Explicada por un Estudiante - Doblado al Español" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    <iframe src="https://www.youtube.com/embed/PnD2vaGL9tc"
+                        title="La 4ta Dimensión Explicada por un Estudiante - Doblado al Español" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen>
                     </iframe>
                 </div>
 
-                    </div>
-                <p>Luego de realizar la tokenización, es necesario agrupar las palabras relacionadas. Por ejemplo, los vectores de las palabras "perro" y "can" pueden estar muy próximos entre sí, ya que son palabras que se relacionan directamente. Debido a esta proximidad, sus vectores se sitúan en un espacio vectorial similar.</p>
+                </div>
+                <p>Luego de realizar la tokenización, es necesario agrupar las palabras relacionadas. Por ejemplo, los
+                    vectores de las palabras "perro" y "can" pueden estar muy próximos entre sí, ya que son palabras que
+                    se relacionan directamente. Debido a esta proximidad, sus vectores se sitúan en un espacio vectorial
+                    similar.</p>
                 <p>A esto se le conoce como <i>Los embeddings</i></p>
                 <p>(Clic en la imagen para ampliar)</p>
                 <div class="centered-image-container">
-                    <img src="./images/embenddings.jpg" alt="Representación de palabras en un espacio vectorial" class="responsive-image zoomable-image" data-zoom-src="./images/embenddings.jpg" />
+                    <img src="./images/embenddings.jpg" alt="Representación de palabras en un espacio vectorial"
+                        class="responsive-image zoomable-image" data-zoom-src="./images/embenddings.jpg" />
                 </div>
             </section>
 
             <section class="article-section">
                 <h2>Los vectores, clave matemática para comprender los LLM</h2>
-                <p>Para comprender mejor estos conceptos y los que veremos más adelante, también es importante conocer qué es un vector matemáticamente hablando.</p>
-                <p>Imagina que estás en una habitación. Para describir la ubicación de cualquier objeto en esa habitación, necesitas tres datos:</p>
+                <p>Para comprender mejor estos conceptos y los que veremos más adelante, también es importante conocer
+                    qué es un vector matemáticamente hablando.</p>
+                <p>Imagina que estás en una habitación. Para describir la ubicación de cualquier objeto en esa
+                    habitación, necesitas tres datos:</p>
                 <ul>
                     <li>Qué tan lejos está de una pared (el largo, o el eje X).</li>
                     <li>Qué tan lejos está de la pared contigua (el ancho, o el eje Y).</li>
                     <li>Qué tan alto está del suelo (la altura, o el eje Z).</li>
                 </ul>
-                <p>Un vector tridimensional es simplemente un conjunto de tres números que te dan la posición de un punto en ese espacio, como las coordenadas (X, Y, Z). Es como una flecha que va desde el punto de inicio de la habitación (la esquina del suelo) hasta la ubicación exacta del objeto.</p>
-                <p>En los LLMs, en lugar de ubicar un objeto físico, se ubican palabras. Cada palabra es un "objeto", y sus coordenadas en ese espacio de tres (o más) dimensiones representan su significado y su relación con otras palabras.</p>
-                <p>Si eres como yo probablemente entiendes mejor con un video, que con una explicación escrita, así que aquí está:</p>
-                </section>
+                <p>Un vector tridimensional es simplemente un conjunto de tres números que te dan la posición de un
+                    punto en ese espacio, como las coordenadas (X, Y, Z). Es como una flecha que va desde el punto de
+                    inicio de la habitación (la esquina del suelo) hasta la ubicación exacta del objeto.</p>
+                <p>En los LLMs, en lugar de ubicar un objeto físico, se ubican palabras. Cada palabra es un "objeto", y
+                    sus coordenadas en ese espacio de tres (o más) dimensiones representan su significado y su relación
+                    con otras palabras.</p>
+                <p>Si eres como yo probablemente entiendes mejor con un video, que con una explicación escrita, así que
+                    aquí está:</p>
+            </section>
 
-            
 
-<section class="article-section">
-    <h2>Explicación matemática de un vector tridimensional</h2>
-    <p>Recuerda activar la mejor calidad en YouTube, para mejor visualización del video, y recuerda, esta es una explicación tridimensional, los LLM pueden usar muchas más dimensiones, si entiendes el uso tridimensional, puedes tener noción de cómo funcionan los LLMs de una mejor manera</p>
-    <div class="youtube-video">
-        <iframe 
-            src="https://www.youtube.com/embed/aevLlQfs9hY" 
-            title="03. Vectores y puntos en tres dimensiones (Coordenadas tridimensionales)" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <p>Echa un vistazo a este video para ver como funcionan los vectores</p>
-</section>
+
+            <section class="article-section">
+                <h2>Explicación matemática de un vector tridimensional</h2>
+                <p>Recuerda activar la mejor calidad en YouTube, para mejor visualización del video, y recuerda, esta es
+                    una explicación tridimensional, los LLM pueden usar muchas más dimensiones, si entiendes el uso
+                    tridimensional, puedes tener noción de cómo funcionan los LLMs de una mejor manera</p>
+                <div class="youtube-video">
+                    <iframe src="https://www.youtube.com/embed/aevLlQfs9hY"
+                        title="03. Vectores y puntos en tres dimensiones (Coordenadas tridimensionales)" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p>Echa un vistazo a este video para ver como funcionan los vectores</p>
+            </section>
 
         </article>
         <section class="article-navigation-button">
@@ -137,25 +170,26 @@
         </section>
     </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Guillermo Vásquez</p>
-    <div class="footer-links">
-      <a href="./images/correo.png">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
-        Correo
-      </a>
-      <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
-        <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
-        LinkedIn
-      </a>
-    </div>
-  </footer>
+    <footer class="footer">
+        <p>&copy; 2025 Guillermo Vásquez</p>
+        <div class="footer-links">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red">
+                Correo
+            </a>
+            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red">
+                LinkedIn
+            </a>
+        </div>
+    </footer>
 
     <div id="imageLightbox" class="lightbox">
         <span class="close-lightbox-button">×</span>
         <img class="lightbox-content" id="lightboxImage">
     </div>
 
+    <script src="./js/fecha-articulo.js"></script>
     <script>
         // Lógica para el menú de hamburguesa
         const toggle = document.getElementById("menuToggle");
@@ -169,12 +203,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const publishDateSpan = document.getElementById('publish-date');
-            if (publishDateSpan) { 
-                const today = new Date();
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
-            }
+            /* Lógica de fecha movida a js/fecha-articulo.js */
 
             // Manejo del Lightbox/Modal de imágenes
             const lightbox = document.getElementById('imageLightbox');
@@ -183,7 +212,7 @@
             const zoomableImages = document.querySelectorAll('.zoomable-image');
 
             zoomableImages.forEach(image => {
-                image.addEventListener('click', function() {
+                image.addEventListener('click', function () {
                     const zoomSrc = this.getAttribute('data-zoom-src');
                     if (zoomSrc) {
                         lightbox.style.display = 'block';
@@ -206,4 +235,5 @@
         });
     </script>
 </body>
+
 </html>

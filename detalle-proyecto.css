@@ -8,7 +8,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #0a0f1c;
-  color: #f0f0f0;
+  color: #e2e8f0;
   line-height: 1.6;
   padding: 2rem;
 }
@@ -19,7 +19,7 @@ body {
   background-color: #111;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .titulo {
@@ -162,9 +162,10 @@ body {
     font-size: 0.9rem;
   }
 }
-  /* Estilos para que el logo en pantallas mayores a 768px se vea */
-  @media (min-width: 769px) {
-    .hero-content .logo-img img {
-      display: block;
-    }
+
+/* Estilos para que el logo en pantallas mayores a 768px se vea */
+@media (min-width: 769px) {
+  .hero-content .logo-img img {
+    display: block;
   }
+}

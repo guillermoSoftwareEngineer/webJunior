@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link rel="icon" type="image/png" href="./images/favicon.png">
   <link rel="stylesheet" href="./item-articulo-plantilla.css" />
 </head>
+
 <body>
 
   <!-- HEADER SIMPLIFICADO como en Proyectos -->
@@ -37,14 +39,16 @@
   <main class="article-container">
     <article>
       <h1 class="article-title">Título del Artículo</h1>
-      <p class="article-meta">Publicado por Guillermo Vásquez · 13 mayo 2025</p>
+      <p class="article-meta">Publicado por Guillermo Vásquez · <span id="publish-date"></span></p>
 
       <img src="./images/calculadora-detalles.png" alt="Imagen principal del artículo" class="article-image">
 
       <section class="article-section">
         <h2>Subtítulo del primer bloque</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi sed feugiat porta, sapien ligula sagittis metus.</p>
-        <p>Morbi in urna ac eros ultrices cursus. Aenean varius, magna non dignissim viverra, vel vehicula orci eros nec justo.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nisi sed feugiat porta, sapien ligula
+          sagittis metus.</p>
+        <p>Morbi in urna ac eros ultrices cursus. Aenean varius, magna non dignissim viverra, vel vehicula orci eros nec
+          justo.</p>
       </section>
 
       <!-- SECCIÓN CROQUIS -->
@@ -55,14 +59,16 @@
         <div class="croquis-content">
           <h3 class="croquis-title">Título del bloque a la derecha</h3>
           <div class="croquis-text">
-            <p>Este bloque simula el estilo visual solicitado, con el título arriba y un recuadro de texto redondeado a la derecha de una imagen.</p>
+            <p>Este bloque simula el estilo visual solicitado, con el título arriba y un recuadro de texto redondeado a
+              la derecha de una imagen.</p>
           </div>
         </div>
       </section>
 
       <section class="article-section">
         <h2>Conclusión</h2>
-        <p>Comprender estos conceptos permite desarrollar soluciones más seguras y eficientes en el contexto de la electrónica y el desarrollo web moderno.</p>
+        <p>Comprender estos conceptos permite desarrollar soluciones más seguras y eficientes en el contexto de la
+          electrónica y el desarrollo web moderno.</p>
       </section>
     </article>
   </main>
@@ -81,20 +87,22 @@
       </a>
     </div>
 
-  <!-- SCRIPT MENÚ HAMBURGUESA -->
-  <script>
-        // Lógica para el menú de hamburguesa
-        const toggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
-        const menuToggleImage = toggle.querySelector("img");
+    <script src="./js/fecha-articulo.js"></script>
+    <!-- SCRIPT MENÚ HAMBURGUESA -->
+    <script>
+      // Lógica para el menú de hamburguesa
+      const toggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      const menuToggleImage = toggle.querySelector("img");
 
-        if (toggle && navLinks) {
+      if (toggle && navLinks) {
         toggle.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-            toggle.classList.toggle("active");
+          navLinks.classList.toggle("show");
+          toggle.classList.toggle("active");
         });
-        }
-  </script>
+      }
+    </script>
 
 </body>
+
 </html>

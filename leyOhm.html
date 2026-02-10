@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ley de Ohm | Guillermo Vásquez</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <link rel="stylesheet" href="./leyOhm.css"> 
+    <link rel="stylesheet" href="./leyOhm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
     <header class="hero">
@@ -39,13 +41,22 @@
 
             <section class="article-section">
                 <h2>Introducción</h2>
-                <p>La Ley de Ohm es uno de los principios fundamentales en el campo de la electricidad y la electrónica, ya que establece una relación matemática clave entre tres magnitudes esenciales: el voltaje (V), la corriente (I) y la resistencia (R). Su formulación, expresada como V = I × R, permite analizar y diseñar circuitos eléctricos de manera eficiente, garantizando el correcto funcionamiento de dispositivos y sistemas.</p>
-                <p>Esta ley es indispensable porque facilita el cálculo de valores desconocidos en un circuito, ayuda a prevenir fallos por sobrecargas y es la base para entender conceptos más avanzados en ingeniería eléctrica. Sin ella, el desarrollo de tecnologías modernas, desde electrodomésticos hasta sistemas complejos de comunicación, sería mucho más complicado.</p>
+                <p>La Ley de Ohm es uno de los principios fundamentales en el campo de la electricidad y la electrónica,
+                    ya que establece una relación matemática clave entre tres magnitudes esenciales: el voltaje (V), la
+                    corriente (I) y la resistencia (R). Su formulación, expresada como V = I × R, permite analizar y
+                    diseñar circuitos eléctricos de manera eficiente, garantizando el correcto funcionamiento de
+                    dispositivos y sistemas.</p>
+                <p>Esta ley es indispensable porque facilita el cálculo de valores desconocidos en un circuito, ayuda a
+                    prevenir fallos por sobrecargas y es la base para entender conceptos más avanzados en ingeniería
+                    eléctrica. Sin ella, el desarrollo de tecnologías modernas, desde electrodomésticos hasta sistemas
+                    complejos de comunicación, sería mucho más complicado.</p>
             </section>
 
             <section class="article-section">
                 <h2>El triángulo de la Ley de Ohm</h2>
-                <p>El triángulo de la Ley de Ohm es una herramienta visual muy útil para recordar y aplicar rápidamente las tres fórmulas fundamentales de la ley de Ohm, que relacionan voltaje (V), corriente (I) y resistencia (R)</p>
+                <p>El triángulo de la Ley de Ohm es una herramienta visual muy útil para recordar y aplicar rápidamente
+                    las tres fórmulas fundamentales de la ley de Ohm, que relacionan voltaje (V), corriente (I) y
+                    resistencia (R)</p>
                 <div class="centered-image-container">
                     <img src="./images/ohm.png" alt="Triángulo de la Ley de Ohm" class="responsive-image" />
                 </div>
@@ -53,46 +64,65 @@
 
             <section class="article-section">
                 <h2>Cómo usar el triangulo?</h2>
-                <p>Imagina el triángulo dividido en tres partes: en la parte superior está la V (voltaje), y en la parte inferior, una al lado de la otra, están la I (corriente) y la R (resistencia).</p>
+                <p>Imagina el triángulo dividido en tres partes: en la parte superior está la V (voltaje), y en la parte
+                    inferior, una al lado de la otra, están la I (corriente) y la R (resistencia).</p>
                 <ul>
                     <li>Si tapas V, quedan I y R juntas abajo: eso significa que V = I × R.</li>
                     <li>Si tapas I, quedan V arriba y R abajo: eso significa que I = V / R.</li>
                     <li>Si tapas R, quedan V arriba y I abajo: eso significa que R = V / I.</li>
                 </ul>
-                <p>Esta regla mnemotécnica te permite recordar fácilmente qué operación realizar según la variable que necesitas calcular: multiplicar si las letras están juntas abajo, o dividir si una está arriba de la otra</p>
+                <p>Esta regla mnemotécnica te permite recordar fácilmente qué operación realizar según la variable que
+                    necesitas calcular: multiplicar si las letras están juntas abajo, o dividir si una está arriba de la
+                    otra</p>
             </section>
 
             <section class="article-section image-left">
                 <h2>Circuito en serie</h2>
-                <div class="content-with-image"> 
-                    <img src="./images/Ohm-serie.png" alt="Diagrama de circuito en serie" class="section-image zoomable-image" data-zoom-src="./images/Ohm-serie.png" />
-                    <p>Un circuito en serie es aquel donde todos los componentes están conectados uno tras otro, formando un único camino por el que fluye la corriente eléctrica. En este tipo de circuito, la corriente es la misma para todos los elementos, pero el voltaje se reparte entre ellos. Si uno de los componentes se interrumpe o falla, todo el circuito deja de funciona</p>
+                <div class="content-with-image">
+                    <img src="./images/Ohm-serie.png" alt="Diagrama de circuito en serie"
+                        class="section-image zoomable-image" data-zoom-src="./images/Ohm-serie.png" />
+                    <p>Un circuito en serie es aquel donde todos los componentes están conectados uno tras otro,
+                        formando un único camino por el que fluye la corriente eléctrica. En este tipo de circuito, la
+                        corriente es la misma para todos los elementos, pero el voltaje se reparte entre ellos. Si uno
+                        de los componentes se interrumpe o falla, todo el circuito deja de funciona</p>
                 </div>
             </section>
 
             <section class="article-section">
                 <h2>Ejemplo de Circuito en serie</h2>
-                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en serie, donde evidenciamos lo anteriormente mencionado</p>
+                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en serie, donde
+                    evidenciamos lo anteriormente mencionado</p>
                 <p>(Click en la imagen par ampliar)</p>
                 <div class="centered-image-container">
-                    <img src="./images/ckt-serie.png" alt="Ejemplo simulado de circuito en serie" class="responsive-image zoomable-image" data-zoom-src="./images/ckt-serie.png" />
+                    <img src="./images/ckt-serie.png" alt="Ejemplo simulado de circuito en serie"
+                        class="responsive-image zoomable-image" data-zoom-src="./images/ckt-serie.png" />
                 </div>
             </section>
 
             <section class="article-section image-right">
                 <h2>Circuito en paralelo</h2>
                 <div class="content-with-image">
-                    <img src="./images/Ohm-paralelo.png" alt="Diagrama de circuito en paralelo" class="section-image" data-zoom-src="./images/Ohm-paralelo.png" />
-                    <p>Un circuito en paralelo es una configuración eléctrica donde los componentes están conectados en múltiples caminos o ramas, de modo que cada uno tiene sus terminales unidos a los mismos dos puntos. Esto hace que el voltaje sea el mismo en todos los componentes, pero la corriente se divide entre las diferentes ramas según la resistencia de cada una. Si un componente falla, los demás siguen funcionando porque la corriente puede fluir por las otras vías. Además, la resistencia total del circuito en paralelo es menor que la de cualquiera de los componentes individuales. Este tipo de circuito es común en el cableado doméstico y permite que dispositivos funcionen de forma independiente sin afectar a otros.</p>
+                    <img src="./images/Ohm-paralelo.png" alt="Diagrama de circuito en paralelo" class="section-image"
+                        data-zoom-src="./images/Ohm-paralelo.png" />
+                    <p>Un circuito en paralelo es una configuración eléctrica donde los componentes están conectados en
+                        múltiples caminos o ramas, de modo que cada uno tiene sus terminales unidos a los mismos dos
+                        puntos. Esto hace que el voltaje sea el mismo en todos los componentes, pero la corriente se
+                        divide entre las diferentes ramas según la resistencia de cada una. Si un componente falla, los
+                        demás siguen funcionando porque la corriente puede fluir por las otras vías. Además, la
+                        resistencia total del circuito en paralelo es menor que la de cualquiera de los componentes
+                        individuales. Este tipo de circuito es común en el cableado doméstico y permite que dispositivos
+                        funcionen de forma independiente sin afectar a otros.</p>
                 </div>
             </section>
 
             <section class="article-section">
                 <h2>Ejemplo de Circuito en Paralelo</h2>
-                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en paralelo, donde evidenciamos lo anteriormente mencionado</p>
+                <p>A continuacion un ejemplo simulado en proteus de un circuito con resistencias en paralelo, donde
+                    evidenciamos lo anteriormente mencionado</p>
                 <p>(Click en la imagen par ampliar)</p>
                 <div class="centered-image-container">
-                    <img src="./images/ckt-paralelo.png" alt="Ejemplo simulado de circuito en paralelo" class="responsive-image zoomable-image" data-zoom-src="./images/ckt-paralelo.png" />
+                    <img src="./images/ckt-paralelo.png" alt="Ejemplo simulado de circuito en paralelo"
+                        class="responsive-image zoomable-image" data-zoom-src="./images/ckt-paralelo.png" />
                 </div>
             </section>
 
@@ -105,10 +135,10 @@
     <footer class="footer">
         <p>© 2025 Guillermo Vásquez</p>
         <div class="footer-links">
-                  <a href="./images/correo.png">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
-                    Correo
-                  </a>            <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
+            <a href="./images/correo.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icono-red" />
+                Correo
+            </a> <a href="https://www.linkedin.com/in/guillermovasbendev/" target="_blank" rel="noopener">
                 <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="icono-red" />
                 LinkedIn
             </a>
@@ -121,6 +151,7 @@
         <img class="lightbox-content" id="lightboxImage">
     </div>
 
+    <script src="./js/fecha-articulo.js"></script>
     <script>
         // Lógica para el menú de hamburguesa
         const toggle = document.getElementById("menuToggle");
@@ -135,12 +166,7 @@
 
         // --- Lógica del Lightbox y fecha (sin cambios) ---
         document.addEventListener('DOMContentLoaded', () => {
-            const publishDateSpan = document.getElementById('publish-date');
-            if (publishDateSpan) {
-                const today = new Date();
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                publishDateSpan.textContent = today.toLocaleDateString('es-ES', options);
-            }
+            /* Lógica de fecha movida a js/fecha-articulo.js */
 
             const lightbox = document.getElementById('imageLightbox');
             const lightboxImage = document.getElementById('lightboxImage');
@@ -148,7 +174,7 @@
             const zoomableImages = document.querySelectorAll('.zoomable-image');
 
             zoomableImages.forEach(image => {
-                image.addEventListener('click', function() {
+                image.addEventListener('click', function () {
                     const zoomSrc = this.getAttribute('data-zoom-src');
                     if (zoomSrc) {
                         lightbox.style.display = 'block';
@@ -171,4 +197,5 @@
         });
     </script>
 </body>
+
 </html>

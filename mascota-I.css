@@ -5,7 +5,7 @@
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
-  --texto: #ffffff;
+  --texto: #e2e8f0;
   --gris: #c0c0c0;
   --borde: #1e90ff;
   --card-fondo: #0f172a;
@@ -43,7 +43,8 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -452,13 +453,18 @@ nav button img {
 
 .youtube-video {
   position: relative;
-  max-width: 680px; /* Limita el tamaño máximo del video */
-  width: 100%; /* Permite que sea más pequeño si el contenedor es estrecho */
-  padding-bottom: 56.25%; /* Proporción 16:9 */
+  max-width: 680px;
+  /* Limita el tamaño máximo del video */
+  width: 100%;
+  /* Permite que sea más pequeño si el contenedor es estrecho */
+  padding-bottom: 56.25%;
+  /* Proporción 16:9 */
   margin-bottom: var(--spacing-lg);
   border-radius: var(--border-radius-md);
-  margin-left: auto;  /* Centra el contenedor horizontalmente */
-  margin-right: auto; /* Centra el contenedor horizontalmente */
+  margin-left: auto;
+  /* Centra el contenedor horizontalmente */
+  margin-right: auto;
+  /* Centra el contenedor horizontalmente */
   overflow: hidden;
   box-shadow: 0 4px 15px var(--sombra);
 }

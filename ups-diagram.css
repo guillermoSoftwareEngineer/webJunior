@@ -2,7 +2,7 @@
 :root {
     --azul: #1e90ff;
     --fondo: #0d1117;
-    --texto: #ffffff;
+    --texto: #e2e8f0;
     --gris: #c0c0c0;
     --borde: #1e90ff;
     --card-fondo: #0f172a;
@@ -514,4 +514,31 @@ body {
     .hero-content .logo-img img {
         display: block;
     }
+}
+
+/* --- Estilos "En Construcción" --- */
+.construction-container {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: rgba(30, 41, 59, 0.5);
+    /* Fondo sutil */
+    border-radius: 12px;
+    border: 1px dashed var(--gris);
+}
+
+.construction-text {
+    color: var(--gris);
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.construction-highlight {
+    color: var(--azul);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }

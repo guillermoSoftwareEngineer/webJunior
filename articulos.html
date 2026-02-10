@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="./articulos.css">
   <link rel="icon" type="image/png" href="./images/favicon.png">
 </head>
+
 <body>
 
   <header class="hero">
@@ -86,7 +88,7 @@
         <div class="article-content">
           <h3>Menus <br> Hamburguesa</h3>
           <p>CSS, Responsive Design, Movil FIrst, UX/UI. El menu es importantes en el desarrollo web</p>
-          
+
           <a href="./menu-hamburguesa.html">Leer artículo</a>
         </div>
       </div>
@@ -140,13 +142,23 @@
       </div> -->
 
       <div class="article-card">
+        <img src="./images/frustrablogpersonal.png" alt="Frustración en Software" class="article-img">
+        <div class="article-content">
+          <h3>¿EXPECTATIVA DE ÉXITO O FRUSTRACIÓN ASEGURADA?</h3>
+          <p>Estudiar carreras relacionadas con software hoy: una visión honesta sobre el mercado saturado, la edad y
+            las falsas promesas.</p>
+          <a href="./arti-frustracion.html">Leer artículo</a>
+        </div>
+      </div>
+
+      <!-- <div class="article-card">
         <img src="./images/facial.jpeg" alt="CSS Grid Avanzado" class="article-img">
         <div class="article-content">
           <h3>Reconocimiento Facial <br> con Python </h3>
           <p>Base de datos, Reconocimiento Facial, modelos de entrenamiento</p>
           <a href="./en-construccion.html">Leer artículo</a>
         </div>
-      </div>
+      </div> -->
 
 
     </div>
@@ -172,18 +184,19 @@
   </footer>
 
   <script>
-        // Lógica para el menú de hamburguesa
-        const toggle = document.getElementById("menuToggle");
-        const navLinks = document.getElementById("navLinks");
-        const menuToggleImage = toggle.querySelector("img");
+    // Lógica para el menú de hamburguesa
+    const toggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const menuToggleImage = toggle.querySelector("img");
 
-        if (toggle && navLinks) {
-        toggle.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
-            toggle.classList.toggle("active");
-        });
-        }
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        toggle.classList.toggle("active");
+      });
+    }
   </script>
 
 </body>
+
 </html>

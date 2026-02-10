@@ -2,7 +2,7 @@
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
-  --texto: #ffffff;
+  --texto: #e2e8f0;
   --gris: #c0c0c0;
   --borde: #1e90ff;
   --card-fondo: #0f172a;
@@ -79,7 +79,8 @@ body {
 .nav a:hover {
   color: var(--azul);
 }
-.proyectos{
+
+.proyectos {
   margin-top: 4rem;
 }
 
@@ -236,7 +237,7 @@ body {
   }
 
   nav button img {
-  border-radius: 8px;
+    border-radius: 8px;
   }
 
   .nav ul {
@@ -266,10 +267,9 @@ body {
   }
 }
 
-   /* Estilos para que el logo en pantallas mayores a 768px se vea */
-  @media (min-width: 769px) {
-    .hero-content .logo-img img {
-      display: block;
-    }
+/* Estilos para que el logo en pantallas mayores a 768px se vea */
+@media (min-width: 769px) {
+  .hero-content .logo-img img {
+    display: block;
   }
-  
+}

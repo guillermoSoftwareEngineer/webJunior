@@ -2,7 +2,7 @@
 :root {
   --azul: #1e90ff;
   --fondo: #0d1117;
-  --texto: #ffffff;
+  --texto: #e2e8f0;
   --gris: #c0c0c0;
   --borde: #1e90ff;
   --card-fondo: #0f172a;
@@ -179,21 +179,21 @@ nav button img {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .croquis-title {
   font-size: 1.3rem;
   color: var(--azul);
   margin-bottom: 1rem;
-  text-align: center; 
+  text-align: center;
 }
 
 .croquis-text {
   padding: 1rem;
   border-radius: 20px;
   color: var(--texto);
-  text-align: center; 
+  text-align: center;
 }
 
 .feature-section {
@@ -224,7 +224,8 @@ nav button img {
   margin-bottom: 0.5rem;
 }
 
-pre, code {
+pre,
+code {
   font-family: 'Fira Code', monospace;
   margin: 0;
   padding: 0;
@@ -327,17 +328,17 @@ code {
   }
 
   .croquis-content {
-    align-items: flex-start; 
-    text-align: left; 
-    display: block; 
+    align-items: flex-start;
+    text-align: left;
+    display: block;
   }
 
   .croquis-title {
-    text-align: center; 
+    text-align: center;
   }
 
   .croquis-text {
-    text-align: center; 
+    text-align: center;
   }
 
   .code-comparison {
@@ -359,6 +360,7 @@ code {
 }
 
 /* Eliminar bullets de todas las listas */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }

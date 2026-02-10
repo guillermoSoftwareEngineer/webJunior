@@ -1,7 +1,7 @@
 :root {
   --azul: #1e90ff;
   --fondo: #0a0f1c;
-  --texto: #f0f0f0;
+  --texto: #e2e8f0;
   --gris: #c0c0c0;
   --sombra: rgba(0, 0, 0, 0.4);
   --fuente: 'Poppins', sans-serif;
@@ -26,6 +26,7 @@ body {
   align-items: center;
   padding: 1rem;
 }
+
 .hero-content .logo-img img {
   width: 80px;
   display: none;
@@ -51,10 +52,12 @@ nav button img {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .menu-toggle img {
   width: 36px;
   height: 36px;
 }
+
 .nav ul {
   display: flex;
   justify-content: center;
@@ -62,12 +65,14 @@ nav button img {
   gap: 1rem;
   padding: 1rem;
 }
+
 .nav a {
   color: var(--texto);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
+
 .nav a:hover {
   color: var(--azul);
 }
@@ -113,6 +118,7 @@ nav button img {
   gap: 1rem;
   align-items: center;
 }
+
 .redes-contacto a {
   display: flex;
   align-items: center;
@@ -125,9 +131,11 @@ nav button img {
   width: fit-content;
   transition: background-color 0.3s ease;
 }
+
 .redes-contacto a:hover {
   background-color: #1e90ff;
 }
+
 .redes-contacto img {
   width: 24px;
   height: 24px;
@@ -141,6 +149,7 @@ nav button img {
   color: var(--gris);
   font-size: 0.9rem;
 }
+
 .footer-links {
   margin-top: 0.5rem;
   display: flex;
@@ -148,6 +157,7 @@ nav button img {
   gap: 0.5rem;
   align-items: center;
 }
+
 .footer-links a {
   color: var(--azul);
   text-decoration: none;
@@ -155,6 +165,7 @@ nav button img {
   align-items: center;
   gap: 0.5rem;
 }
+
 .footer-links img.icono-red {
   width: 20px;
   height: 20px;
@@ -165,6 +176,7 @@ nav button img {
   .menu-toggle {
     display: block;
   }
+
   .nav ul {
     display: none;
     flex-direction: column;
@@ -175,26 +187,29 @@ nav button img {
     width: 100%;
     z-index: 999;
   }
+
   .nav ul.show {
     display: flex;
   }
+
   .nav ul li {
     padding: 0.5rem 0;
     text-align: center;
   }
 }
+
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
   }
 }
 
-  /* Estilos para que el logo en pantallas mayores a 768px se vea */
-  @media (min-width: 769px) {
-    .hero-content .logo-img img {
-      display: block;
-    }
+/* Estilos para que el logo en pantallas mayores a 768px se vea */
+@media (min-width: 769px) {
+  .hero-content .logo-img img {
+    display: block;
   }
+}
 
 .contact-container {
   display: flex;
